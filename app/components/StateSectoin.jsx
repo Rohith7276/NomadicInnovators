@@ -112,13 +112,13 @@ const StateSectoin = (data) => {
       <section className='flex flex-col items-center my-10 p-6 bg-[#1e0700] border-[#640303] border-[2px]  w-[90vw] md:w-[70vw]'>
         <h2 className='text-3xl font-bold text-yellow-400 mb-4'>About Tour De India</h2>
         <p className='text-lg text-white text-center'>
-          Tour De India is dedicated to helping travelers discover the beauty and diversity of India. Our platform provides detailed information on various states, cultural experiences, and travel packages to ensure that every traveler finds their perfect adventure. Whether you' &apos;re looking for historical landmarks, natural wonders, or vibrant festivals, Tour De India has something for everyone. Join us in exploring the incredible landscapes and rich heritage of India, and make your journey unforgettable.
+          Tour De India is dedicated to helping travelers discover the beauty and diversity of India. Our platform provides detailed information on various states&#39; cultural experiences&#39; and travel packages to ensure that every traveler finds their perfect adventure. Whether you&apos;re looking for historical landmarks&#39; natural wonders&#39; or vibrant festivals&#39; Tour De India has something for everyone. Join us in exploring the incredible landscapes and rich heritage of India&#39; and make your journey unforgettable.
         </p>
       </section>
       <section className='flex flex-col items-center my-10 p-6 bg-[#1e0700] border-[#640303] border-[2px] w-[90vw] md:w-[70vw]'>
         <h2 className='text-3xl font-bold text-yellow-400 mb-4'>Why Choose Tour De India?</h2>
         <p className='text-lg text-white text-center'>
-          At Tour De India, we believe in providing a seamless and enriching travel experience. Our team of experts curates the best travel packages, ensuring that you get the most out of your trip. We offer personalized recommendations, 24/7 customer support, and a user-friendly platform to make your travel planning hassle-free. With Tour De India, you can explore hidden gems, enjoy authentic local experiences, and create memories that will last a lifetime. Choose us for a journey that goes beyond the ordinary.
+          At Tour De India, we believe in providing a seamless and enriching travel experience. Our team of experts curates the best travel packages&#39; ensuring that you get the most out of your trip. We offer personalized recommendations&#39; 24/7 customer support&#39; and a user-friendly platform to make your travel planning hassle-free. With Tour De India&#39; you can explore hidden gems&#39; enjoy authentic local experiences&#39; and create memories that will last a lifetime. Choose us for a journey that goes beyond the ordinary.
         <br />
           <br />
           <strong className='text-yellow-400'>Our services include:</strong>
