@@ -4,7 +4,6 @@ import { useRouter } from 'next/navigation';
 import LOGO from "../../public/images/LOGO.svg";
 import Select from "react-dropdown-select";
 import Image from "next/image";
-import { useGSAP } from "@gsap/react";
 import Link from 'next/link';
 import { useDispatch } from 'react-redux'
 import { setCount } from '../redux/counter/counterSlice';
@@ -19,10 +18,8 @@ export default function Navbar() {
   const router = useRouter();
   const [Loading, setLoading] = useState(false)
 
-  const { contextSafe } = useGSAP();
 
   const [fetchData, setFetchData] = useState(true)
-  const animation = contextSafe(() => { });
 
   const [filejson, setfilejson] = useState({})
   const dataFetch = async () => {
@@ -78,7 +75,6 @@ export default function Navbar() {
       };
     };
 
-    animation();
 
     if (typeof document !== "undefined")
       document.querySelectorAll('li').forEach(element => {
@@ -150,6 +146,9 @@ export default function Navbar() {
           </li>
           <li className='flex flex-col justify-end items-center' id='listanim'>
             <h2 className='cursor-pointer hover:scale-[1.1] scrl duration-300'>About</h2>
+          </li>
+          <li className='flex flex-col justify-end items-center' id='listanim'>
+            <Link href={"/SignIn"} className='cursor-pointer hover:scale-[1.1] scrl duration-300' >Sign In</Link>
           </li>
         </ul>
       </nav>

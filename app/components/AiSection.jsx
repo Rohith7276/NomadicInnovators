@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const AiSection = () => {
     const { contextSafe } = useGSAP();
+    useEffect(() => {
     const animation = contextSafe(() => {
         const text = "Hello Nomader! Where do you wanna travel today?";
         if (typeof document != "undefined")
@@ -36,7 +37,7 @@ const AiSection = () => {
               start: "top 85%", 
               onEnter: () => {
                 window.scrollTo({
-                    top: 770,
+                    top: 730,
                     behavior: 'smooth'
                 });
               },
@@ -45,7 +46,6 @@ const AiSection = () => {
         })
       
     })
-    useEffect(() => {
         animation();
     }, [])
     return (

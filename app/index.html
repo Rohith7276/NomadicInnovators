@@ -42,7 +42,7 @@
     <div id="message">
       <h2>Welcome</h2>
       <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <p>You &apos;re seeing this because you &apos;ve successfully setup Firebase Hosting. Now it &apos;s time to go build something extraordinary!</p>
       <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
     </div>
     <p id="load">Firebase SDK Loading&hellip;</p>
@@ -50,19 +50,19 @@
     <script src="https://files.bpcontent.cloud/2024/10/06/03/20241006033257-4O1MZBDD.js"></script>
     <script>
       if(typeof document !== "undefined"){
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
+      document.addEventListener( &apos;DOMContentLoaded &apos;, function() {
+        const loadEl = document.querySelector( &apos;#load &apos;);
         // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
         // // The Firebase SDK is initialized and available here!
         //
         // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.database().ref( &apos;/path/to/ref &apos;).on( &apos;value &apos;, snapshot => { });
+        // firebase.firestore().doc( &apos;/foo/bar &apos;).get().then(() => { });
+        // firebase.functions().httpsCallable( &apos;yourFunction &apos;)().then(() => { });
         // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.storage().ref( &apos;/path/to/ref &apos;).getDownloadURL().then(() => { });
         // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.analytics().logEvent( &apos;tutorial_completed &apos;);
         // firebase.performance(); // call to activate
         //
         // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
@@ -70,20 +70,20 @@
         try {
           let app = firebase.app();
           let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+             &apos;auth &apos;, 
+             &apos;database &apos;, 
+             &apos;firestore &apos;,
+             &apos;functions &apos;,
+             &apos;messaging &apos;, 
+             &apos;storage &apos;, 
+             &apos;analytics &apos;, 
+             &apos;remoteConfig &apos;,
+             &apos;performance &apos;,
+          ].filter(feature => typeof app[feature] ===  &apos;function &apos;);
+          loadEl.textContent = `Firebase SDK loaded with ${features.join( &apos;,  &apos;)}`;
         } catch (e) {
           console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+          loadEl.textContent =  &apos;Error loading the Firebase SDK, check the console. &apos;;
         }
       });}
     </script>

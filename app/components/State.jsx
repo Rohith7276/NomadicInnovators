@@ -42,8 +42,9 @@ const State = () => {
   useEffect(() => {
     setcount(counterValue);
   }, [counterValue]);
-
+  
   const { contextSafe } = useGSAP();
+  useEffect(() => {
 
   const animation = contextSafe((load) => {
     // Set opacity of all elements with the class 'leftright'
@@ -118,7 +119,6 @@ const State = () => {
     }
   });
 
-  useEffect(() => {
 
     animation(Loading);
 

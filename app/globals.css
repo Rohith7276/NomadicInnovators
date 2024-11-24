@@ -276,13 +276,22 @@ body {
   right: 1rem;
   z-index: 100;
 }
+.placeDiv:hover .placeImg {
+  transform: scale(1.1);
+  transition: transform 1s ease;
+}
 
+.placeDiv .placeImg {
+  transition: transform 1s ease;
+}
 .aiRes span {
   font-weight: bold;
   font-size: x-large;
   color: #ffd867;
 }
-
+.typed-cursor{
+  display: none;
+}
 .stateBg img {
   min-height: 100vh;
 }
