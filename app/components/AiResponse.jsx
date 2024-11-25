@@ -28,12 +28,7 @@ function ChatApp() {
     }, [response])
 
     const handleSendMessage = async () => {
-        useEffect(async () => {
-
-
-            document.querySelectorAll('.scrollBrown').forEach(element => {
-                element.style.opacity = 0.5;
-            });
+        
             setLoading(true);
             document.querySelector('.scrollBrown').scrollTo({ top: 0, behavior: 'smooth' });
             const finalInput = `Pretend like you are a travel guide for India working for "Tour De India website": You asked for "where do you wanna travel in India?" I replied ${input} you reply back for the reply based on context of a traveler and  you can also suggest best places to vist in there, food places to try, etc. if required and don't forget to mention website name in the conversation.`;
@@ -56,10 +51,7 @@ function ChatApp() {
                 setResponse(['An error occurred while communicating with the server.']);
                 setLoading(false);
             }
-            document.querySelectorAll('.scrollBrown').forEach(element => {
-                element.style.opacity = 1;
-            });
-        }, [])
+           
     };
     const HtmlRenderer = ({ htmlString }) => {
         // Sanitize the HTML string before rendering
