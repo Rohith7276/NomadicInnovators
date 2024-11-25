@@ -42,82 +42,82 @@ const State = () => {
   useEffect(() => {
     setcount(counterValue);
   }, [counterValue]);
-  
+
   const { contextSafe } = useGSAP();
   useEffect(() => {
 
-  const animation = contextSafe((load) => {
-    // Set opacity of all elements with the class 'leftright'
-    if(typeof document !== "undefined"){
-    document.querySelectorAll('.leftright').forEach(element => {
-      element.style.opacity = 1;
-    });
-  }
-    // Function to handle ScrollTrigger and hover events for each culture section
-    const applyScrollTrigger = (index, cultureSection, cultureImg) => {
-      if (!cultureSection || !cultureImg) return;
+    const animation = contextSafe((load) => {
+      // Set opacity of all elements with the class 'leftright'
+      if (typeof document !== "undefined") {
+        document.querySelectorAll('.leftright').forEach(element => {
+          element.style.opacity = 1;
+        });
+      }
+      // Function to handle ScrollTrigger and hover events for each culture section
+      const applyScrollTrigger = (index, cultureSection, cultureImg) => {
+        if (!cultureSection || !cultureImg) return;
 
-      ScrollTrigger.create({
-        trigger: cultureSection,
-        start: 'top center',
-        once: true,
-        onEnter: () => {
-          cultureSection.style.opacity = 1;
+        ScrollTrigger.create({
+          trigger: cultureSection,
+          start: 'top center',
+          once: true,
+          onEnter: () => {
+            cultureSection.style.opacity = 1;
 
-          // Apply hover effects
-          cultureSection.addEventListener('mouseenter', () => {
-            cultureImg.style.transition = 'transform 1s';
-            cultureImg.style.transform = 'scale(1.3)';
-          });
-          cultureSection.addEventListener('mouseleave', () => {
-            cultureImg.style.transition = 'transform 1s';
-            cultureImg.style.transform = 'scale(1)';
-          });
+            // Apply hover effects
+            cultureSection.addEventListener('mouseenter', () => {
+              cultureImg.style.transition = 'transform 1s';
+              cultureImg.style.transform = 'scale(1.3)';
+            });
+            cultureSection.addEventListener('mouseleave', () => {
+              cultureImg.style.transition = 'transform 1s';
+              cultureImg.style.transform = 'scale(1)';
+            });
 
-          // Apply GSAP animation
-          gsap.from(cultureSection, {
-            duration: 1.5,
-            opacity: 0,
-            y: 60,
-            ease: 'power2.out',
-          });
-        
-        },
-      });
-    };
+            // Apply GSAP animation
+            gsap.from(cultureSection, {
+              duration: 1.5,
+              opacity: 0,
+              y: 60,
+              ease: 'power2.out',
+            });
 
-    // Loop through culture sections and apply animations
-    if(typeof document !== "undefined"){
-    for (let index = 0; index < 5; index++) {
-      const cultureSection = document.getElementById(`culture${index}`);
-      const cultureImg = document.getElementById(`cultureImg${index}`);
-      applyScrollTrigger(index, cultureSection, cultureImg);
-      // Apply ScrollTrigger to each section
-    }
-  }
-
-
-    // Handle animations for images and text based on window size
-    if (load !== true && typeof window !== "undefined") {
-      const handleImageAnimation = () => {
-        image.current.style.opacity = 1;
-        if (window.innerWidth < 1200) {
-          gsap.from(image.current, { y: -90, duration: 10 });
-          gsap.from('.text', { opacity: 0, y: 100, duration: 1 });
-        } else {
-          gsap.from(image.current, { x: -90, y: 30, duration: 10 });
-          gsap.from('.text', { opacity: 0, x: 100, duration: 1 });
-        }
+          },
+        });
       };
 
-      handleImageAnimation();
-    }
+      // Loop through culture sections and apply animations
+      if (typeof document !== "undefined") {
+        for (let index = 0; index < 5; index++) {
+          const cultureSection = document.getElementById(`culture${index}`);
+          const cultureImg = document.getElementById(`cultureImg${index}`);
+          applyScrollTrigger(index, cultureSection, cultureImg);
+          // Apply ScrollTrigger to each section
+        }
+      }
 
-    // Scroll to top of the page
-    if (typeof window !== "undefined") {
-      window.scrollTo(0, 0);
-    }
-  });
+
+      // Handle animations for images and text based on window size
+      if (load !== true && typeof window !== "undefined") {
+        const handleImageAnimation = () => {
+          image.current.style.opacity = 1;
+          if (window.innerWidth < 1200) {
+            gsap.from(image.current, { y: -90, duration: 10 });
+            gsap.from('.text', { opacity: 0, y: 100, duration: 1 });
+          } else {
+            gsap.from(image.current, { x: -90, y: 30, duration: 10 });
+            gsap.from('.text', { opacity: 0, x: 100, duration: 1 });
+          }
+        };
+
+        handleImageAnimation();
+      }
+
+      // Scroll to top of the page
+      if (typeof window !== "undefined") {
+        window.scrollTo(0, 0);
+      }
+    });
 
 
     animation(Loading);

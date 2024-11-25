@@ -11,51 +11,55 @@ function ChatApp() {
     const [loading, setLoading] = useState(false)
     const { contextSafe } = useGSAP();
     useEffect(() => {
-    const animation = contextSafe(() => {
-        if (typeof document !== "undefined") {
-            Array.from(document.getElementsByClassName("aiRes")).forEach(element => {
-                element.style.opacity = 1;
-            });
-        }
-        gsap.from(".aiRes", {
-            y: 20,
-            opacity: 0,
-            stagger: 0.2
-        })
-    });
+        const animation = contextSafe(() => {
+            if (typeof document !== "undefined") {
+                Array.from(document.getElementsByClassName("aiRes")).forEach(element => {
+                    element.style.opacity = 1;
+                });
+            }
+            gsap.from(".aiRes", {
+                y: 20,
+                opacity: 0,
+                stagger: 0.2
+            })
+        });
 
         animation();
     }, [response])
 
     const handleSendMessage = async () => {
-        document.querySelectorAll('.scrollBrown').forEach(element => {
-            element.style.opacity = 0.5;
-        });
-        setLoading(true);
-        document.querySelector('.scrollBrown').scrollTo({ top: 0, behavior: 'smooth' });
-        const finalInput = `Pretend like you are a travel guide for India working for "Tour De India website": You asked for "where do you wanna travel in India?" I replied ${input} you reply back for the reply based on context of a traveler and  you can also suggest best places to vist in there, food places to try, etc. if required and don't forget to mention website name in the conversation.`;
-       
-        try {
-            // Send a POST request to the API route
-            const res = await fetch('/api/chat', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(finalInput), // Send the user input as JSON
-            });
-            const jsonData = await res.json();
+        useEffect(async () => {
 
-            setResponse(jsonData.response.split("\n"));
-            setLoading(false);
-        } catch (error) {
-            console.error('Error:', error);
-            setResponse(['An error occurred while communicating with the server.']);
-            setLoading(false);
-        }
-        document.querySelectorAll('.scrollBrown').forEach(element => {
-            element.style.opacity = 1;
-        });
+
+            document.querySelectorAll('.scrollBrown').forEach(element => {
+                element.style.opacity = 0.5;
+            });
+            setLoading(true);
+            document.querySelector('.scrollBrown').scrollTo({ top: 0, behavior: 'smooth' });
+            const finalInput = `Pretend like you are a travel guide for India working for "Tour De India website": You asked for "where do you wanna travel in India?" I replied ${input} you reply back for the reply based on context of a traveler and  you can also suggest best places to vist in there, food places to try, etc. if required and don't forget to mention website name in the conversation.`;
+
+            try {
+                // Send a POST request to the API route
+                const res = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(finalInput), // Send the user input as JSON
+                });
+                const jsonData = await res.json();
+
+                setResponse(jsonData.response.split("\n"));
+                setLoading(false);
+            } catch (error) {
+                console.error('Error:', error);
+                setResponse(['An error occurred while communicating with the server.']);
+                setLoading(false);
+            }
+            document.querySelectorAll('.scrollBrown').forEach(element => {
+                element.style.opacity = 1;
+            });
+        }, [])
     };
     const HtmlRenderer = ({ htmlString }) => {
         // Sanitize the HTML string before rendering
@@ -83,7 +87,7 @@ function ChatApp() {
                 />
                 <button onClick={handleSendMessage} className='text-yellow-400 cursor-pointer'><IoSend /></button>
             </div>
-            {loading && <div className='absolute ml-[45vw] mt-[7rem] '><Loader/></div>}
+            {loading && <div className='absolute ml-[45vw] mt-[7rem] '><Loader /></div>}
             <div className='h-[60vh] my-6 px-4 scrollBrown overflow-y-scroll  w-[80vw] py-7 m-auto'>
                 {response.map((item, index) => {
                     let formattedItem = item;
