@@ -83,7 +83,7 @@ const Home = () => {
           {/* <Stars /> */}
         </section>
         <h1 className='amsterdam bg-origin-border py-4 text-[#ffd867] mt-50 text-center w-full text-[6rem] mx-auto mt'>
-          STATES
+          STATES TO VISIT
         </h1>
         <StateSectoin data={filejson} />
       </>

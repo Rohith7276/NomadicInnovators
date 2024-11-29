@@ -65,7 +65,7 @@ function ChatApp() {
         <div>
             <div className=' rounded-md m-auto w-fit px-3  bg-[#4F2109] flex justify-center items-center'>
 
-                <textarea className='w-[47vw] p-[0.5rem] h-[2.5rem] resize-none self-center outline-none'
+                <textarea className='w-[47vw] p-[0.5rem] h-[2.5rem] bg-[#4F2109] resize-none self-center outline-none'
                     value={input}
                     onKeyDown={e => {
                         if (e.key === "Enter") {
