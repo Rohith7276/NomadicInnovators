@@ -31,7 +31,7 @@ return (
                     </label>
                     <input 
                         placeholder='username' 
-                        className='shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline' 
+                        className='shadow appearance-none  bg-[#1e0700] border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline' 
                         {...register("username", { required: {value: true, message: "This field is required"}, minLength: {value: 3, message: "Min length is 3"} })} 
                         type="text"   
                     />
@@ -43,7 +43,7 @@ return (
                     </label>
                     <input 
                         placeholder='password'  
-                        className='shadow appearance-none border rounded w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline' 
+                        className='shadow appearance-none bg-[#1e0700] border rounded w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline' 
                         {...register("password", {minLength: {value: 7, message: "Min length of password is 7"},})} 
                         type="password"
                     />
@@ -52,7 +52,7 @@ return (
                 <div className="flex items-center justify-between bg-blue-700 w-fit cursor-pointer">
                     <input 
                         disabled={isSubmitting} 
-                        className='bg-blue-700  text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' 
+                        className='bg-blue-700 bg-[#1e0700] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' 
                         type="submit" 
                         value="Submit" 
                     />

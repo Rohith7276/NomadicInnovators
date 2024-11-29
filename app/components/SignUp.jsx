@@ -43,7 +43,7 @@ const SignUp = () => {
                     </label>
                     <input 
                         placeholder='username' 
-                        className='shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline' 
+                        className='shadow appearance-none bg-[#1e0700] border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline' 
                         {...register("name", { required: {value: true, message: "This field is required"}, minLength: {value: 3, message: "Min length is 3"}, maxLength: {value: 8, message: "Max length is 8"} })} 
                         type="text"   
                     />
@@ -68,7 +68,7 @@ const SignUp = () => {
                     <div className="relative">
                         <input 
                             placeholder='password'  
-                            className='shadow appearance-none border rounded w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline' 
+                            className='shadow appearance-none border bg-[#1e0700] rounded w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline' 
                             {...register("password", {minLength: {value: 7, message: "Min length of password is 7"},})} 
                             type={showPassword ? "text" : "password"}
                         />
