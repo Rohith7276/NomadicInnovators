@@ -2,7 +2,9 @@
 import { Gowun_Batang } from "next/font/google";
 import "./globals.css";
 
-import Bot from './components/bot';
+import dynamic from 'next/dynamic';
+
+const Bot = dynamic(() => import('./components/bot'), { ssr: false });
 
 const inter = Gowun_Batang({ subsets: ["latin"], weight: ['400', '700'], });
 

@@ -281,6 +281,14 @@ body {
   transition: transform 1s ease;
 }
 
+.shdw{
+  box-shadow: inset 0px -35px 18px #260b03ab;
+  width: 100vw;
+  height: 3rem;
+  color: #f3b70a;
+  margin-top: -3rem;
+}
+
 .placeDiv .placeImg {
   transition: transform 1s ease;
 }
@@ -296,6 +304,15 @@ body {
   min-height: 100vh;
 }
 
+.hoverimage:hover .hoverpack {
+  opacity: 1;
+}
+
+.hoverpack {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  /* transition-delay: 0.9s; */
+}
 .aiRes {
   font-size: large;
 

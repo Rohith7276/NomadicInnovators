@@ -6,14 +6,11 @@ import Footer from './components/Footer'
 import dynamic from 'next/dynamic';
 
 // Dynamically import the component and disable SSR
-const Home = dynamic(() => import('./components/Home'), {
-  ssr: false, // Disable server-side rendering
-});
-const Navbar = dynamic(() => import('./components/Navbar'), {
-  ssr: false, // Disable server-side rendering
-});
+
 import store from './redux/store'
 import { Provider } from 'react-redux'
+import Home from './components/Home';
+import Navbar from './components/Navbar';
 function App() {
 
 
