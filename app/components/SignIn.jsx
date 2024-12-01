@@ -2,7 +2,6 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import React from 'react'
 import { useForm } from "react-hook-form"
 import { auth } from '../firebase/firebaseConfig';
-import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
 
 const SignIn = () => {
@@ -11,13 +10,12 @@ const SignIn = () => {
     const {
         register,
         handleSubmit,
-        setError,    
+        setError,
         formState: { errors, isSubmitting },
       } = useForm();
       const onSubmit = async (data) => {
         const result = await signInWithEmailAndPassword(auth, data.username, data.password)
         localStorage.setItem('user', JSON.stringify(result))
-        toast.success('User Logged In Successfully')
         router.push('/')
       }
 return (
@@ -52,7 +50,7 @@ return (
                 <div className="flex items-center justify-between bg-blue-700 w-fit cursor-pointer">
                     <input 
                         disabled={isSubmitting} 
-                        className='bg-blue-700 bg-[#1e0700] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' 
+                        className=' bg-[#1e0700] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' 
                         type="submit" 
                         value="Submit" 
                     />

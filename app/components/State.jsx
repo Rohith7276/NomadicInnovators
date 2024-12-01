@@ -5,6 +5,8 @@ import { useGSAP } from "@gsap/react";
 import Loader from '../components/Loader'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+import CommentList from './dispCommet'
+import CommentForm from './comment'
 import { fireDB } from '../firebase/firebaseConfig'
 import { collection, getDocs } from 'firebase/firestore'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
@@ -171,6 +173,7 @@ const State = () => {
               <div id={`culture${index}`} key={each.cultureName} className='flex opacity-0 culture border-[2px] border-[#640303] rounded-sm shrink-0 justify-between w-[90vw] md:w-[45vw] m-4 bg-[#1e0700] '>
                 <div className='overflow-hidden flex items-center justify-center w-[126vw]'>
                   <Image src={each.cultureImg} id={`cultureImg${index}`} alt={each.cultureName} width={1000} height={100} className="object-cover float-left px-4 h-[18vh] md:h-[35vh] lg:h-[sdf]  w-fit max-w-[25vw]" />
+
                 </div>
                 <div className='flex flex-col justify-center px-[1rem] my-6'>
                   <h2 className='text-2xl h-fit text-center font-bold text-[orange]'>{each.cultureName}</h2>
@@ -179,8 +182,18 @@ const State = () => {
               </div>
             ))}
           </div>
+          <div>
+            <h1 className='amsterdam bg-origin-border  text-[#ffd867] mt-50 text-center w-full text-[4rem] mx-auto mt'>
+              COMMENTS
+            </h1>
+            <CommentForm />
+            <div className='bg-[#1e0700] my-6 py-5 pb-1 px-5 mx-52 rounded-md'>
+              <CommentList />
+            </div>
+          </div>
         </div>
       )}
+
     </div>
   )
 }

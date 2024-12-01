@@ -36,10 +36,13 @@ const AiSection = () => {
               trigger: ".aisec",
               start: "top 85%", 
               onEnter: () => {
-                window.scrollTo({
-                    top: 730,
-                    behavior: 'smooth'
-                });
+                const textAnimElement = document.querySelector('#textanim');
+                if (textAnimElement) {
+                    window.scrollTo({
+                        top: textAnimElement.getBoundingClientRect().top + window.scrollY - 80, // 5rem = 80px
+                        behavior: 'smooth'
+                    });
+                }
               },
             //   markers: true,                    // Smooth transition when `fixedDiv` unpins
             }

@@ -53,6 +53,8 @@ function ChatApp() {
             }
            
     };
+
+
     const HtmlRenderer = ({ htmlString }) => {
         // Sanitize the HTML string before rendering
         const sanitizedHtml = DOMPurify.sanitize(htmlString);

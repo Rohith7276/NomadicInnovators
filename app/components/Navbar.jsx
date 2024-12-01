@@ -3,24 +3,32 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import LOGO from "../../public/images/LOGO.svg";
 import Select from "react-dropdown-select";
+import { deleteDoc } from 'firebase/firestore';
 import Image from "next/image";
 import Link from 'next/link';
 import { useDispatch } from 'react-redux'
 import { setCount } from '../redux/counter/counterSlice';
 import { fireDB } from '../firebase/firebaseConfig'
-import { collection, getDocs } from 'firebase/firestore'
-
-
+import { collection, getDocs, doc } from 'firebase/firestore'
+import themeBtn from './themeBtn'
+import { FaRegUserCircle } from "react-icons/fa";
 export default function Navbar() {
   const [loading, setloading] = useState(false)
   const boxRef = useRef(null);
   const dispatch = useDispatch()
   const router = useRouter();
   const [Loading, setLoading] = useState(false)
-
-
+  const [user, setuser] = useState("null")
+  const [userClick, setUserClick] = useState(false)
   const [fetchData, setFetchData] = useState(true)
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+        // console.log(JSON.parse(storedUser).user.email)
+        setuser([JSON.parse(storedUser).name ,JSON.parse(storedUser).email]);
+    }
 
+}, [])
   const [filejson, setfilejson] = useState({})
   const dataFetch = async () => {
     let x = await getDocs(collection(fireDB, 'jsonData'));
@@ -31,48 +39,48 @@ export default function Navbar() {
 
   useEffect(() => {
     const googleTranslateElementInit = () => {
-      if(typeof window !== "undefined" && typeof document !== "undefined"){
-      new window.google.translate.TranslateElement(
-        { pageLanguage: 'en' },
-        'google_translate_element'
-      );
-      if (window.screen.width < 768 && typeof document !== "undefined") {
-        document.querySelector('nav').style.transform = 'translateY(-100%)';
+      if (typeof window !== "undefined" && typeof document !== "undefined") {
+        new window.google.translate.TranslateElement(
+          { pageLanguage: 'en' },
+          'google_translate_element'
+        );
+        if (window.screen.width < 768 && typeof document !== "undefined") {
+          document.querySelector('nav').style.transform = 'translateY(-100%)';
+        }
       }
-    }
-      const handleScroll = () => {
-        if (typeof document !== "undefined") {
-          var nav = document.querySelector('nav');
-        }
-        if (typeof window !== "undefined" && nav) { 
-          if (window.scrollY > window.innerHeight / 0.5) {
-            nav.style.transition = 'transform 0.6s ease-in-out';
-            nav.style.transform = 'translateY(-30vh)';
-          } else {
-            nav.style.transition = 'transform 0.6s ease-in-out';
-            nav.style.transform = 'translateY(0)';
-          }
-        }
+      // const handleScroll = () => {
+      //   if (typeof document !== "undefined") {
+      //     var nav = document.querySelector('nav');
+      //   }
+      //   if (typeof window !== "undefined" && nav) {
+      //     if (window.scrollY > window.innerHeight / 0.5) {
+      //       nav.style.transition = 'transform 0.6s ease-in-out';
+      //       nav.style.transform = 'translateY(-30vh)';
+      //     } else {
+      //       nav.style.transition = 'transform 0.6s ease-in-out';
+      //       nav.style.transform = 'translateY(0)';
+      //     }
+      //   }
 
-      };
-      if (typeof document !== "undefined")
-        document.querySelectorAll('.scrl').forEach(element => {
-          element.addEventListener('click', () => {
-            if (typeof window !== "undefined") {
-              window.scrollTo({
-                top: document.body.scrollHeight,
-                behavior: 'smooth'
-              });
-            }
-          });
-        });
-      if (typeof window !== "undefined")
-        window.addEventListener('scroll', handleScroll);
+      // };
+      // if (typeof document !== "undefined")
+      //   document.querySelectorAll('.scrl').forEach(element => {
+      //     element.addEventListener('click', () => {
+      //       if (typeof window !== "undefined") {
+      //         window.scrollTo({
+      //           top: document.body.scrollHeight,
+      //           behavior: 'smooth'
+      //         });
+      //       }
+      //     });
+      //   });
+      // if (typeof window !== "undefined")
+      //   window.addEventListener('scroll', handleScroll);
 
-      return () => {
-        if (typeof window !== "undefined")
-          window.removeEventListener('scroll', handleScroll);
-      };
+      // return () => {
+      //   if (typeof window !== "undefined")
+      //     window.removeEventListener('scroll', handleScroll);
+      // };
     };
 
 
@@ -90,14 +98,32 @@ export default function Navbar() {
       script.async = true;
       if (typeof document !== "undefined")
         document.body.appendChild(script);
-      if (typeof window !== "undefined"){
-        window.googleTranslateElementInit = googleTranslateElementInit;}
+      if (typeof window !== "undefined") {
+        window.googleTranslateElementInit = googleTranslateElementInit;
+      }
     };
 
     addGoogleTranslateScript();
 
   }, []);
+  const handleUser = ()=>{
+    setUserClick(!userClick)
 
+  }
+  const handleLogOut = async () => {
+    const userRef = collection(fireDB, 'users');
+    try{
+
+      await deleteDoc(doc(userRef, user));
+      localStorage.removeItem('user');
+      setuser("null");
+      setUserClick(false);
+    }catch(error){
+      console.error("Error deleting user: ", error);
+    }
+    window.location.reload();
+    // setuser("rrr@gmail.com")
+  };
   const options = filejson?.states?.map((each, index) => { return { id: index, name: each.state } })
 
   return (
@@ -148,7 +174,12 @@ export default function Navbar() {
             <h2 className='cursor-pointer hover:scale-[1.1] scrl duration-300'>About</h2>
           </li>
           <li className='flex flex-col justify-end items-center' id='listanim'>
-            <Link href={"/SignIn"} className='cursor-pointer hover:scale-[1.1] scrl duration-300' >Sign In</Link>
+            <themeBtn />
+          </li>
+          <li className='flex flex-col justify-end cursor-pointer items-center' id='listanim'>
+            {user==="null"?<Link href={"/SignIn"} className='cursor-pointer hover:scale-[1.1] scrl duration-300' >Sign In</Link>:
+            <FaRegUserCircle className='cursor-pointer' onClick={handleUser} />}
+            {(userClick&&user!=null)&& <div className='absolute bg-[#351a03] rounded-b-md top-[4rem] right-0 flex flex-col gap-4 p-4'> {user[0]} <br/> {user[1]} <button className='bg-yellow-400 rounded-lg text-black font-bold' onClick={handleLogOut}>Logout</button></div>}
           </li>
         </ul>
       </nav>

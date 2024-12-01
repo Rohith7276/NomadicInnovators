@@ -62,10 +62,10 @@ const Authentication = () => {
                 </div>
 
                 {account ? <SignIn /> : <SignUp />}
-                <div>
+                <div className='px-14 flex justify-between pb-9'>
                     
                 {account ? <div>Don&apos;t have an account?
-                    <button className='text-blue-500 hover:underline' onClick={() => setAccount(false)}>Sign Up</button></div> : <div>Do you have an account? <button className='text-blue-500 hover:underline' onClick={() => setAccount(true)}>Sign In</button>
+                    <button className='text-[#ffd867] hover:underline' onClick={() => setAccount(false)}>Sign Up</button></div> : <div>Do you have an account? <button className='text-[#ffd867] hover:underline' onClick={() => setAccount(true)}>Sign In</button>
                 </div>
                 }
                 <Link href='/' className='cursor-pointer flex justify-center items-center bg-blfdsck text-[#ffd867] w-5 h-5 roundsfded-full'><FaHome className='cursor-pointer w-10' /></Link>

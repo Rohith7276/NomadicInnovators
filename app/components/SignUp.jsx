@@ -3,6 +3,7 @@ import React from 'react'
 import { useForm } from "react-hook-form"
 import {auth, fireDB} from '../firebase/firebaseConfig' 
 import { addDoc, collection } from 'firebase/firestore';
+import { useRouter } from 'next/navigation';
 import { v4 as uuidv4 } from 'uuid';
 const SignUp = () => {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -12,22 +13,25 @@ const SignUp = () => {
     setError,    
     formState: { errors, isSubmitting },
   } = useForm();
+  const router = useRouter();
   const onSubmit = async (data) => {
     console.log(data);
     // const auth = getAuth();
     try {
       const users = await createUserWithEmailAndPassword(auth, data.email, data.password);
       console.log("users",users);
-      
       const uniqueId = uuidv4();
       const user = {
-        name: data.name,
-        email: data.email,
-        uid: uniqueId,
-      }
-
-      const userRef = collection(fireDB, "users");
-      await addDoc(userRef, user);
+          name: data.name,
+          email: data.email,
+          uid: uniqueId,
+        }
+        
+        const userRef = collection(fireDB, "users");
+        await addDoc(userRef, user);
+        localStorage.setItem("user", JSON.stringify(user));
+        router.push('/')
+        
     } catch (e) {
       console.log(e);
     }
@@ -88,8 +92,13 @@ const SignUp = () => {
                     </div>
                     {errors.password && <div className='text-red-500 text-xs italic'>{errors.password.message}</div>}
                 </div>
-                <div className="flex items-center justify-between bg-blue-700 w-fit cursor-pointer">
-                <input type="submit" />
+                <div className="flex items-center justify-between amsterdam tracking-widest rounded-[10rem]  bg-yellow-600 w-fit cursor-pointer">
+                    <input 
+                        disabled={isSubmitting} 
+                        className=' bg-[#1e0700] text-white font-bold py-1 px-4 rounded focus:outline-none focus:shadow-outline' 
+                        type="submit" 
+                        value="Submit" 
+                    />
                 </div>
                 {errors.myform && <div className='text-red-500 text-xs italic mt-4'>{errors.myform.message}</div>}
                 {errors.blocked && <div className='text-red-500 text-xs italic mt-4'>{errors.blocked.message}</div>}
