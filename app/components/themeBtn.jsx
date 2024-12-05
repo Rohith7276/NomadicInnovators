@@ -3,7 +3,7 @@ import Brightness3Icon from '@mui/icons-material/Brightness3';
 import FlareIcon from '@mui/icons-material/Flare';
 import React from 'react'
 import { Switch } from '@mui/material'
-import {useTheme, useThemeUpdate} from '@/app/contexts/themes';
+import { useTheme, useThemeUpdate } from '@/app/contexts/themes';
 
 const ThemeBtn = () => {
     const themeMode = useTheme()

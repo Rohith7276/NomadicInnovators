@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { MdDelete } from "react-icons/md";
 import { collection, query, orderBy, onSnapshot, deleteDoc, doc } from "firebase/firestore";
 // import { fireDB } from "./firebase";
 import { fireDB } from '../firebase/firebaseConfig'
@@ -30,17 +31,34 @@ const CommentList = () => {
         }
     };
     return (
-        <div className="comment-list scroll overflow-scroll min-h-[20vh] max-h-[50vh] bg-[#1e0700]   my-11" style={{ padding: "10px" , borderRadius: "5px" }}>
+<>
+        <div className="comment-list dark:hidden  lightscroll overflow-scroll min-h-[20vh] max-h-[50vh]  text-black dark:text-white bg-white shdfadow-lg dark:bg-[#1e0700]   my-11" style={{ padding: "10px" , borderRadius: "5px" }}>
             {comments.length ? comments.map((comment) => (
-                <div key={comment.id} className="comment bg-[#2d1000]" style={{ marginBottom: "10px", padding: "10px", border: "1px solid #640303", borderRadius: "5px" }}>
-                    {comment.user === user ? <h1 className="text-green-600">You</h1> : <h1 className="text-gray-400">{comment.user}</h1>}
+                <div key={comment.id} className="comment flex  border-black lg:border-[#640303] border justify-between text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700]" style={{ marginBottom: "10px", padding: "10px" , borderRadius: "5px" }}>
+                    <div>
+                        {comment.user === user ? <h1 className="text-green-600">You</h1> : <h1 className="text-gray-400">{comment.user}</h1>}
                     <p style={{ margin: "0 0 5px 0" }}>{comment.content}</p>
-                    <small className="text-yellow-100" >{comment.timestamp?.toDate().toLocaleString()}</small>
-                    {comment.user === user && <button onClick={() => handleDelete(comment.id)}>Delete</button>}
+                    <small className="text-gray-500" >{comment.timestamp?.toDate().toLocaleString()}</small>
+                        </div>
+                    {comment.user === user && <button className="cursor-pointer" onClick={() => handleDelete(comment.id)}><MdDelete className="cursor-pointer w-[1.6rem]"/></button>}
                 </div>
             )) : <div className="text-black flex h-[20vh] w-full justify-center items-center"> No comments yet</div>}
 
         </div>
+        <div className="comment-list hidden dark:block scroll overflow-scroll min-h-[20vh] max-h-[50vh]  text-black dark:text-white bg-white shdfadow-lg dark:bg-[#1e0700]   my-11" style={{ padding: "10px" , borderRadius: "5px" }}>
+            {comments.length ? comments.map((comment) => (
+                <div key={comment.id} className="comment flex  border-black lg:border-[#640303] border justify-between text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700]" style={{ marginBottom: "10px", padding: "10px" , borderRadius: "5px" }}>
+                    <div>
+                    {comment.user === user ? <h1 className="text-green-600">You</h1> : <h1 className="text-gray-400">{comment.user}</h1>}
+                    <p style={{ margin: "0 0 5px 0" }}>{comment.content}</p>
+                    <small className="text-yellow-100" >{comment.timestamp?.toDate().toLocaleString()}</small>
+                    </div>
+                    {comment.user === user && <button className="cursor-pointer"  onClick={() => handleDelete(comment.id)}><MdDelete className="cursor-pointer w-[1.6rem]"/></button>}
+                </div>
+            )) : <div className="text-black flex h-[20vh] w-full justify-center items-center"> No comments yet</div>}
+
+        </div>
+        </>
     );
 };
 

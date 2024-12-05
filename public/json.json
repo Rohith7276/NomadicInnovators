@@ -2,11 +2,292 @@
     "states": [
         {
             "state": "Karnataka",
-            
             "description": "Karnataka is a must-visit destination for travelers seeking a blend of natural beauty, cultural richness, and historical significance. Whether you're exploring the bustling streets of Bengaluru, marveling at the architectural wonders of Mysore Palace, or trekking through the lush forests of the Western Ghats, Karnataka offers a diverse range of experiences that cater to all types of travelers.",
             "desc": "Karnataka, located in the southwestern region of India, is known for its diverse landscapes, rich cultural heritage, and historical significance. The state boasts beautiful coastlines, lush forests, and vibrant cities. Key attractions include the historic Mysore Palace, the ancient ruins of Hampi, and the bustling tech hub of Bengaluru.",
             "PortraitImg": "https://images.unsplash.com/photo-1622117655866-8b233395581a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "bigImg": "https://plus.unsplash.com/premium_photo-1697730337612-8bd916249e30?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "hotel": [
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/temple-tour.webp",
+                        "days": "7 Nights - 8 Days",
+                        "name": "Divine Karnataka Temple Tour",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/temple-tour.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/jain-temple-tour.webp",
+                        "days": "2 Nights - 3 Days",
+                        "name": "Karnataka Jain Temple Tour",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/jain-temple-tour.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/karnataka-classical-tour.webp",
+                        "days": "6 Nights - 7 Days",
+                        "name": "Classical Tour of Karnataka",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/karnataka-classical-tour.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/coorg-tour-with-kabini.webp",
+                        "days": "4 Nights - 5 Days",
+                        "name": "Coorg Tour with Kabini",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/coorg-tour-with-kabini.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/bangalore-mysore-ooty-tour.webp",
+                        "days": "4 Nights - 5 Days",
+                        "name": "Bangalore Mysore Ooty Tour",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/bangalore-mysore-ooty-tour.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/coorg-sightseeing-tour.webp",
+                        "days": "2 Nights - 4 Days",
+                        "name": "Coorg Sightseeing Tour",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/coorg-sightseeing-tour.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/short-tour-to-kabini.webp",
+                        "days": "2 Nights - 3 Days",
+                        "name": "Short Tour to Kabini",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/short-tour-to-kabini.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/bangalore-mysore-nagarhole-tour.webp",
+                        "days": "5 Nights - 6 Days",
+                        "name": "Bangalore Mysore Nagarhole Tour",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/bangalore-mysore-nagarhole-tour.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/shimoga-nature-tour-karnataka.webp",
+                        "days": "3 Nights - 4 Days",
+                        "name": "Shimoga Nature Tour Karnataka",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/shimoga-nature-tour-karnataka.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/bandipur-ooty-tour.webp",
+                        "days": "3 Nights - 4 Days",
+                        "name": "Bandipur Tour with Ooty",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/bandipur-ooty-tour.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/wayanad-kabini-tour.webp",
+                        "days": "4 Nights - 5 Days",
+                        "name": "Wayanad Hill Station Tour with Kabini",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/wayanad-kabini-tour.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/heritage-culture-of-karnataka.webp",
+                        "days": "14 Nights - 15 Days",
+                        "name": "Heritage Culture of Karnataka with Wildlife",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/heritage-culture-of-karnataka-with-wildlife.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/western-ghats-tour-with-mysore.webp",
+                        "days": "5 Nights - 6 Days",
+                        "name": "Mesmerizing Western Ghats with Mysore",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/western-ghats-tour-with-mysore.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/best-of-karnataka-tour-with-goa.webp",
+                        "days": "14 Nights - 15 Days",
+                        "name": "Best of Karnataka Tour with Goa",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/best-of-karnataka-tour-with-goa.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/mesmerizing-south-india-tour.webp",
+                        "days": "5 Nights - 6 Days",
+                        "name": "Mesmerizing South India Tour",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/mesmerizing-south-india-tour.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/mumbai-goa-tour-with-south-india.webp",
+                        "days": "15 Nights - 16 Days",
+                        "name": "South India Tour with Mumbai & Goa",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/mumbai-goa-tour-with-south-india.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/mangalore-goa-beach-tour.webp",
+                        "days": "6 Nights - 7 Days",
+                        "name": "Mangalore Goa Beach Tour",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/mangalore-goa-beach-tour.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/mysore-goa-tour.webp",
+                        "days": "8 Nights - 9 Days",
+                        "name": "Mysore Goa Tour",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/mysore-goa-tour.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/karnataka-wildlife-safari-tour.webp",
+                        "days": "12 Nights - 13 Days",
+                        "name": "Karnataka Wildlife Safari Tour",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/karnataka-wildlife-safari-tour.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/karnataka-expedition-tour.webp",
+                        "days": "14 Nights - 15 Days",
+                        "name": "Karnataka Expedition Tour",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/karnataka-expedition-tour.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/horse-safari-tour.webp",
+                        "days": "9 Nights - 10 Days",
+                        "name": "Horse Safari in Karnataka",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/horse-safari-tour.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/ancient-karnataka-tour.webp",
+                        "days": "15 Nights - 16 Days",
+                        "name": "Ancient Karnataka Tour",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/ancient-karnataka-tour.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/mumbai-goa-karnataka-tour.webp",
+                        "days": "15 Nights - 16 Days",
+                        "name": "Karnataka Tour with Mumbai & Goa",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/mumbai-goa-karnataka-tour.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/karnataka-with-kerala-backwaters.webp",
+                        "days": "15 Nights - 16 Days",
+                        "name": "Karnataka Tour with Kerala Backwaters",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/karnataka-with-kerala-backwaters.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/bangalore-chitradurga-hampi-tour.webp",
+                        "days": "4 Nights - 5 Days",
+                        "name": "Bangalore - Chitradurga - Hampi Tour",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/bangalore-chitradurga-hampi-tour.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/bangalore-hampi-bijapur-tour.webp",
+                        "days": "5 Nights - 6 Days",
+                        "name": "Bangalore Hampi Bijapur Tour",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/bangalore-hampi-bijapur-tour.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/chikmagalur-temple-package.webp",
+                        "days": "3 Nights - 4 Days",
+                        "name": "Chikmagalur Temple Package",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/chikmagalur-temple-package.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/shaiva-kshetras-tour-karnataka.webp",
+                        "days": "3 Nights - 4 Days",
+                        "name": "Shaiva Kshetras (Shiva Temple) Tour of Karnataka",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/shaiva-kshetras-tour-karnataka.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/bangalore-temple-tour.webp",
+                        "days": "2 Nights - 3 Days",
+                        "name": "Bangalore Temple Tour Package",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/bangalore-temple-tour.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/karnataka-golf-tour.webp",
+                        "days": "6 Nights - 7 Days",
+                        "name": "Karnataka Golf Tour",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/karnataka-golf-tour.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/mukti-kshetra-package.webp",
+                        "days": "6 Nights - 7 Days",
+                        "name": "Karnataka Mukti Kshetra Tour Package",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/mukti-kshetra-package.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/sringeri-temple-tour.webp",
+                        "days": "2 Nights - 3 Days",
+                        "name": "Sringeri Temple Tour Package",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/sringeri-temple-tour.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/hoysala-temples-tour.webp",
+                        "days": "2 Nights - 3 Days",
+                        "name": "Hoysala Temples Package - Belur and Halebid",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/hoysala-temples-tour.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/hill-station-tour.webp",
+                        "days": "12 Nights - 13 Days",
+                        "name": "Karnataka Hill Station Tour with Kerala Backwaters",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/hill-station-tour-with-kerala-backwaters.html"
+                    },
+                    {
+                         
+                        "image": "https://www.tourmyindia.com/states/karnataka/image/golden-triangle-tour.webp",
+                        "days": "10 Nights - 11 Days",
+                        "name": "Golden Triangle of Karnataka with Temples of Tamilnadu",
+                     
+                        "link": "https://www.tourmyindia.com/packages-tour-india/karnataka-holiday-packages/golden-triangle-tour-of-karnataka.html"
+                    }
+                ],
             "placesToVisit": [
                 {
                     "placeName": "Mysore Palace",
@@ -73,6 +354,53 @@
             "desc": "Andhra Pradesh, located on the southeastern coast of India, is known for its rich cultural heritage, historical significance, and natural beauty. The state features a diverse landscape that includes beautiful beaches, lush hills, and fertile plains. Key attractions include the sacred Tirupati Temple, the scenic Araku Valley, and the historic city of Amaravati. Andhra Pradesh is also famous for its vibrant festivals, traditional dance forms like Kuchipudi, and delicious cuisine.",
             "PortraitImg": "https://th.bing.com/th/id/OIP.ulDZ_gplyWlJwOe7V1LN_wHaKy?rs=1&pid=ImgDetMain",
             "bigImg": "https://images.unsplash.com/photo-1707833711203-7b37bdeb73b6?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "hotel": [
+                    {
+                        "image": "images/coastal-andhra-tour.jpg",
+                        "name": "A Tour to Coastal Andhra Pradesh\n \n  Duration: 09 Nights - 10 Days\n  Vijayawada - Rajahmundry - Bhadrachalam - Dwaraka Tirumala - Rajahmundry - Annavam - Vizag - Srikakulam Tour - Vizag",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/andhra-pradesh-tours/coastal-andhra-tour.html"
+                    },
+                    {
+                        "image": "images/deccan.jpg",
+                        "name": "Deccan Nostalgia\n                                \n                                Duration: 12 Nights - 13 Days\n                                Hyderabad - Gulberga - Bijapur - Badami - Hospet - Hassan - Belur - Halebeed - Mysore - Bangalore",
+                        "link": "https://www.tourmyindia.com/special/deccan.html"
+                    },
+                    {
+                        "image": "images/education_trip.jpg",
+                        "name": "Education Tour India\n                                \n                                Duration: 11 Nights - 12 Days\n                                Delhi - Hyderabad - Mysore - Belur - Halebid - Chikmagular - Cochin - Kumarakom - Kanchipuram - Mahabalipuram - Chennai",
+                        "link": "https://www.tourmyindia.com/special/education_trip.html"
+                    },
+                    {
+                        "image": "images/historic-temple.jpg",
+                        "name": "Historic Temple Tour\n                                \n                                Duration: 23 Nights - 24 Days\n                                Chennai - Kanchipuram - Mahabalipuram - Pondicherry - Chidambaram - Kumarakom - Tanjore - Trichy - Rameshwaram - Madurai - Thekkady - Kanyakumari - Kovalam - Alleppey - Cochin - Hyderabad - Warangal - Vijaywada - Nagarjunsagar - Hyderabad",
+                        "link": "https://www.tourmyindia.com/special/historic_temple.html"
+                    },
+                    {
+                        "image": "images/jyotirlinga-tour.jpg",
+                        "name": "Dwadash (12) Jyotirlinga Temples Tour\n                                \n                                Duration: 23 Nights - 24 Days\n                                Mumbai - Rajkot - Dwarka - Somnath - Ujjain - Haridwar - Guptkashi - Sonpryag \u2013 Kedarnath  - Rudrapryag  - Varanasi - Jasidih - Deoghar - Kolkata - Chennai - Rameshwaram - Madurai - Pune - Bhimashankar - Trimbakeshwar - Nashik- Shirdi - Aurangabad - Hydrabad",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/pilgrimage-tour-packages/12-jyotirlinga-tour.html"
+                    },
+                    {
+                        "image": "images/south-india-heritage-tour.jpg",
+                        "name": "South India Heritage Tour\n                                Duration: 23 Nights - 24 Days\n                                Chennai - Kanchipuram - Mahabalipuram - Pondicherry - Kumarakom - Tanjore - Trichy - Rameshwaram - Madurai - Kanyakumari - Kovalam - Alleppey - Cochin - Hyderabad - Warangal - Viyaywada - Hyderabad",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/heritage-tours/south-india-heritage-tour.html"
+                    },
+                    {
+                        "image": "images/buddhist-tour-andhra-and-telangana.jpg",
+                        "name": "Buddhist Tour of Andhra Pradesh & Telangana\n                                \n                                Duration: 06 Nights - 07 Days\n                                 Hyderabad - Nagarjunkonda - Hyderabad - Warangal - Vijayawada - Amravati - Vijayawada",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/andhra-pradesh-tours/buddhist-tour-andhra-and-telangana.html"
+                    },
+                    {
+                        "image": "images/pilgrimage-tour-andhra-and-telangana.jpg",
+                        "name": "Pilgrimage trip of Andhra & Telangana  \n                                \n                                Duration: 12 Nights - 13 Days\n                                Hyderabad - Warangal - Vijayawada - Nagarjuna Sagar - Srisailam  - Kurnool - Puttaparthy  - Tirupathi - Chennai",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/andhra-pradesh-tours/pilgrimage-tour-andhra-and-telangana.html"
+                    },
+                    {
+                        "image": "images/deccan-tour-andhra-and-karnataka.jpg",
+                        "name": "Deccan Tour with Andhra and Karnataka\n                                \n                                Duration: 12 Nights - 13 Days\n                                 Mumbai - Hyderabad - Gulbarga - Bijapur - Badami - Hospet - Hassan - Mysore - Bangalore",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/andhra-pradesh-tours/deccan-tour-andhra-and-karnataka.html"
+                    }
+                ],
             "placesToVisit": [
                 {
                     "placeName": "Srisailam",
@@ -110,6 +438,8 @@
                     "cultureName": "Kuchipudi Dance",
                     "cultureImg": "https://th.bing.com/th/id/OIP.4HIfplaxQ2bGm-iEh-c-2AHaJ4?rs=1&pid=ImgDetMain",
                     "cultureDesc": "Kuchipudi is a classical Indian dance form that originated in Andhra Pradesh. It is known for its graceful movements, expressive gestures, and intricate footwork."
+                    
+                 
                 },
                 {
                     "cultureName": "Ugadi Festival",
@@ -139,6 +469,32 @@
             "desc": "New Delhi, the capital city of India, is a vibrant metropolis known for its rich history, cultural diversity, and political significance. The city is a blend of ancient and modern, with historic landmarks like the Red Fort, Qutub Minar, and Humayun’s Tomb coexisting with contemporary structures like the Lotus Temple and Akshardham Temple. New Delhi is also the seat of the Indian government, housing important institutions such as the Parliament House and Rashtrapati Bhavan. The city is famous for its bustling markets, diverse cuisine, and vibrant festivals, making it a dynamic and essential destination for visitors.",
             "PortraitImg": "https://images.unsplash.com/photo-1705077171489-b5dfcf144676?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "bigImg": "https://images.unsplash.com/photo-1688781298681-ae1f2d470b31?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "hotels": [
+                {
+                  "image": "images/golden-triangle-tour-package-4.jpg",
+                  "days": "Duration: 03 Nights - 04 Days",
+                  "name": "Golden Triangle Tours",
+                  "link": "https://www.tourmyindia.com/states/rajasthan/3nights-4days-golden-triangle-tour.html"
+                },
+                {
+                  "image": "images/golden-triangle-tour-package-3.jpg",
+                  "days": "Duration: 04 Nights - 05 Days",
+                  "name": "Golden Triangle Tours",
+                  "link": "https://www.tourmyindia.com/states/rajasthan/4nights-5days-golden-triangle-tour.html"
+                },
+                {
+                  "image": "images/golden-triangle-tour-package2.jpg",
+                  "days": "Duration: 05 Nights - 06 Days",
+                  "name": "Golden Triangle Tours",
+                  "link": "https://www.tourmyindia.com/states/rajasthan/5nights-6days-golden-triangle-tour.html"
+                },
+                {
+                  "image": "images/golden-traingle.jpg",
+                  "days": "Duration: 06 Nights - 07 Days",
+                  "name": "Golden Triangle Tour",
+                  "link": "https://www.tourmyindia.com/states/rajasthan/golden-triangle-tours.html"
+                }
+              ],
             "placesToVisit": [
                 {
                     "placeName": "India Gate",
@@ -205,6 +561,62 @@
             "desc": "Telangana, located in southern India, is renowned for its historical monuments, diverse culture, and vibrant festivals. The state is home to the city of Hyderabad, famous for its iconic Charminar, Golconda Fort, and delicious Hyderabadi biryani. The state has a rich tradition of art, music, and dance, with Kuchipudi being a prominent classical dance form. Telangana's cuisine, a blend of Telugu and Hyderabadi flavors, is known for its unique spices and tastes.",
             "PortraitImg": "https://upload.wikimedia.org/wikipedia/commons/7/71/Charminar_Hyderabad_1.jpg",
             "bigImg": "https://wallpaperaccess.com/full/2142592.jpg",
+            "hotels": [
+    {
+      "image": "https://www.tourmyindia.com/states/telangana/images/coastal-tour.jpg",
+      "name": "A Tour to Coastal Andhra Pradesh",
+      "trip": "A Tour to Coastal Andhra Pradesh 09 NIGHTS/10 DAYS",
+      "link": "https://www.tourmyindia.com/packages-tour-india/andhra-pradesh-tours/coastal-andhra-tour.html"
+    },
+    {
+      "image": "https://www.tourmyindia.com/states/telangana/images/deccan-nostalgia.jpg",
+      "name": "Deccan Nostalgia",
+      "trip": "Deccan Nostalgia 12 NIGHTS/13 DAYS",
+      "link": "https://www.tourmyindia.com/special/deccan.html"
+    },
+    {
+      "image": "https://www.tourmyindia.com/states/telangana/images/education_trip.jpg",
+      "name": "Education Tour India",
+      "trip": "Education Tour India 11 NIGHTS/12 DAYS",
+      "link": "https://www.tourmyindia.com/special/education_trip.html"
+    },
+    {
+      "image": "https://www.tourmyindia.com/states/telangana/images/historic_temple.jpg",
+      "name": "Historic Temple Tour",
+      "trip": "Historic Temple Tour 23 NIGHTS/24 DAYS",
+      "link": "https://www.tourmyindia.com/special/historic_temple.html"
+    },
+    {
+      "image": "https://www.tourmyindia.com/states/telangana/images/12-jyotirlinga-tour.jpg",
+      "name": "Dwadash (12) Jyotirlinga Temples Tour",
+      "trip": "Dwadash (12) Jyotirlinga Temples Tour 23 NIGHTS/24 DAYS",
+      "link": "https://www.tourmyindia.com/packages-tour-india/pilgrimage-tour-packages/12-jyotirlinga-tour.html"
+    },
+    {
+      "image": "https://www.tourmyindia.com/states/telangana/images/south-india-heritage-tour.jpg",
+      "name": "South India Heritage Tour",
+      "trip": "South India Heritage Tour 23 NIGHTS/24 DAYS",
+      "link": "https://www.tourmyindia.com/packages-tour-india/heritage-tours/south-india-heritage-tour.html"
+    },
+    {
+      "image": "https://www.tourmyindia.com/states/telangana/images/buddhist-tour-andhra-and-telangana.jpg",
+      "name": "Buddhist Tour of Andhra Pradesh & Telangana",
+      "trip": "Buddhist Tour of Andhra Pradesh & Telangana 06 NIGHTS/07 DAYS",
+      "link": "https://www.tourmyindia.com/packages-tour-india/andhra-pradesh-tours/buddhist-tour-andhra-and-telangana.html"
+    },
+    {
+      "image": "https://www.tourmyindia.com/states/telangana/images/pilgrimage-tour-andhra-and-telangana.jpg",
+      "name": "Pilgrimage trip of Andhra & Telangana",
+      "trip": "Pilgrimage trip of Andhra & Telangana 12 NIGHTS/13 DAYS",
+      "link": "https://www.tourmyindia.com/packages-tour-india/andhra-pradesh-tours/pilgrimage-tour-andhra-and-telangana.html"
+    },
+    {
+      "image": "https://www.tourmyindia.com/states/telangana/images/deccan-tour-andhra-and-karnataka.jpg",
+      "name": "Deccan Tour with Andhra and Karnataka",
+      "trip": "Deccan Tour with Andhra and Karnataka 12 NIGHTS/13 DAYS",
+      "link": "https://www.tourmyindia.com/packages-tour-india/andhra-pradesh-tours/deccan-tour-andhra-and-karnataka.html"
+    }
+  ],
             "placesToVisit": [
                 {
                     "placeName": "Hyderabad",
@@ -265,6 +677,28 @@
             "desc": "Bihar is one of India's oldest inhabited regions, with a long history of religious and cultural significance. The state is home to important Buddhist, Jain, and Hindu pilgrimage sites, including Bodh Gaya and Nalanda. Its cities, such as Patna and Rajgir, are filled with historical monuments, ancient ruins, and religious centers. Bihar's vibrant traditions, including folk music, art, and festivals, add to its unique charm.",
             "PortraitImg": "https://e0.pxfuel.com/wallpapers/119/519/desktop-wallpaper-patna-sahib-gurudwara-pics-bihar-thumbnail.jpg",
             "bigImg": "https://wallpaperaccess.com/full/3510412.jpg",
+                "hotel": [
+                    {
+                        "image": "https://www.tourmyindia.com/states/bihar/images/buddhist-tour-packages.jpg",
+                        "name": "Buddhist Packages-Ex-Delhi-1\n            08 NIGHTS/09 DAYS",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/buddhist-travel-packages/buddhist-tour-packages1.html"
+                    },
+                    {
+                        "image": "https://www.tourmyindia.com/states/bihar/images/buddhist-tour-packages1.jpg",
+                        "name": "Buddhist Packages-Ex-Delhi-1\n            09 NIGHTS/10 DAYS",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/buddhist-travel-packages/buddhist-tour-packages2.html"
+                    },
+                    {
+                        "image": "https://www.tourmyindia.com/states/bihar/images/india-nepal-buddhism-tour.jpg",
+                        "name": "India and Nepal Buddhism Tour\n            16 NIGHTS/17 DAYS",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/pilgrimage-tour-packages/india-nepal-buddhism-tour.html"
+                    },
+                    {
+                        "image": "https://www.tourmyindia.com/states/bihar/images/temple-tour-with-lord-buddha.jpg",
+                        "name": "Temple Tour with Footprint of Lord Buddha\n            13 NIGHTS/14 DAYS",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/pilgrimage-tour-packages/temple-tour-with-lord-buddha.html"
+                    }
+                ],
             "placesToVisit": [
                 {
                     "placeName": "Bodh Gaya",
@@ -325,6 +759,62 @@
             "desc": "Assam is a land of natural beauty and rich cultural heritage. Its tea plantations produce some of the finest tea in the world. The Brahmaputra River flows majestically through the state, nurturing its diverse wildlife and ecosystems. Assam's festivals, including Bihu, reflect the state's colorful traditions and deep connection to agriculture and nature.",
             "PortraitImg": "https://1.bp.blogspot.com/-cw8Wac5OoQg/WTE_WvBbKCI/AAAAAAAAAcA/4NPkCoFIHAkyUV633tVvOgcgZtHZ7ke_QCEw/s1600/925740541s.jpg",
             "bigImg": "https://www.travelholicq.com/wp-content/uploads/2021/05/Places-To-Visit-In-Assam.jpg",
+            "hotels": [
+                {
+                  "image": "images/assam-meghalaya-tour1.jpg",
+                  "name": "Assam Meghalaya Tour",
+                  "trip": "Assam Meghalaya Tour 4N/5D",
+                  "link": "https://www.tourmyindia.com/packages-tour-india/assam-tours/assam-meghalaya-tour.html"
+                },
+                {
+                  "image": "images/guwahati-shillong-kaziranga-tour1.jpg",
+                  "name": "Guwahati Shillong Kaziranga",
+                  "trip": "Guwahati Shillong Kaziranga 5N/6D",
+                  "link": "https://www.tourmyindia.com/packages-tour-india/assam-tours/guwahati-shillong-kaziranga-tour.html"
+                },
+                {
+                  "image": "../../states/assam/images/kaziranga-with-meghalaya.jpg",
+                  "name": "Kaziranga with Meghalaya",
+                  "trip": "Kaziranga with Meghalaya 6N/7D",
+                  "link": "https://www.tourmyindia.com/packages-tour-india/hill-stations/kaziranga-with-meghalaya.html"
+                },
+                {
+                  "image": "../../states/assam/images/splendors-north-east.jpg",
+                  "name": "Splendors of North East",
+                  "trip": "Splendors of North East 9N/10D",
+                  "link": "https://www.tourmyindia.com/packages-tour-india/hill-stations/splendors-of-north-east.html"
+                },
+                {
+                  "image": "../../states/assam/images/nature-best-adventure.jpg", 
+                  "name": "Nature's Best Adventure",
+                  "trip": "Nature's Best Adventure 10N/11D",
+                  "link": "https://www.tourmyindia.com/packages-tour-india/hill-stations/nature-best-adventure.html"
+                },
+                {
+                  "image": "../../states/assam/images/tawang-excursion.jpg",
+                  "name": "Tawang Excursion Tour Package",
+                  "trip": "Tawang Excursion Tour Package 8N/9D",
+                  "link": "https://www.tourmyindia.com/packages-tour-india/hill-stations/tawang-excursion-tour.html"
+                },
+                {
+                  "image": "../../states/assam/images/tawang-assam.jpg",
+                  "name": "The Unexplored North East",
+                  "trip": "The Unexplored North East 7N/8D",
+                  "link": "https://www.tourmyindia.com/packages-tour-india/hill-stations/the-unexplored-north-east.html"
+                },
+                {
+                  "image": "../../states/assam/images/sight-assam.jpg",
+                  "name": "Sights of Assam",
+                  "trip": "Sights of Assam 8N/9D",
+                  "link": "https://www.tourmyindia.com/packages-tour-india/hill-stations/sight-of-assam.html"
+                },
+                {
+                  "image": "../../states/assam/images/assam-and-arunanchal.jpg",
+                  "name": "Assam & Arunanchal Pradesh",
+                  "trip": "Assam & Arunanchal Pradesh 15N/16D",
+                  "link": "https://www.tourmyindia.com/packages-tour-india/hill-stations/assam-and-arunanchal-pradesh-tour.html"
+                }
+              ],
             "placesToVisit": [
                 {
                     "placeName": "Kaziranga National Park",
@@ -385,6 +875,28 @@
             "desc": "Haryana, located in northern India, is famous for its contribution to India's agricultural output and its historical sites. The state is known for its vibrant folk traditions, including dances like Ghoomar and Dhamal, and its rich cultural festivals. Haryana also has a strong connection to the Mahabharata, with many sites related to the ancient epic found here, particularly in Kurukshetra. With sprawling farms, rural tourism, and places like the Sultanpur Bird Sanctuary, Haryana offers a mix of history, culture, and natural beauty.",
             "PortraitImg": "https://th.bing.com/th/id/OIP.ABZP5_-THCWQ2SYxiu2Q2gHaJK?rs=1&pid=ImgDetMain",
             "bigImg": "https://images.unsplash.com/photo-1605469237567-a39930679526?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "hotels": [
+    {
+      "image": "https://www.tourmyindia.com/states/haryana/images/north-india-cultural-tour.jpg",
+      "name": "North India Cultural Tour 06 NIGHTS/07 DAYS",
+      "link": "https://www.tourmyindia.com/packages-tour-india/cultural-tour-packages/north-india-cultural-tour.html"
+    },
+    {
+      "image": "https://www.tourmyindia.com/states/haryana/images/north-india-cultural-heritage-tour.jpg",
+      "name": "North India Cultural Heritage Tour 09 NIGHTS/10 DAYS",
+      "link": "https://www.tourmyindia.com/packages-tour-india/cultural-tour-packages/north-india-cultural-heritage-tour.html"
+    },
+    {
+      "image": "https://www.tourmyindia.com/states/haryana/images/india-tigers-tour.jpg",
+      "name": "North & Central India Tiger Tour 16 NIGHTS/17 DAYS",
+      "link": "https://www.tourmyindia.com/packages-tour-india/wildlife-tour-packages/india-tigers-tour.html"
+    },
+    {
+      "image": "https://www.tourmyindia.com/states/haryana/images/north-india-tour.jpg",
+      "name": "Best of North India Tour 12 NIGHTS/13 DAYS",
+      "link": "https://www.tourmyindia.com/packages-tour-india/cultural-tour-packages/north-india-tour.html"
+    }
+  ],
             "placesToVisit": [
                 {
                     "placeName": "Kurukshetra",
@@ -445,6 +957,108 @@
             "desc": "Tamil Nadu, located in the southern part of India, is known for its rich cultural heritage, ancient temples, and beautiful landscapes. The state is famous for its Dravidian-style Hindu temples, vibrant festivals, classical music, and dance forms like Bharatanatyam. Key attractions include the historic city of Madurai, the hill stations of Ooty and Kodaikanal, and the coastal town of Mahabalipuram. Tamil Nadu's diverse geography ranges from the beaches along the Bay of Bengal to the lush Western Ghats. The state's cuisine, known for its spicy and flavorful dishes, is also a major draw for visitors.",
             "PortraitImg": "https://th.bing.com/th/id/OIP.CcTwKoXdr0FP-wdIiPUD0wHaJ4?rs=1&pid=ImgDetMain",
             "bigImg": "https://plus.unsplash.com/premium_photo-1697729536647-4e23a32dd324?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "hotel": [
+                    {
+                        "image": "images/classical-tour.jpg",
+                        "name": "Classical Tamil Nadu Tour\n                                Duration : 05 Nights - 06 Days\n                                Chennai - Kanchipurem - Mahabalipuram - Pondicherry - Tanjore   - Trichy - Madurai",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/tamilnadu-tours/classical-tour.html"
+                    },
+                    {
+                        "image": "images/ooty-kodaikanal-tour.jpg",
+                        "name": "Ooty & Kodaikanal Tour\n                                \n                                Duration : 04 Nights - 05 Days\n                                Coimbatore - Ooty - Coonoor - Kodaikanal - Coimbatore",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/tamilnadu-tours/ooty-kodaikanal-tour.html"
+                    },
+                    {
+                        "image": "images/temples-and-beach-tour.jpg",
+                        "name": "Temples with Beach Tour of Tamilnadu & Kerala\n                                \n                                Duration: 05 Nights - 06 Days\n                                Madurai - Rameshwaram - Kanyakumari - Poovar - Trivandrum",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/tamilnadu-tours/temples-and-beach-tour.html"
+                    },
+                    {
+                        "image": "images/tirupati-mahabalipuram-tour.jpg",
+                        "name": "Tirupati with Mahabalipuram Tour\n                                \n                                Duration : 03 Nights - 04 Days\n                                Chennai - Tirupati - Kanchipuram - Mahabalipuram - Chennai",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/tamilnadu-tours/tirupati-mahabalipuram-tour.html"
+                    },
+                    {
+                        "image": "images/tamil-nadu-with-kerala-tour.jpg",
+                        "name": "Tamil Nadu with Kerala Tour\n                                \n                                Duration: 13 Nights - 14 Days\n                                Chennai - Mahabalipuram - Pondicherry - Kumarakom - Tanjore - Madurai - Periyar National Park - Kumarakom - Cochin",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/tamilnadu-tours/tamil-nadu-with-kerala-tour.html"
+                    },
+                    {
+                        "image": "images/spiritual-tour.jpg",
+                        "name": "Spiritual Tour to Tamilnadu\n                                \n                                Duration: 09 Nights - 10 Days\n                                Chennai - Mahabalipuram - Pondicherry - Tiruchchirappalli - Thanjavur - Rameshwaram - Madurai - Kanyakumari - Trivandrum",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/tamilnadu-tours/spiritual-tour.html"
+                    },
+                    {
+                        "image": "images/temple-tour.jpg",
+                        "name": "Temple Tour Package Tamilnadu\n                                \n                                Duration: 06 Nights - 07 Days\n                                Chennai - Tanjore - Madurai - Rameswaram - Kanyakumari - Chennai",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/tamilnadu-tours/temple-tour.html"
+                    },
+                    {
+                        "image": "images/navagraha-temple-tour.jpg",
+                        "name": "Navagraha Temple Tour\n                                \n                                Duration : 02 Nights - 03 Days\n                                Kumbakonam - Mayiladuthurai - Thiruvenkadu",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/tamilnadu-tours/navagraha-temple-tour.html"
+                    },
+                    {
+                        "image": "images/south-india-temple-tours.jpg",
+                        "name": "Temple Tours South India\n                                \n                                Duration: 13 Nights - 14 Days\n                                Chennai - Kanchipuram - Mahabalipuram - Pondicherry - Chidambaram - Kumarakom - Tanjore - Trichy - Rameshwaram - Madurai - Thekkady - Alleppey - Cochin",
+                        "link": "https://www.tourmyindia.com/special/south-india-temple-tours.html"
+                    },
+                    {
+                        "image": "images/palaces-wildlife-and-beaches-tour.jpg",
+                        "name": "Palaces Wildlife & Beaches Tour\n                                \n                                Duration: 14 Nights - 15 Days\n                                Bangalore - Mysore - Sravanbelgola - Bandipur - Mudumalai - Ooty - Coonoor - Cochin - Alleppey - Kovalam - Kanyakumari - Kovalam",
+                        "link": "https://www.tourmyindia.com/special/palaces-wildlife-and-beaches-tour.html"
+                    },
+                    {
+                        "image": "images/majestic-south-india-tour.jpg",
+                        "name": "Majestic South India Tour\n                                \n                                Duration: 14 Nights - 15 Days\n                                Banglore - Mysore - Mudumalai - Ooty - Coonnor - Cochin - Alleppey - Kovalam - Kanyakumari - Trivandrum",
+                        "link": "https://www.tourmyindia.com/special/majestic-south-india-tour.html"
+                    },
+                    {
+                        "image": "images/education-trip.jpg",
+                        "name": "Education Tour India\n                                \n                                Duration: 11 Nights - 12 Days\n                                Delhi - Hyderabad - Mysore - Belur - Halebid - Chikmagular - Cochin - Kumarakom - Kanchipuram - Mahabalipuram - Chennai",
+                        "link": "https://www.tourmyindia.com/special/education_trip.html"
+                    },
+                    {
+                        "image": "images/historic-temple.jpg",
+                        "name": "Historic Temple Tour\n                                \n                                Duration: 23 Nights - 24 Days\n                                Chennai - Kanchipuram - Mahabalipuram - Pondicherry - Chidambaram - Kumarakom - Tanjore - Trichy - Rameshwaram - Madurai - Thekkady - Kanyakumari - Kovalam - Alleppey - Cochin - Hyderabad - Warangal - Vijaywada - Nagarjunsagar - Hyderabad",
+                        "link": "https://www.tourmyindia.com/special/historic_temple.html"
+                    },
+                    {
+                        "image": "images/ooty-madurai-rameshwaram-tour.jpg",
+                        "name": "Ooty Madurai and Rameshwaram Tour\n                                \n                                Duration: 07 Nights - 08 Days\n                                Bangalore - Ooty - Coimbatore - Madurai - Rameshwaram - Thanjavur - Pondicherry - Bangalore",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/hill-stations/ooty-madurai-rameshwaram-tour.html"
+                    },
+                    {
+                        "image": "images/ooty-hill-station-tour.jpg",
+                        "name": "Ooty Hills Tour Package\n                                \n                                Duration: 02 Nights - 03 Days\n                                Coimbatore - Ooty - Coimbatore",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/hill-stations/ooty-hill-station-tour.html"
+                    },
+                    {
+                        "image": "images/south-india-hill-stations-tour.jpg",
+                        "name": "Best of South India Hill Stations\n                                \n                                Duration: 07 Nights - 08 Days\n                                Munnar - Kodaikanal - Ooty - Coimbatore - Cochin",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/hill-stations/south-india-hill-stations-tour.html"
+                    },
+                    {
+                        "image": "images/ooty-coorg-wayanad-tour.jpg",
+                        "name": "Ooty Coorg Hills with Wayanad Tour\n                                \n                                Duration: 06 Nights - 07 Days\n                                Coimbatore - Ooty - Wayanad - Coorg - Coimbatore",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/hill-stations/ooty-coorg-wayanad-tour.html"
+                    },
+                    {
+                        "image": "images/ooty-munnar-kodaikanal-tour.jpg",
+                        "name": "Ooty Munnar Kodaikanal Tour\n                                \n                                Duration: 06 Nights - 07 Days\n                                Coimbatore - Kodaikanal - Munnar - Ooty - Coimbatore",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/hill-stations/ooty-munnar-kodaikanal-tour.html"
+                    },
+                    {
+                        "image": "images/coorg-hill-station-tour.jpg",
+                        "name": "Coorg Hill Station Tour\n                                \n                                Duration: 02 Nights - 03 Days\n                                Coimbatore - Coorg - Coimbatore",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/hill-stations/coorg-hill-station-tour.html"
+                    },
+                    {
+                        "image": "images/munnar-hill-station-tour.jpg",
+                        "name": "Munnar Hills Tour Package\n                                \n                                Duration: 03 Nights - 04 Days\n                                Coimbatore - Munnar - Coimbatore",
+                        "link": "https://www.tourmyindia.com/packages-tour-india/hill-stations/munnar-hill-station-tour.html"
+                    }
+                ],
             "placesToVisit": [
                 {
                     "placeName": "Kodaikanal",

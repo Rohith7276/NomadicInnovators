@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import Background from "../../public/images/homeImg.jpg"
+import Background2 from "../../public/images/homeImg2.jpg"
 import Image from 'next/image'
 import { FaHome } from "react-icons/fa";
 import Typed from 'typed.js';
@@ -50,25 +51,26 @@ const Authentication = () => {
     }, []);
 
     return (
-        <div className='flex justify-center items-center h-screen w-screen'>
+        <div className='flex  justify-center items-center h-screen w-screen'>
             <div className='flex justify-center items-center fixed z-[-10] w-screen h-screen blur-sm '>
-                <Image src={Background} alt="Background Image"></Image>
+                <Image src={Background2} alt="Background Image" className='dark:hidden'></Image>
+                <Image src={Background} alt="Background Image" className='dark:block hidden'></Image>
             </div>
-            <div className='border-[2px] border-[#640303] rounded-sm shrink-0 justify-between flex-col items-stretch w-[90vw] md:w-[45vw] flex h-[80vh] mx-4 bg-[#1e0700]  '>
+            <div className='dark:border-[2px] py-5 shadow-md dark:border-[#640303] rounded-sm shrink-0 justify-between flex-col items-stretch w-[90vw] md:w-[45vw] flex min-h-[80vh] mx-4 bg-[#89a3a8c9]   dark:bg-[#1e0700]  '>
                 <div>
 
-                    <div className='bg-pinewk-300 font-bold text-[3rem] max-w-[24.5rem] text-wrap py-4 h-[5rem] text-[#ffd867] mt-50 text-center w-fdll  mx-auto mt' ref={typedElement}></div>
-                    <div ref={appear} className='opacity-0 bg-origin-border text-[#ffd867] mt-50 text-center   mx-auto mt amsterdama'>Specialist in the art of travel</div>
+                    <div className='bg-pinewk-300 font-bold text-[3rem] max-w-[24.5rem] text-wrap py-4 h-[5rem] text-[#031a2c] dark:text-[#ffd867] mt-50 text-center w-fdll  mx-auto mt' ref={typedElement}></div>
+                    <div ref={appear} className='opacity-0 bg-origin-border text-[#031a2c] dark:text-[#ffd867] mt-50 text-center   mx-auto mt amsterdama'>Specialist in the art of travel</div>
                 </div>
 
                 {account ? <SignIn /> : <SignUp />}
-                <div className='px-14 flex justify-between pb-9'>
+                <div className='px-14 flex justify-between '>
                     
                 {account ? <div>Don&apos;t have an account?
-                    <button className='text-[#ffd867] hover:underline' onClick={() => setAccount(false)}>Sign Up</button></div> : <div>Do you have an account? <button className='text-[#ffd867] hover:underline' onClick={() => setAccount(true)}>Sign In</button>
+                    <button className='text-[#031a2c] dark:text-[#ffd867]  hover:underline' onClick={() => setAccount(false)}>Sign Up</button></div> : <div>Do you have an account? <button className='text-[#031a2c] dark:text-[#ffd867]  hover:underline' onClick={() => setAccount(true)}>Sign In</button>
                 </div>
                 }
-                <Link href='/' className='cursor-pointer flex justify-center items-center bg-blfdsck text-[#ffd867] w-5 h-5 roundsfded-full'><FaHome className='cursor-pointer w-10' /></Link>
+                <Link href='/' className='cursor-pointer flex justify-center items-center bg-blfdsck text-[#031a2c] dark:text-[#ffd867]  w-5 h-5 roundsfded-full'><FaHome className='cursor-pointer w-10' /></Link>
                 </div>
             </div>
         </div>

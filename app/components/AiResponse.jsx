@@ -32,7 +32,8 @@ function ChatApp() {
             setLoading(true);
             document.querySelector('.scrollBrown').scrollTo({ top: 0, behavior: 'smooth' });
             const finalInput = `Pretend like you are a travel guide for India working for "Tour De India website": You asked for "where do you wanna travel in India?" I replied ${input} you reply back for the reply based on context of a traveler and  you can also suggest best places to vist in there, food places to try, etc. if required and don't forget to mention website name in the conversation.`;
-
+            document.querySelector('.scrollLight').scrollTo({ top: 0, behavior: 'smooth' });
+            document.querySelector('.scrollBrown').scrollTo({ top: 0, behavior: 'smooth' });
             try {
                 // Send a POST request to the API route
                 const res = await fetch('/api/chat', {
@@ -65,9 +66,9 @@ function ChatApp() {
     };
     return (
         <div>
-            <div className=' rounded-md m-auto w-fit px-3  bg-[#4F2109] flex justify-center items-center'>
+            <div className=' rounded-md m-auto w-fit px-3 h-fit bg-[#031a2c] dark:bg-[#4F2109] flex justify-center items-center'>
 
-                <textarea className='w-[47vw] p-[0.5rem] h-[2.5rem] bg-[#4F2109] resize-none self-center outline-none'
+                <textarea className='w-[60vw] lg:w-[47vw] p-[0.5rem] h-fidfst  h-[2.5rem] bg-[#031a2c] dark:bg-[#4F2109] resize-none self-center outline-none'
                     value={input}
                     onKeyDown={e => {
                         if (e.key === "Enter") {
@@ -79,15 +80,31 @@ function ChatApp() {
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Enter the place name here..."
                 />
-                <button onClick={handleSendMessage} className='text-yellow-400 cursor-pointer'><IoSend /></button>
+                <button onClick={handleSendMessage} className='text-white dark:text-yellow-400 cursor-pointer'><IoSend /></button>
             </div>
             {loading && <div className='absolute ml-[45vw] mt-[7rem] '><Loader /></div>}
-            <div className='h-[60vh] my-6 px-4 scrollBrown overflow-y-scroll  w-[80vw] py-7 m-auto'>
+            <div className='h-[60vh] my-6 px-4 scrollBrown hidden dark:block overflow-y-scroll  w-[80vw] py-7 m-auto'>
                 {response.map((item, index) => {
                     let formattedItem = item;
                     let isBold = true;
                     while (formattedItem.includes("**")) {
                         formattedItem = formattedItem.replace("**", isBold ? `<span className="aibold">` : `</span>`);
+                        isBold = !isBold;
+                    }
+                    return (
+                        <div key={index}>
+                            <HtmlRenderer htmlString={formattedItem} />
+                            <br />
+                        </div>
+                    );
+                })}
+            </div>
+            <div className='h-[60vh] dark:hidden my-6 px-4 scrollLight overflow-y-scroll  w-[80vw] py-7 m-auto'>
+                {response.map((item, index) => {
+                    let formattedItem = item;
+                    let isBold = true;
+                    while (formattedItem.includes("**")) {
+                        formattedItem = formattedItem.replace("**", isBold ? `<span className="aibold2">` : `</span>`);
                         isBold = !isBold;
                     }
                     return (

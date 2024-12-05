@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { fireDB } from '../firebase/firebaseConfig';
-
-const FetchData = () => {
+import filejson from "../../public/json.json"
+const Rough = () => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('/api/data');
-                const result = await response.json();
-                console.log('result', result)
-                setData(result);
-                uploadDataToFirestore(result);
+                // const response = await fetch('/api/data');
+                // const result = await response.json();
+                // console.log('result', result)
+                // setData(result);
+                uploadDataToFirestore(filejson);
+                console.log("Done")
             } catch (error) {
-                console.error('Error fetching the data:', error);
+                console.log('Error fetching the data:', error);
             }
         };
         fetchData();
@@ -27,6 +28,7 @@ const FetchData = () => {
                 // Add each value (which is an object) to Firestore
                 await addDoc(collection(fireDB, "jsonData"), data);
             // }
+            console.log("yes")
             console.log("Data successfully uploaded!");
         } catch (error) {
             console.error("Error uploading data: ", error);
@@ -45,4 +47,4 @@ const FetchData = () => {
     );
 };
 
-export default FetchData;
+export default Rough;

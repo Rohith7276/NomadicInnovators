@@ -2,38 +2,38 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import LOGO from "../../public/images/LOGO.svg";
+import LOGO2 from "../../public/images/LOGO2.jpg";
 import Select from "react-dropdown-select";
 import { deleteDoc } from 'firebase/firestore';
 import Image from "next/image";
+import Contact from "./contact.jsx"
 import Link from 'next/link';
 import { useDispatch } from 'react-redux'
 import { setCount } from '../redux/counter/counterSlice';
 import { fireDB } from '../firebase/firebaseConfig'
 import { collection, getDocs, doc } from 'firebase/firestore'
-import themeBtn from './themeBtn'
+import Loader from "./Loader";
+import { CiMenuBurger } from "react-icons/ci";
+import ThemeBtn from './themeBtn'
 import { FaRegUserCircle } from "react-icons/fa";
 export default function Navbar() {
-  const [loading, setloading] = useState(false)
   const boxRef = useRef(null);
   const dispatch = useDispatch()
   const router = useRouter();
-  const [Loading, setLoading] = useState(false)
   const [user, setuser] = useState("null")
   const [userClick, setUserClick] = useState(false)
-  const [fetchData, setFetchData] = useState(true)
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
-    if (storedUser) {
-        // console.log(JSON.parse(storedUser).user.email)
-        setuser([JSON.parse(storedUser).name ,JSON.parse(storedUser).email]);
+    if (storedUser) { 
+      setuser([JSON.parse(storedUser).name, JSON.parse(storedUser).email]);
     }
 
-}, [])
+  }, [])
   const [filejson, setfilejson] = useState({})
+  const [Comment, setComment] = useState(false)
   const dataFetch = async () => {
     let x = await getDocs(collection(fireDB, 'jsonData'));
-    setfilejson(x.docs[1].data())
-    setFetchData(false)
+    setfilejson(x. docs[0].data())
   }
   useEffect(() => { dataFetch() }, [])
 
@@ -44,43 +44,8 @@ export default function Navbar() {
           { pageLanguage: 'en' },
           'google_translate_element'
         );
-        if (window.screen.width < 768 && typeof document !== "undefined") {
-          document.querySelector('nav').style.transform = 'translateY(-100%)';
-        }
       }
-      // const handleScroll = () => {
-      //   if (typeof document !== "undefined") {
-      //     var nav = document.querySelector('nav');
-      //   }
-      //   if (typeof window !== "undefined" && nav) {
-      //     if (window.scrollY > window.innerHeight / 0.5) {
-      //       nav.style.transition = 'transform 0.6s ease-in-out';
-      //       nav.style.transform = 'translateY(-30vh)';
-      //     } else {
-      //       nav.style.transition = 'transform 0.6s ease-in-out';
-      //       nav.style.transform = 'translateY(0)';
-      //     }
-      //   }
-
-      // };
-      // if (typeof document !== "undefined")
-      //   document.querySelectorAll('.scrl').forEach(element => {
-      //     element.addEventListener('click', () => {
-      //       if (typeof window !== "undefined") {
-      //         window.scrollTo({
-      //           top: document.body.scrollHeight,
-      //           behavior: 'smooth'
-      //         });
-      //       }
-      //     });
-      //   });
-      // if (typeof window !== "undefined")
-      //   window.addEventListener('scroll', handleScroll);
-
-      // return () => {
-      //   if (typeof window !== "undefined")
-      //     window.removeEventListener('scroll', handleScroll);
-      // };
+     
     };
 
 
@@ -106,47 +71,47 @@ export default function Navbar() {
     addGoogleTranslateScript();
 
   }, []);
-  const handleUser = ()=>{
+  const handleUser = () => {
     setUserClick(!userClick)
 
   }
   const handleLogOut = async () => {
-    const userRef = collection(fireDB, 'users');
-    try{
-
-      await deleteDoc(doc(userRef, user));
+    try {
       localStorage.removeItem('user');
       setuser("null");
       setUserClick(false);
-    }catch(error){
+    } catch (error) {
       console.error("Error deleting user: ", error);
     }
     window.location.reload();
-    // setuser("rrr@gmail.com")
   };
   const options = filejson?.states?.map((each, index) => { return { id: index, name: each.state } })
-
+  const [menu, setmenu] = useState(false)
+  const handleMenu = () => {
+    setmenu(!menu)
+  }
   return (
     <>
-      <nav className='bg-[#351a03] pl-4 h-[4rem] flex flex-col lg:flex-row items-center justify-center lg:justify-start shadow-md shadow-black sticky top-0 w-full z-[100]'>
-        <div className='flex items-center w-full justify-between  lg:w-auto'>
-          <Image src={LOGO} width={90} alt="Logo" />
-          <button className='lg:hidden  px-5 text-white' onClick={() => setLoading(!Loading)}>
-            <svg className="w-6 cursor-pointer h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-          </button>
+
+    
+      <nav className='bg-[#cacbc3]  text-black dark:text-white dark:bg-[#351a03] pl-4 h-[4rem] flex  overdfflow-hidden lg:flex-row items-center justify-between lg:justify-start shadow-md shadow-gray-700   dark:shadow-md dark:shadow-black sticky top-0 w-full z-[100] backdrop-filter backdrop-blur-sm'>
+        <div className='flex items-center bdfsg-[#351a03] w-fit justify-between lg:w-fit'>
+          <Image class src={LOGO} className="hidden dark:block" width={90} alt="Logo" />
+          <Image class src={LOGO2} className='dark:hidden' width={90} alt="Logo" />
         </div>
-        <ul ref={boxRef} className={`absolute gap-4 flex-col items-start lg:top-0 top-[4rem] p-4 right-0 lg:right-[1rem] w-[16rem] bg-[#351a03] lg:flex-row lg:items-center lg:justify-around lg:w-[90vw] lg:h-[4rem] lg:flex ${Loading ? 'flex' : 'hidden'} lg:flex`}>
-          <li className='flex flex-col justify-end items-center' id='listanim'>
+        <button onClick={handleMenu} className='lg:hidden mx-7'>
+          <CiMenuBurger />
+        </button>
+        <ul ref={boxRef} className={`absolute ${menu ? "flex" : "hidden"}  gafp-4 flex-col items-start lg:top-0 top-[4rem] p-4 right-0 lg:right-[1rem] w-[12rem] bg-[#cacbc3] dark:bg-[#351a03] lg:flex-row lg:items-center lg:justify-around lg:w-[90vw] lg:h-[4rem]  lg:flex`}>
+          <li className='border border-t-0 border-l-0 border-r-0 w-full lg:w-fit py-3 lg:bordver-b-0 border-b-sm lg:border-b-0 flex flex-col justify-end items-center' id='listanim'>
             <Link href="/" >
-              <h2 className='cursor-pointer hover:scale-[1.1] bg-bladck duration-300'>Home</h2>
+              <h2 className='cursor-pointer hover:scale-[1.1] duration-300'>Home</h2>
             </Link>
           </li>
-          <li className='flex flex-col justify-end items-center' id='listanim'>
+          <li onClick={()=>setComment(!Comment)} className='border border-t-0 border-l-0 border-r-0 w-full lg:w-fit py-3 border-b-sm lg:border-b-0 flex flex-col justify-end items-center' id='listanim'>
             <h2 className='cursor-pointer scrl hover:scale-[1.1] duration-300'>Contact</h2>
           </li>
-          <li className='w-full lg:w-[10rem]'>
+          <li className='border border-t-0 border-l-0 border-r-0  py-3 lggfd:w-fit border-b-sm lg:border-b-0 w-full lg:w-[10rem]'>
             <Select
               className='text-black bg-white'
               options={options}
@@ -161,28 +126,31 @@ export default function Navbar() {
               }}
               color='grey'
               onChange={(id) => {
-                setloading(true)
                 dispatch(setCount(id[0].id));
                 router.push('/States');
               }}
             />
           </li>
-          <li>
-            <div id="google_translate_element" className='overflow-hidden mt-[-0.9rem] h-[2rem]'></div>
+          <li className='border border-t-0 border-l-0 border-r-0   py-1 lggfd:w-fit border-b-sm lg:border-b-0 w-full lg:w-[10rem]'>
+
+            <div id="google_translate_element" className='lg:w-fit overflow-hidden mt-[-0.9rem] h-[2rem]'></div>
           </li>
-          <li className='flex flex-col justify-end items-center' id='listanim'>
+          <li className='border lg:w-fit border-t-0 border-l-0 border-r-0 w-full py-3 border-b-sm lg:border-b-0 flex flex-col justify-end items-center' id='listanim'>
             <h2 className='cursor-pointer hover:scale-[1.1] scrl duration-300'>About</h2>
           </li>
-          <li className='flex flex-col justify-end items-center' id='listanim'>
-            <themeBtn />
+          <li className='border lg:w-fit border-t-0 border-l-0 border-r-0 w-full py-3 border-b-sm lg:border-b-0 flex flex-col justify-end items-center' id='listanim'>
+            <ThemeBtn />
           </li>
-          <li className='flex flex-col justify-end cursor-pointer items-center' id='listanim'>
-            {user==="null"?<Link href={"/SignIn"} className='cursor-pointer hover:scale-[1.1] scrl duration-300' >Sign In</Link>:
-            <FaRegUserCircle className='cursor-pointer' onClick={handleUser} />}
-            {(userClick&&user!=null)&& <div className='absolute bg-[#351a03] rounded-b-md top-[4rem] right-0 flex flex-col gap-4 p-4'> {user[0]} <br/> {user[1]} <button className='bg-yellow-400 rounded-lg text-black font-bold' onClick={handleLogOut}>Logout</button></div>}
+          <li className='border lg:w-fit border-t-0 border-l-0  border-r-0 w-full py-3 border-b-sm lg:border-b-0 flex flex-col justify-end cursor-pointer items-center bdfsg-[#cacbc3] text-black dark:text-white' id='listanim'>
+            {user === "null" ? <Link href={"/SignIn"} className='cursor-pointer hover:scale-[1.1] scrl duration-300' >Sign In</Link> :
+              <FaRegUserCircle className='cursor-pointer w-[3rem] h-[1.5rem]' onClick={handleUser} />}
+            {(userClick && user != null) && <div className='absolute shadow-lg top-[18rem] right-[12rem] bg-[#cacbc3] dark:bg-[#351a03] rounded-l-md lg:rounded-l-none lg:rounded-b-md lg:top-[4rem] lg:-right-[1rem] flex flex-col gap-4 p-4'> {user[0]} <br /> {user[1]} <button className='bg-black text-white dark:bg-yellow-400 rounded-lg dark:text-black font-bold' onClick={handleLogOut}>Logout</button></div>}
           </li>
         </ul>
       </nav>
+     {Comment && <section className="contact">
+              <Contact/>
+      </section>}
     </>
   );
 };

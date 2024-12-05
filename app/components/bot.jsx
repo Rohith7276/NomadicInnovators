@@ -43,7 +43,7 @@ export default function App() {
   }
   return (
     <div>
-      <div className="fixed pop z-[100] bottom-4 flex gap-2 items-center w-0 text-nowrap overflow-hidden pt-[20px] pb-[20px] pl-[20px] opacity-0 rounded-md pr-[43px] right-[3rem] bg-white text-black">
+      <div className="shadow-lg fixed pop z-[100] bottom-4 flex gap-2 items-center w-0 text-nowrap overflow-hidden pt-[20px] pb-[20px] pl-[20px] opacity-0 rounded-md pr-[43px] right-[3rem] bg-white text-black">
         <button className=" bg-blacdfsk absolute flex fl mt-[-3.1rem] ml-[-1.3rem] rounded-full p-0  cursor-pointer text-black" onClick={hide}><TbXboxXFilled className="cursor-pointer" /></button>
         Hey we&apos;re online<FcCustomerSupport className="text-xl" /></div>
       <style>{style}</style>
@@ -51,7 +51,7 @@ export default function App() {
         theme={theme}
         client={client}
       >
-        <Fab onClick={toggleWebchat} />
+        <Fab onClick={toggleWebchat} className="shadfgdw-sm" />
         <div
           style={{
             display: isWebchatOpen ? "block" : "none",
