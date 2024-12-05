@@ -47,7 +47,6 @@ const State = () => {
     else if (filejson.states[count]?.hotel?.length != 0) {
       x = filejson.states[count]?.hotel?.length
     }
-alert(x)
     if (x <= 4) {
       setShowMore(x)
       document.querySelectorAll(".shdw").forEach(element => {
