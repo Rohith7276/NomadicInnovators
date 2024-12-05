@@ -2,8 +2,7 @@
 import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Stars from './Stars'
-import { useState } from 'react'
-import Rough from "./Rough.jsx"
+import { useState } from 'react' 
 import cook from "../../public/images/cook.gif"
 import cook2 from "../../public/images/cook2.gif"
 import Background from "../../public/images/homeImg.jpg"

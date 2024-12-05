@@ -15,11 +15,9 @@ export const Contact = () => {
             .then(
                 () => {
                     alert("Thank you. I will get back to you as soon as possible.");
-                    console.log('SUCCESS!');
+                    
                 },
-                (error) => {
-                    console.log('FAILED...', error.text);
-                },
+                 
             form.current.reset()
             );
     };

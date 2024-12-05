@@ -15,11 +15,11 @@ const SignUp = () => {
   } = useForm();
   const router = useRouter();
   const onSubmit = async (data) => {
-    console.log(data);
+   
     // const auth = getAuth();
     try {
       const users = await createUserWithEmailAndPassword(auth, data.email, data.password);
-      console.log("users",users);
+     
       const uniqueId = uuidv4();
       const user = {
           name: data.name,
