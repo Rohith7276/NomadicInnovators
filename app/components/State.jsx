@@ -44,17 +44,12 @@ const State = () => {
     if (filejson.states[count]?.hotels?.length != 0) {
       x = filejson.states[count]?.hotels?.length
     }
-    else if (filejson.states[count]?.hotel?.length != 0) {
+     if (x == undefined || filejson.states[count]?.hotel?.length > x) {
       x = filejson.states[count]?.hotel?.length
     }
     if (x <= 4) {
       setShowMore(x)
-      document.querySelectorAll(".shdw").forEach(element => {
-        element.innerHTML = "End";
-      });
-      document.querySelectorAll(".lightMore").forEach(element => {
-        element.innerHTML = "End";
-      });
+     alert("End of the content")
     }
     else if (showMore + 4 < x) {
       window.scrollBy({
