@@ -36,7 +36,7 @@ return (
                     {errors.username && <div className='text-red-500 text-xs italic'>{errors.username.message}</div>}
                 </div>
                 <div className="mb-6">
-                    <label className="block text-black lg:text-white text-sm font-bold mb-2" htmlFor="password">
+                    <label className="block text-white lg:text-white text-sm font-bold mb-2" htmlFor="password">
                         Password
                     </label>
                     <input 
@@ -50,7 +50,7 @@ return (
                 <div className="flex items-center justify-between amsterdam tracking-widest rounded-[10rem] bg-[#031a2c]  dark:bg-yellow-600 w-fit cursor-pointer">
                     <input 
                         disabled={isSubmitting} 
-                        className=' bg-white dark:bg-[#1e0700] text-black dark:text-white font-b old py-1 px-4 rounded cursor-pointer focus:outline-none focus:shadow-outline' 
+                        className=' bg-white dark:bg-[#1e0700] text-white dark:text-white font-b old py-1 px-4 rounded cursor-pointer focus:outline-none focus:shadow-outline' 
                         type="submit" 
                         value="Submit" 
                     />
