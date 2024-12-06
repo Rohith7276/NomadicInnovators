@@ -39,7 +39,7 @@ const CommentForm = () => {
         <>
             {user != null ? (
                 <>
-                    <form onSubmit={handleSubmit} className="comment-form mx-2" style={{ display: 'flex', flexDirection: 'column', gap: '10px', maxWidth: '400px', margin: '0 auto' }}>
+                    <form onSubmit={handleSubmit} className="comment-form px-[1.5rem] m-auto" style={{ display: 'flex', flexDirection: 'column', gap: '10px', maxWidth: '400px' }}>
                         <textarea
                             value={comment}
                             onChange={(e) => setComment(e.target.value)}

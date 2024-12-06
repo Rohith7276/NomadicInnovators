@@ -42,7 +42,7 @@ const SignUp = () => {
          <div className="container mx-auto p-4">
             <form className=" gap-5 sfdhadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit(onSubmit)}>
                 <div className="mb-6">
-                    <label className="block text-white text-sm font-bold mb-2" htmlFor="Name">
+                    <label className="block text-black dark:text-white text-sm font-bold mb-2" htmlFor="Name">
                         Name
                     </label>
                     <input 

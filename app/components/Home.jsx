@@ -69,7 +69,9 @@ const Home = () => {
     // setfilejson(data.data)
 
   }, [filejson]);
-  useEffect(() => { dataFetch() }, [])
+  useEffect(() => { dataFetch()
+    
+   }, [])
   const quote = async (e) => {
     setGif(true)
     const finalInput = `Give me a quote related to India travel`;

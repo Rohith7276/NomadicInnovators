@@ -146,9 +146,9 @@ const StateSectoin = (data) => {
           filejson.IndiaPackages.slice(0, showMore).map((each) => (
             <div key={each.placeName} className='flex-col py-3 mx-4 lg:my-4 lg:py-0 lg:flex-row flex placeDiv items-center overflow-hidden    border-[2px] dark:border-[#640303] rounded-sm shrink-0 justify-between w-[90vw] md:w-[45vw] m-4  text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700] '>
               <div ref={imghov} className='overflow-hidden lg:ml-2 hoverimage flex lg:h-[16rem] items-center justify-start lg:w-[126vw]'>
-                <Image src={each.image} alt={each.placeName} width={1000} height={100} className="object-cover  float-left pr-4 h-[18vh] md:h-[35vh] lg:h-[sdf]   w-fit lg:max-w-[25vw]  placeImg" />
+                <Image src={each.image} alt={each.placeName} width={1000} height={100} className="object-cover blurimage float-left pr-4 h-[18vh] md:h-[35vh] lg:h-[sdf]   w-fit lg:max-w-[25vw]  placeImg" />
                 {window.innerWidth >= 700 && (
-                  <div className='backdrop-blur-[5px] flex justify-center items-center h-[10rem] lg:h-[16rem] hoverpack  w-[65vw] lg:w-[24vw] absolute'>
+                  <div className='  flex justify-center items-center h-[10rem] lg:h-[16rem] hoverpack  w-[65vw] lg:w-[24vw] absolute'>
                     <Link href={each.hotel} className='cursor-pointer' target='_blank'><button className='border bg-[#745f4e81] tracking-wider amsterdam hover:text-white  dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5]  py-1  border-white rounded-[10rem] px-3 cursor-pointer'> Book Hotels </button></Link>
                   </div>
                 )}

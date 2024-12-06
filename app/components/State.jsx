@@ -194,7 +194,7 @@ const State = () => {
       ) : (
         <div className='w-full h-fit'>
           <div className='h-fit lg:max-h-[95vh] min-w-[50vw] full items-start overflow-hidden w-full flex lg:flex-row flex-col'>
-            <div ref={image} className='w-fit opacity-0 relative image stateBg  h-fit flex items-center justify-center  self-center overflow-hidden'>
+            <div ref={image} className='w-screen opacity-0 relative image stateBg  h-fit flex items-center justify-center  self-center overflow-hidden'>
               {Loading && <div className="flex fixed bg-[#38sdf1a05ad]  w-screen h-screen"><Loader /></div>}
               <LazyLoadImage
                 effect="black-and-white"
@@ -269,7 +269,7 @@ const State = () => {
                     <div ref={imghov} className='overflow-hidden lg:ml-2 hoverimage flex lg:h-[16rem] items-center justify-start lg:w-fit'>
                       <Image src={each.image} alt={each.placeName} width={1000} height={100} className="object-cover float-left pr-4 h-[18vh] md:h-[35vh] lg:h-[sdf] w-fit lg:max-w-[25vw] placeImg" />
                     </div>
-                    <div className='flex flex-col justify-center px-[1rem]  my-6'>
+                    <div className='flex flex-col justify-center px-[1rem] w-full my-6'>
                       <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] dark:text-yellow-400'>{each.name}</h2>
                       <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] dark:text-yellow-400'>{each.days}</h2>
                       <Link href={each.link} className='cursor-pointer w-full flex justify-center pt-5 items-center' target='_blank'>
@@ -280,7 +280,7 @@ const State = () => {
                   :
                   <div key={each.name} className='flex-col py-3 mx-4 lg:my-4 lg:py-0 lg:flex-row flex placeDiv items-center overflow-hidden border-[2px] dark:border-[#640303] rounded-sm shrink-0 justify-between w-[90vw] md:w-[45vw] m-4 text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700]'>
 
-                    <div className='flex flex-col justify-center px-[1rem]  my-6'>
+                    <div className='flex flex-col justify-center px-[1rem] w-full my-6'>
                       <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] dark:text-yellow-400'>{each.name}</h2>
                       <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] dark:text-yellow-400'>{each.days}</h2>
                       <Link href={each.link} className='cursor-pointer w-full flex justify-center pt-5 items-center' target='_blank'>

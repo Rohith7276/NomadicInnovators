@@ -12,7 +12,7 @@ export const metadata = {
   title: "Tour De India",
   description: "News web app",
 };
-
+ 
 
 export default function RootLayout({ children }) {
   return (

@@ -325,7 +325,11 @@ body {
 }
 .placeDiv:hover .placeImg {
   transform: scale(1.1);
-  transition: transform 1s ease;
+  transition: transform 1s ease; 
+  /* transition-delay: 0.5s; */
+}
+.placeDiv:hover .blurimage {
+  filter: blur(3px);
 }
 
 .shdw{
@@ -364,7 +368,7 @@ body {
   min-height: 100vh;
 }
 
-.hoverimage:hover .hoverpack {
+.placeDiv:hover .hoverpack {
   opacity: 1;
 }
 
@@ -436,8 +440,13 @@ body {
   /* Sienna color */
 }
 
-@media (-webkit-device-pixel-ratio:1.25){
+/* @media (-webkit-device-pixel-ratio:1.25){
   :root{
     zoom:0.8;
   }
-}
+} */ 
+ :root{
+  
+    font-size: 90%; /* Reduces the base font size to simulate zoom-out */
+  
+ }
