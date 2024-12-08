@@ -51,21 +51,21 @@ const Authentication = () => {
     }, []);
 
     return (
-        <div className='flex  justify-center items-center h-screen w-screen'>
-            <div className='flex justify-center items-center fixed z-[-10] w-screen h-screen blur-sm '>
-            <div   className='mt-[-4rem] h-[100vh] bgHome z-[-10]  overflow-hidden flex items-center'>
-          <div className='h-full bgHome w-full dark:hidden block'>
+        <div className='cursor-none flex  justify-center items-center h-screen w-screen'>
+            <div className='cursor-none flex justify-center items-center fixed z-[-10] w-screen h-screen blur-sm '>
+            <div   className='cursor-none mt-[-4rem] h-[100vh] bgHome z-[-10]  overflow-hidden flex items-center'>
+          <div className='cursor-none h-full bgHome w-full dark:hidden block'>
 
-          <div className='backdrop-blur-[5px] h-screen flex justify-center items-center'>
+          <div className='cursor-none backdrop-blur-[5px] h-screen flex justify-center items-center'>
 
           <Image src={Background2} alt='bg' className="dark:hidden lg:h-screen h-[50vh]  object-cover" width={"100%"} height={"80vh"} />
           </div>
           
           </div>
-          <div className='h-full bgHome2 w-full dark:block hidden'>
+          <div className='cursor-none h-full bgHome2 w-full dark:block hidden'>
 
 
-          <div className='backdrop-blur-[5px] h-screen flex justify-center items-center'>
+          <div className='cursor-none backdrop-blur-[5px] h-screen flex justify-center items-center'>
 
           <Image src={Background } alt='bg' className="dark:block hidden h-[50vh] lg:h-screen  object-cover" width={"100%"} height={"80vh"} />
           </div>
@@ -73,21 +73,21 @@ const Authentication = () => {
           </div>
         </div>
             </div>
-            <div className='dark:border-[2px] py-5 shadow-md dark:border-[#640303] rounded-sm shrink-0 justify-between flex-col items-stretch w-[90vw] md:w-[45vw] flex min-h-[80vh] mx-4 bg-[#89a3a8c9]   dark:bg-[#1e0700]  '>
+            <div className='cursor-none dark:border-[2px] py-5 shadow-md dark:border-[#640303] rounded-sm shrink-0 justify-between flex-col items-stretch w-[90vw] md:w-[45vw] flex min-h-[80vh] mx-4 bg-[#89a3a8c9]   dark:bg-[#1e0700]  '>
                 <div>
 
-                    <div className='bg-pinewk-300 font-bold text-[3rem] max-w-[24.5rem] text-wrap py-4 h-[5rem] text-[#031a2c] dark:text-[#ffd867] mt-50 text-center w-fdll  mx-auto mt' ref={typedElement}></div>
-                    <div ref={appear} className='opacity-0 bg-origin-border text-[#031a2c] dark:text-[#ffd867] mt-50 text-center   mx-auto mt amsterdama'>Specialist in the art of travel</div>
+                    <div className='cursor-none bg-pinewk-300 font-bold text-[3rem] max-w-[24.5rem] text-wrap py-4 h-[5rem] text-[#031a2c] dark:text-[#ffd867] mt-50 text-center w-fdll  mx-auto mt' ref={typedElement}></div>
+                    <div ref={appear} className='cursor-none opacity-0 bg-origin-border text-[#031a2c] dark:text-[#ffd867] mt-50 text-center   mx-auto mt amsterdama'>Specialist in the art of travel</div>
                 </div>
 
                 {account ? <SignIn /> : <SignUp />}
-                <div className='px-14 flex justify-between '>
+                <div className='cursor-none px-14 flex justify-between '>
                     
                 {account ? <div>Don&apos;t have an account?
-                    <button className='text-[#031a2c] dark:text-[#ffd867]  hover:underline' onClick={() => setAccount(false)}>Sign Up</button></div> : <div>Do you have an account? <button className='text-[#031a2c] dark:text-[#ffd867]  hover:underline' onClick={() => setAccount(true)}>Sign In</button>
+                    <button className='cursor-none text-[#031a2c] dark:text-[#ffd867]  hover:underline' onClick={() => setAccount(false)}>Sign Up</button></div> : <div>Do you have an account? <button className='cursor-none text-[#031a2c] dark:text-[#ffd867]  hover:underline' onClick={() => setAccount(true)}>Sign In</button>
                 </div>
                 }
-                <Link href='/' className='cursor-pointer flex justify-center items-center bg-blfdsck text-[#031a2c] dark:text-[#ffd867]  w-5 h-5 roundsfded-full'><FaHome className='cursor-pointer w-10' /></Link>
+                <Link href='/' className='cursor-none cursor-pointer flex justify-center items-center bg-blfdsck text-[#031a2c] dark:text-[#ffd867]  w-5 h-5 roundsfded-full'><FaHome className='cursor-none cursor-pointer w-10' /></Link>
                 </div>
             </div>
         </div>

@@ -12,9 +12,10 @@ function App() {
 
 
   return (
-    <div clasName="bg-gray-100">
+    <div clasName="bg-gray-100 ">
     <ThemeProvider>
       <Provider store={store}>
+        
         <Navbar />
         <Home />
         <Footer />

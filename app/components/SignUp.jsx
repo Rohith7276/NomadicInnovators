@@ -42,16 +42,16 @@ const SignUp = () => {
          <div className="container mx-auto p-4">
             <form className=" gap-5 sfdhadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit(onSubmit)}>
                 <div className="mb-6">
-                    <label className="block text-black dark:text-white text-sm font-bold mb-2" htmlFor="Name">
+                    <label className="block  text-white text-sm font-bold mb-2" htmlFor="Name">
                         Name
                     </label>
                     <input 
                         placeholder='username' 
-                        className='shadow appearance-none bg-white dark:bg-[#1e0700] border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline' 
+                        className='cursor-none shadow appearance-none bg-white dark:bg-[#1e0700] border rounded w-full py-2 px-3 text-black dark:text-white leading-tight focus:outline-none focus:shadow-outline' 
                         {...register("name", { required: {value: true, message: "This field is required"}, minLength: {value: 3, message: "Min length is 3"}, maxLength: {value: 8, message: "Max length is 8"} })} 
                         type="text"   
                     />
-                    {errors.name && <div className='text-red-500 text-xs italic'>{errors.name.message}</div>}
+                    {errors.name && <div className='cursor-none text-red-500 text-xs italic'>{errors.name.message}</div>}
                 </div>
                 <div className="mb-6">
                     <label className="block text-white text-sm font-bold mb-2" htmlFor="Email">
@@ -59,11 +59,11 @@ const SignUp = () => {
                     </label>
                     <input 
                         placeholder='email' 
-                        className='shadow appearance-none bg-white dark:bg-[#1e0700] border rounded w-full py-2 px-3 text-black lg:text-white leading-tight focus:outline-none focus:shadow-outline' 
+                        className='cursor-none shadow appearance-none bg-white dark:bg-[#1e0700] border rounded w-full py-2 px-3 text-black darktext-white leading-tight focus:outline-none focus:shadow-outline' 
                         {...register("email", { required: {value: true, message: "This field is required"}, minLength: {value: 3, message: "Min length is 3"} })} 
                         type="text"   
                     />
-                    {errors.username && <div className='text-red-500 text-xs italic'>{errors.username.message}</div>}
+                    {errors.username && <div className='cursor-none text-red-500 text-xs italic'>{errors.username.message}</div>}
                 </div>
                 <div className="mb-6">
                     <label className="block text-white text-sm font-bold mb-2" htmlFor="password">
@@ -72,7 +72,7 @@ const SignUp = () => {
                     <div className="relative">
                         <input 
                             placeholder='password'  
-                            className='shadow appearance-none border bg-white dark:bg-[#1e0700] rounded w-full py-2 px-3 text-black lg:text-white mb-3 leading-tight focus:outline-none focus:shadow-outline' 
+                            className='cursor-none shadow appearance-none border bg-white dark:bg-[#1e0700] rounded w-full py-2 px-3 text-black dark:text-white mb-3 leading-tight focus:outline-none focus:shadow-outline' 
                             {...register("password", {minLength: {value: 7, message: "Min length of password is 7"},})} 
                             type={showPassword ? "text" : "password"}
                         />
@@ -90,18 +90,18 @@ const SignUp = () => {
                             )}
                         </span>
                     </div>
-                    {errors.password && <div className='text-red-500 text-xs italic'>{errors.password.message}</div>}
+                    {errors.password && <div className='cursor-none text-red-500 text-xs italic'>{errors.password.message}</div>}
                 </div>
                 <div className="flex items-center justify-between amsterdam tracking-widest rounded-[10rem] bg-[#031a2c]  dark:bg-yellow-600 w-fit cursor-pointer">
                     <input 
                         disabled={isSubmitting} 
-                        className=' bg-white dark:bg-[#1e0700] text-white font-bo ld py-1 px-4 cursor-pointer rounded focus:outline-none focus:shadow-outline' 
+                        className='cursor-none  bg-white dark:bg-[#1e0700] text-white font-bo ld py-1 px-4 cursor-pointer rounded focus:outline-none focus:shadow-outline' 
                         type="submit" 
                         value="Submit" 
                     />
                 </div>
-                {errors.myform && <div className='text-red-500 text-xs italic mt-4'>{errors.myform.message}</div>}
-                {errors.blocked && <div className='text-red-500 text-xs italic mt-4'>{errors.blocked.message}</div>}
+                {errors.myform && <div className='cursor-none text-red-500 text-xs italic mt-4'>{errors.myform.message}</div>}
+                {errors.blocked && <div className='cursor-none text-red-500 text-xs italic mt-4'>{errors.blocked.message}</div>}
             </form>
          </div>
     </>

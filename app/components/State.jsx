@@ -1,6 +1,8 @@
 "use client"
 import React, { useEffect, useState, useRef } from 'react'
 import { gsap } from 'gsap';
+import { useDispatch } from 'react-redux'
+
 import { useGSAP } from "@gsap/react";
 import Loader from '../components/Loader'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -11,20 +13,34 @@ import { fireDB } from '../firebase/firebaseConfig'
 import { collection, getDocs } from 'firebase/firestore'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import SliderComponent from '../components/SliderComponent'
+import { setCount } from '../redux/counter/counterSlice';
+
 import { useSelector } from 'react-redux'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation';
+
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 const State = () => {
+  const router = useRouter();
+
   const [fetchData, setFetchData] = useState(true)
+  const counterValue = useSelector(state => state.counter.value);
+  const [Loading, setLoading] = useState(true)
+  const [count, setcount] = useState(counterValue)
+  const [imageSection, setimageSection] = useState(false)
+  const image = useRef()
+  const [Random, setRandom] = useState({ x: 0, y: 0 })
+
   const [filejson, setfilejson] = useState({})
   const imghov = useRef(false)
+  const dispatch = useDispatch()
+
   const dataFetch = async () => {
     try {
       let x = await getDocs(collection(fireDB, 'jsonData'));
       if (x.empty) {
-        notFound();
-        return;
+        notFound(); 
       }
       setfilejson(x.docs[0].data());
       setFetchData(false);
@@ -35,7 +51,17 @@ const State = () => {
   }
 
 
-  useEffect(() => { dataFetch() }, [])
+  useEffect(() => {
+   
+    let x, y;
+    do {
+      x = Math.floor(Math.random() * 8);
+      y = Math.floor(Math.random() * 8);
+    } while (x === y || x === count || y === count);
+
+    setRandom({ x: x, y: y })
+    dataFetch()
+  }, [])
   const [showMore, setShowMore] = useState(4)
   const handleMore = (e) => {
     if (!filejson.states || !filejson.states[count]) return;
@@ -44,12 +70,12 @@ const State = () => {
     if (filejson.states[count]?.hotels?.length != 0) {
       x = filejson.states[count]?.hotels?.length
     }
-     if (x == undefined || filejson.states[count]?.hotel?.length > x) {
+    if (x == undefined || filejson.states[count]?.hotel?.length > x) {
       x = filejson.states[count]?.hotel?.length
     }
     if (x <= 4) {
       setShowMore(x)
-     alert("End of the content")
+      alert("End of the content")
     }
     else if (showMore + 4 < x) {
       window.scrollBy({
@@ -87,12 +113,18 @@ const State = () => {
       });
     }
   }
+
+  useEffect(() => {
+    let x, y;
+    do {
+      x = Math.floor(Math.random() * 8);
+      y = Math.floor(Math.random() * 8);
+    } while (x === y || x === count || y === count);
+
+    setRandom({ x: x, y: y })
+  }, [count])
+
   //in here we are bringing the variable from the redux store
-  const counterValue = useSelector(state => state.counter.value);
-  const [Loading, setLoading] = useState(true)
-  const [count, setcount] = useState(counterValue)
-  const [imageSection, setimageSection] = useState(false)
-  const image = useRef()
   useEffect(() => {
     if (counterValue == 0 || counterValue == 3 || counterValue == 4 || counterValue == 6)
       setimageSection(true)
@@ -241,68 +273,106 @@ const State = () => {
               </div>
             ))}
           </div>
-          <section className={`flex shwmr overflow-hidden justify-center my-10 flex-wrap`}>
-            <h1 className='amsterdam bg-origin-border pt-10 text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[3rem] lg:text-[4rem] mx-auto mt'>
-              Packages
-            </h1>
-            {
-              filejson?.states[count]?.hotel?.slice(0, showMore).map((each) => (
-                <div key={each.name} className='flex-col py-3 mx-4 lg:my-4 lg:py-0 lg:flex-row flex placeDiv items-center overflow-hidden    border-[2px] dark:border-[#640303] rounded-sm shrink-0 justify-between w-[90vw] md:w-[45vw] m-4  text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700] '>
-                  {(count == 0 || count == 3 || count == 4 || count == 6) && <div ref={imghov} className='overflow-hidden lg:ml-2 hoverimage flex lg:h-[16rem] items-center justify-start lg:w-fit'>
-                    <Image src={each.image} alt={each.name} width={1000} height={100} className="object-cover  float-left pr-4 h-[18vh] md:h-[35vh] lg:h-[sdf]   w-fit lg:max-w-[25vw]  placeImg" />
+        
+    <section className={`flex shwmr overflow-hidden justify-center my-10 flex-wrap`}>
+      <h1 className='amsterdam bg-origin-border pt-10 text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[3rem] lg:text-[4rem] mx-auto mt'>
+        Packages
+      </h1>
+      {
+        filejson?.states[count]?.hotel?.slice(0, showMore).map((each) => (
+          <div key={each.name} className='flex-col py-3 mx-4 lg:my-4 lg:py-0 lg:flex-row flex placeDiv items-center overflow-hidden    border-[2px] dark:border-[#640303] rounded-sm shrink-0 justify-between w-[90vw] md:w-[45vw] m-4  text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700] '>
+            {(count == 0 || count == 3 || count == 4 || count == 6) && <div ref={imghov} className='overflow-hidden lg:ml-2 hoverimage flex lg:h-[16rem] items-center justify-start lg:w-fit'>
+              <Image src={each.image} alt={each.name} width={1000} height={100} className="object-cover  float-left pr-4 h-[18vh] md:h-[35vh] lg:h-[sdf]   w-fit lg:max-w-[25vw]  placeImg" />
 
 
-                  </div>}
-                  <div className='flex flex-col justify-center px-[1rem]   my-6'>
-                    <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] dark:text-yellow-400 '>{each.name}</h2>
-                    <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] dark:text-yellow-400 '>{each.days}</h2>
-                    <Link href={each.link} className='cursor-pointer w-full flex justify-center pt-5 items-center' target='_blank'><button className='border  border-whited tracking-wider amsterdam hover:text-white  dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5]   py-1  border-black rounded-[10rem] px-3 cursor-pointer'> View Package </button></Link>
-                  </div>
-                </div>
-              ))
-
-            }
-            {
-              filejson?.states[count]?.hotels?.slice(0, showMore).map((each) => (
-                imageSection ?
-                  <div key={each.name} className='flex-col py-3 mx-4 lg:my-4 lg:py-0 lg:flex-row flex placeDiv items-center overflow-hidden border-[2px] dark:border-[#640303] rounded-sm shrink-0 justify-between w-[90vw] md:w-[45vw]  m-4 text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700]'>
-                    <div ref={imghov} className='overflow-hidden lg:ml-2 hoverimage flex lg:h-[16rem] items-center justify-start lg:w-fit'>
-                      <Image src={each.image} alt={each.placeName} width={1000} height={100} className="object-cover float-left pr-4 h-[18vh] md:h-[35vh] lg:h-[sdf] w-fit lg:max-w-[25vw] placeImg" />
-                    </div>
-                    <div className='flex flex-col justify-center px-[1rem] w-full my-6'>
-                      <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] dark:text-yellow-400'>{each.name}</h2>
-                      <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] dark:text-yellow-400'>{each.days}</h2>
-                      <Link href={each.link} className='cursor-pointer w-full flex justify-center pt-5 items-center' target='_blank'>
-                        <button className='border border-whited tracking-wider amsterdam hover:text-white dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5] py-1 border-black rounded-[10rem] px-3 cursor-pointer'>View Package</button>
-                      </Link>
-                    </div>
-                  </div>
-                  :
-                  <div key={each.name} className='flex-col py-3 mx-4 lg:my-4 lg:py-0 lg:flex-row flex placeDiv items-center overflow-hidden border-[2px] dark:border-[#640303] rounded-sm shrink-0 justify-between w-[90vw] md:w-[45vw] m-4 text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700]'>
-
-                    <div className='flex flex-col justify-center px-[1rem] w-full my-6'>
-                      <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] dark:text-yellow-400'>{each.name}</h2>
-                      <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] dark:text-yellow-400'>{each.days}</h2>
-                      <Link href={each.link} className='cursor-pointer w-full flex justify-center pt-5 items-center' target='_blank'>
-                        <button className='border border-whited tracking-wider amsterdam hover:text-white dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5] py-1 border-black rounded-[10rem] px-3 cursor-pointer'>View Package</button>
-                      </Link>
-                    </div>
-                  </div>
-              ))
-            }
-          </section>
-          <button className=' z-10 shdw dark:block hidden' onClick={(e) => handleMore(e)}>show more</button>
-          <button className=' z-10 lightMore dark:hidden' onClick={(e) => handleMore(e)}>show more</button>
-          <div className='pb-10'>
-            <h1 className='amsterdam bg-origin-border  text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[4rem] mx-auto mt'>
-              COMMENTS
-            </h1>
-            <CommentForm />
-            <div className=' text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700] mt-6 lg:py-5 py-1 pb-1 lg:px-5 mx-5 lg:mx-52 rounded-md'>
-              <CommentList />
+            </div>}
+            <div className='flex flex-col justify-center px-[1rem]   my-6'>
+              <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] dark:text-yellow-400 '>{each.name}</h2>
+              <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] dark:text-yellow-400 '>{each.days}</h2>
+              <Link href={each.link} className='cursor-pointer w-full flex justify-center pt-5 items-center' target='_blank'><button className='border  border-whited tracking-wider amsterdam hover:text-white  dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5]   py-1  border-black rounded-[10rem] px-3 cursor-pointer'> View Package </button></Link>
             </div>
           </div>
-        </div >
+        ))
+
+      }
+      {
+        filejson?.states[count]?.hotels?.slice(0, showMore).map((each) => (
+          imageSection ?
+            <div key={each.name} className='flex-col py-3 mx-4 lg:my-4 lg:py-0 lg:flex-row flex placeDiv items-center overflow-hidden border-[2px] dark:border-[#640303] rounded-sm shrink-0 justify-between w-[90vw] md:w-[45vw]  m-4 text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700]'>
+              <div ref={imghov} className='overflow-hidden lg:ml-2 hoverimage flex lg:h-[16rem] items-center justify-start lg:w-fit'>
+                <Image src={each.image} alt={each.placeName} width={1000} height={100} className="object-cover float-left pr-4 h-[18vh] md:h-[35vh] lg:h-[sdf] w-fit lg:max-w-[25vw] placeImg" />
+              </div>
+              <div className='flex flex-col justify-center px-[1rem] w-full my-6'>
+                <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] dark:text-yellow-400'>{each.name}</h2>
+                <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] dark:text-yellow-400'>{each.days}</h2>
+                <Link href={each.link} className='cursor-pointer w-full flex justify-center pt-5 items-center' target='_blank'>
+                  <button className='border border-whited tracking-wider amsterdam hover:text-white dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5] py-1 border-black rounded-[10rem] px-3 cursor-pointer'>View Package</button>
+                </Link>
+              </div>
+            </div>
+            :
+            <div key={each.name} className='flex-col py-3 mx-4 lg:my-4 lg:py-0 lg:flex-row flex placeDiv items-center overflow-hidden border-[2px] dark:border-[#640303] rounded-sm shrink-0 justify-between w-[90vw] md:w-[45vw] m-4 text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700]'>
+
+              <div className='flex flex-col justify-center px-[1rem] w-full my-6'>
+                <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] dark:text-yellow-400'>{each.name}</h2>
+                <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] dark:text-yellow-400'>{each.days}</h2>
+                <Link href={each.link} className='cursor-pointer w-full flex justify-center pt-5 items-center' target='_blank'>
+                  <button className='border border-whited tracking-wider amsterdam hover:text-white dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5] py-1 border-black rounded-[10rem] px-3 cursor-pointer'>View Package</button>
+                </Link>
+              </div>
+            </div>
+        ))
+      }
+
+    </section>
+    <button className=' z-10 shdw dark:block hidden' onClick={(e) => handleMore(e)}>show more</button>
+    <button className=' z-10 lightMore dark:hidden' onClick={(e) => handleMore(e)}>show more</button>
+    <h1 className='amsterdam bg-origin-border pt-5 lg:pt-0 py-4 text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[4rem] mx-auto mt-[10vh]'>
+            Recomended  to visit
+          </h1>
+          <div className='flex justify-around my-10 flex-wrap'>
+            <div className='flex flex-col lg:flex-row border-[2px] dark:border-[#640303] rounded-sm shrink-0 justify-between w-[90vw] md:w-[79vw] m-4 pt-4 lg:pt-0 text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700] '>
+              <div className='overflow-hidden flex items-center justify-center lg:w-full'>
+                <Image src={filejson?.states[Random.x]?.bigImg} alt={filejson?.states[Random.x]?.state} width={1000} height={100} className="object-cover float-left px-4 h-[18vh] md:h-[35vh] lg:h-[sdf]  w-fit lg:max-w-[25vw]" />
+              </div>
+              <div className='flex flex-col justify-center gap-2 px-[1rem] my-6'>
+                <h2 className='text-2xl h-fit text-center font-bold text-[#031a2c] dark:text-yellow-400 '> {filejson?.states[Random.x]?.state}</h2>
+                <p className='text-center pt-3'> {filejson?.states[Random.x]?.desc}</p>
+                <div  className='cursor-pointer w-full flex justify-center pt-5 items-center' target='_blank'><button className='border  border-whited tracking-wider amsterdam hover:text-white  dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5]   py-1  border-black rounded-[10rem] px-3 cursor-pointer' onClick={( ) => {
+                dispatch(setCount(Random.x));
+                // window.location.reload();
+                router.push('/States');
+              }} > Visit Now! </button></div>
+              </div>
+            </div>
+          </div>
+          <div className='flex justify-around my-10 flex-wrap'>
+            <div className='flex flex-col lg:flex-row border-[2px] dark:border-[#640303] rounded-sm shrink-0 justify-between w-[90vw] md:w-[79vw] m-4 pt-4 lg:pt-0 text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700] '>
+              <div className='overflow-hidden flex items-center justify-center lg:w-full'>
+                <Image src={filejson?.states[Random.y]?.bigImg} alt={filejson?.states[Random.y]?.state} width={1000} height={100} className="object-cover float-left px-4 h-[18vh] md:h-[35vh] lg:h-[sdf]  w-fit lg:max-w-[25vw]" />
+              </div>
+              <div className='flex flex-col justify-center gap-2 px-[1rem] my-6'>
+                <h2 className='text-2xl h-fit text-center font-bold text-[#031a2c] dark:text-yellow-400 '> {filejson?.states[Random.y]?.state}</h2>
+                <p className='text-center pt-3'> {filejson?.states[Random.y]?.desc}</p>
+                <div  className='cursor-pointer w-full flex justify-center pt-5 items-center' target='_blank'><button className='border  border-whited tracking-wider amsterdam hover:text-white  dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5]   py-1  border-black rounded-[10rem] px-3 cursor-pointer' onClick={( ) => {
+                dispatch(setCount(Random.y));
+                // window.location.reload();
+                router.push('/States');
+              }} > Visit Now! </button></div>
+              </div>
+            </div>
+          </div>
+            
+    <div className='pb-10'>
+      <h1 className='amsterdam bg-origin-border  text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[4rem] mx-auto mt'>
+        COMMENTS
+      </h1>
+      <CommentForm />
+      <div className=' text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700] mt-6 lg:py-5 py-1 pb-1 lg:px-5 mx-5 lg:mx-52 rounded-md'>
+        <CommentList />
+      </div>
+    </div>
+  </div >
       )}
 
     </div >

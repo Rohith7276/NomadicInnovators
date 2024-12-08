@@ -23,21 +23,21 @@ export const Contact = () => {
     };
 
     return (<>
-    <div className='backdrop-blur-md fixed top-5 flex justify-center items-center w-screen h-screen overflow-y-scroll z-[99] '>
-        <form ref={form} onSubmit={sendEmail} className="max-w-[60vw] min-w-[50vw]  mx-auto p-4 bg-white shadow-md rounded-lg">
-        <p className=" text-black">Get in touch</p>
+    <div className='backdrop-blur-md curZ fixed top-5 flex justify-center items-center w-screen h-screen  overflow-y-scroll z-[99] '>
+        <form ref={form} onSubmit={sendEmail}  className="max-w-[60vw] py-11 min-w-[50vw]  mx-auto p-4 bg-white dark:bg-black shadow-md rounded-lg">
+        <h2 className='text-2xl h-fit text-center font-bold text-[#031a2c] dark:text-yellow-400 '> Get in touch</h2>
         <h3 className=" text-black">Contact.</h3>
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2">Name</label>
-                <input type="text" name="user_name" placeholder='Enter Your Name' className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                <label className="block text-gray-700 dark:text-white text-sm font-bold mb-2">Name</label>
+                <input type="text" name="user_name" placeholder='Enter Your Name' className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-white leading-tight focus:outline-none focus:shadow-outline" />
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2">Email</label>
-                <input type="email" name="user_email" placeholder='Enter Your Email' className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                <label className="block text-gray-700 dark:text-white text-sm font-bold mb-2">Email</label>
+                <input type="email" name="user_email" placeholder='Enter Your Email' className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-white leading-tight focus:outline-none focus:shadow-outline" />
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2">Message</label>
-                <textarea name="message"   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                <label className="block text-gray-700 dark:text-white text-sm font-bold mb-2">Message</label>
+                <textarea name="message"   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-white leading-tight focus:outline-none focus:shadow-outline" />
             </div>
             <div className="flex items-center bg-blue-700 w-fit justify-between">
                 <input type="submit" value="Send" className="  text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" />

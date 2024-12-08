@@ -11,8 +11,7 @@ import Link from 'next/link';
 import { useDispatch } from 'react-redux'
 import { setCount } from '../redux/counter/counterSlice';
 import { fireDB } from '../firebase/firebaseConfig'
-import { collection, getDocs, doc } from 'firebase/firestore'
-import Loader from "./Loader";
+import { collection, getDocs, doc } from 'firebase/firestore' 
 import { CiMenuBurger } from "react-icons/ci";
 import ThemeBtn from './themeBtn'
 import { FaRegUserCircle } from "react-icons/fa";
@@ -105,11 +104,11 @@ export default function Navbar() {
         <ul ref={boxRef} className={`absolute ${menu ? "flex" : "hidden"}  gafp-4 flex-col items-start lg:top-0 top-[4rem] p-4 right-0 lg:right-[1rem] w-[12rem] bg-[#cacbc3] dark:bg-[#351a03] lg:flex-row lg:items-center lg:justify-around lg:w-[90vw] lg:h-[4rem]  lg:flex`}>
           <li className='border border-t-0 border-l-0 border-r-0 w-full lg:w-fit py-3 lg:bordver-b-0 border-b-sm lg:border-b-0 flex flex-col justify-end items-center' id='listanim'>
             <Link href="/" >
-              <h2 className='cursor-pointer hover:scale-[1.1] duration-300'>Home</h2>
+              <h2 className='cursor-pointer cursor-none hover:scale-[1.1] duration-300'>Home</h2>
             </Link>
           </li>
           <li onClick={()=>setComment(!Comment)} className='border border-t-0 border-l-0 border-r-0 w-full lg:w-fit py-3 border-b-sm lg:border-b-0 flex flex-col justify-end items-center' id='listanim'>
-            <h2 className='cursor-pointer scrl hover:scale-[1.1] duration-300'>Contact</h2>
+            <h2 className='cursor-pointer scrl hover:scale-[1.1] curZ duration-300'>Contact</h2>
           </li>
           <li className='border border-t-0 border-l-0 border-r-0  py-3 lggfd:w-fit border-b-sm lg:border-b-0 w-full lg:w-[10rem]'>
             <Select
@@ -126,6 +125,7 @@ export default function Navbar() {
               }}
               color='grey'
               onChange={(id) => {
+                
                 dispatch(setCount(id[0].id));
                 router.push('/States');
               }}

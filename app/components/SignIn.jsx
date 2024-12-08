@@ -24,24 +24,24 @@ return (
          <div className="container mx-auto p-4">
             <form className="bg-wdfshite gap-5 shdfadow-md rounded px-8  mb-4" onSubmit={handleSubmit(onSubmit)}>
                 <div className="mb-6">
-                    <label className="block text-white text-sm font-bold mb-2" htmlFor="Email">
+                    <label className="block text-white   text-sm font-bold mb-2" htmlFor="Email">
                         Email
                     </label>
                     <input 
                         placeholder='username' 
-                        className='shdfadow appearance-none  bg-white dark:bg-[#1e0700] border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline' 
+                        className='shdfadow appearance-none  bg-white text-black dark:bg-[#1e0700] border rounded w-full py-2 px-3 dark:text-white leading-tight focus:outline-none focus:shadow-outline' 
                         {...register("username", { required: {value: true, message: "This field is required"}, minLength: {value: 3, message: "Min length is 3"} })} 
                         type="text"   
                     />
                     {errors.username && <div className='text-red-500 text-xs italic'>{errors.username.message}</div>}
                 </div>
                 <div className="mb-6">
-                    <label className="block text-white lg:text-white text-sm font-bold mb-2" htmlFor="password">
+                    <label className="block text-white :tdext-white text-sm font-bold mb-2" htmlFor="password">
                         Password
                     </label>
                     <input 
                         placeholder='password'  
-                        className='shadow appearance-none bg-white dark:bg-[#1e0700] border rounded w-full py-2 px-3 text-black lg:text-white mb-3 leading-tight focus:outline-none focus:shadow-outline' 
+                        className='shadow appearance-none bg-white dark:bg-[#1e0700] border rounded w-full py-2 px-3 text-black dark:text-white mb-3 leading-tight focus:outline-none focus:shadow-outline' 
                         {...register("password", {minLength: {value: 7, message: "Min length of password is 7"},})} 
                         type="password"
                     />

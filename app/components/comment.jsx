@@ -57,7 +57,7 @@ const CommentForm = () => {
                     </form>
                 </>
             ) : (
-                <h1 className='amsterdam bg-origin-border py-4 text-[#031a2c] dark:text-[#ffd867] mt-50 text-center w-full text-[3rem] mx-auto mt'>
+                <h1 className='cursor-none amsterdam bg-origin-border py-4 text-[#031a2c] dark:text-[#ffd867] mt-50 text-center w-full text-[3rem] mx-auto mt'>
                     Please <Link href={"/SignIn"} className="text-blue-400 hover:underline cursor-pointer">SignIn</Link> to comment
                 </h1>
             )}

@@ -61,7 +61,7 @@ function ChatApp() {
         const sanitizedHtml = DOMPurify.sanitize(htmlString);
 
         return (
-            <div className="aiRes opacidfty-0 " dangerouslySetInnerHTML={{ __html: sanitizedHtml }} />
+            <div className="aiRes opacity-0 " dangerouslySetInnerHTML={{ __html: sanitizedHtml }} />
         );
     };
     return (
