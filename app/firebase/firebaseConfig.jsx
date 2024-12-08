@@ -3,6 +3,8 @@ import { initializeApp } from "firebase/app";
 import {getFirestore} from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 import {getAuth} from 'firebase/auth'
+import {signInWithPopup} from "firebase/auth" 
+import { GoogleAuthProvider } from "firebase/auth";
 const firebaseConfig = {
   apiKey: "AIzaSyBTSmLFd3Jf8KEaOxzFJlVNSvV-7T7AFd0",
   authDomain: "travel-d4acf.firebaseapp.com",
@@ -18,5 +20,6 @@ const app = initializeApp(firebaseConfig);
 const fireDB = getFirestore(app)
 const storage = getStorage(app);
 const auth = getAuth(app)
+const provider = new GoogleAuthProvider(); 
 // const analytics = getAnalytics(app);
-export {auth,storage , app, fireDB}
+export {auth,storage, provider  , app, fireDB, signInWithPopup}

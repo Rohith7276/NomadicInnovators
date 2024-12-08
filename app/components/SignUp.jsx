@@ -40,7 +40,7 @@ const SignUp = () => {
     <> 
     {isSubmitting && <div className="text-center text-blue-500">Loading...</div>}
          <div className="container mx-auto p-4">
-            <form className=" gap-5 sfdhadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit(onSubmit)}>
+            <form className=" gap-5 sfdhadow-md rounded px-8 pt-6  mb-4" onSubmit={handleSubmit(onSubmit)}>
                 <div className="mb-6">
                     <label className="block  text-white text-sm font-bold mb-2" htmlFor="Name">
                         Name

@@ -85,7 +85,7 @@ const SliderComponent = () => {
               </div>
               <div className=" flex-col  h-full scroll hidden dark:flex justify-around overflow-scroll gap-3">
                 <h2 className="text-2xl h-fit text-center pt-10 font-bold text-[orange]">{each.placeName}</h2>
-                <p className="text-xl h-full flex items-center text-justify  py-6  leading-[2.4rem] overflow-scroll scroll  dark:text-white px-4">
+                <p className="text-xl h-full lg:flex items-center lg:text-justify  py-6 text-center leading-[2.4rem] overflow-scroll scroll  dark:text-white px-4">
 
                   <Image src={each.imageurl} loading="lazy" alt={each.placeName} width={1000} height={100} className="object-cover float-left px-4 h-[30vh] lg:h-[100%] pr-7  w-fit" />
               
