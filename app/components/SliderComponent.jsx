@@ -43,7 +43,7 @@ const SliderComponent = () => {
     // transitionDuration: 1000,
     prevArrow: (
       <div className="ml-[-0.7rem] lg:ml-0" style={{ width: "30px", marginRight: "-10px", cursor: "pointer" }}>
-        <svg className="w-[1rem] lg:wfull"
+        <svg className="w-[1rem] curZ  lg:wfull"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
           fill="#2e2e2e"
@@ -54,7 +54,7 @@ const SliderComponent = () => {
     ),
     nextArrow: (
       <div className="mr-[-1.4rem] lg:m-0" style={{ width: "30px", marginLeft: "-10px", cursor: "pointer" }}>
-               <svg className="w-[1rem] lg:wfull"
+               <svg className="w-[1rem] curZ  lg:wfull"
 
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
@@ -74,7 +74,7 @@ const SliderComponent = () => {
             <div key={index} className="flex h-[77vh] margin: 0 0 0 59.7rem; items-center w-[80vw] m-auto lg:w-[89vw]  gap-5 mx-11 border dark:border-[#5e1e0b] rounded-lg  text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700]" style={{ margin: "auto" }}>
 
               <div className="flex flex-col  h-full ligfhtscroll dark:hidden justify-around overflow-hidden gap-3">
-                <h2 className="text-2xl h-fit text-center pt-10 font-bold text-[#031a2c] dark:text-[orange]">{each.placeName}</h2>
+                <h2 className="text-2xl h-fit text-center pt-10 font-bold text-[#031a2c]  curZ dark:text-[orange]">{each.placeName}</h2>
                 <p className="text-xl h-full text-center lg:text-justify lg:flex items-center   py-6  leading-[2.4rem] overflow-scroll lightscroll  dark:text-white px-4">
 
                   <Image src={each.imageurl} loading="lazy" alt={each.placeName} width={1000} height={100} className="object-cover float-left px-4 h-[30vh] lg:h-[100%] lg:pr-7  w-fit" />
@@ -84,7 +84,7 @@ const SliderComponent = () => {
                 </p>
               </div>
               <div className=" flex-col  h-full scroll hidden dark:flex justify-around overflow-scroll gap-3">
-                <h2 className="text-2xl h-fit text-center pt-10 font-bold text-[orange]">{each.placeName}</h2>
+                <h2 className="text-2xl h-fit text-center pt-10 font-bold curZ  text-[orange]">{each.placeName}</h2>
                 <p className="text-xl h-full lg:flex items-center lg:text-justify  py-6 text-center leading-[2.4rem] overflow-scroll scroll  dark:text-white px-4">
 
                   <Image src={each.imageurl} loading="lazy" alt={each.placeName} width={1000} height={100} className="object-cover float-left px-4 h-[30vh] lg:h-[100%] pr-7  w-fit" />
@@ -94,8 +94,8 @@ const SliderComponent = () => {
                 </p>
               </div>
               <div className={map ? "absolute flex justify-center items-center  top-34 z-[10]  h-[100vh] w-[100vw] " : "hidden"} dangerouslySetInnerHTML={{ __html: each.map }}></div>
-              <button onClick={() => setmap(e => !e)} className=" z-[11] cursor-pointer absolute self-start p-3 flex justify-end itedms-end w-[79vw] lg:w-[89vw] z-100" >
-                <FaMapMarkedAlt   width={2003} className="w-fit fill-[#031a2c] dark:fill-white h-[1.7rem] lg:h-[2rem] " />
+              <button onClick={() => setmap(e => !e)} className=" z-[11]   absolute self-start p-3 flex justify-end itedms-end w-[79vw] lg:w-[89vw] z-100" >
+                <FaMapMarkedAlt   width={2003} className="w-fit curZ  fill-[#031a2c] dark:fill-white h-[1.7rem] lg:h-[2rem] " />
               </button>
             </div>
           ))}

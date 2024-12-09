@@ -149,7 +149,7 @@ const StateSectoin = (data) => {
                 <Image src={each.image} alt={each.placeName} width={1000} height={100} className="object-cover blurimage float-left pr-4 h-[18vh] md:h-[35vh] lg:h-[sdf]   w-fit lg:max-w-[25vw]  placeImg" />
                 {window.innerWidth >= 700 && (
                   <div className='  flex justify-center items-center h-[10rem] lg:h-[16rem] hoverpack  w-[65vw] lg:w-[24vw] absolute'>
-                    <Link href={each.hotel} className='cursor-pointer' target='_blank'><button className='border bg-[#745f4e81] tracking-wider amsterdam hover:text-white  dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5]  py-1  border-white rounded-[10rem] px-3 cursor-pointer'> Book Hotels </button></Link>
+                    <Link href={each.hotel} className=' ' target='_blank'><button className='border bg-[#745f4e81] tracking-wider amsterdam hover:text-white  dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5]  py-1  border-white rounded-[10rem] px-3  '> Book Hotels </button></Link>
                   </div>
                 )}
               </div>
@@ -157,7 +157,7 @@ const StateSectoin = (data) => {
                 <h2 className='text-2xl h-fit text-center font-bold text-[#031a2c] dark:text-yellow-400 '>{each.placeName}</h2>
                 <p className='text-center px-5 lg:px-0 lg:pt-3'>{each.desc}</p>
                 {window.innerWidth < 700 && (
-                  <Link href={each.hotel} className='cursor-pointer w-full flex justify-center pt-5 items-center' target='_blank'><button className='border  border-whited tracking-wider amsterdam hover:text-white  dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5]   py-1  border-black rounded-[10rem] px-3 cursor-pointer'> Book Hotels </button></Link>
+                  <Link href={each.hotel} className='  w-full flex justify-center pt-5 items-center' target='_blank'><button className='border  border-whited tracking-wider amsterdam hover:text-white  dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5]   py-1  border-black rounded-[10rem] px-3  '> Book Hotels </button></Link>
                 )}
               </div>
             </div>

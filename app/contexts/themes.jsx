@@ -26,8 +26,8 @@ export function ThemeProvider({ children }) {
         }
     }
     useEffect(() => {
-        document.querySelector('html').classList.remove('dark', 'light')
-        document.querySelector('html').classList.add(themeMode)
+        document.querySelector("html").classList.remove("dark", "light")
+        document.querySelector("html").classList.add(themeMode)
     }, [themeMode])
     useEffect(() => {
         if (localStorage.getItem("themeMode")) {

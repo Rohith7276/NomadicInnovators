@@ -1,9 +1,9 @@
 "use client"
-import React, { useEffect } from 'react'
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
+import React, { useEffect } from "react"
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Temp from './AiResponse'
+import Temp from "./AiResponse"
 gsap.registerPlugin(ScrollTrigger);
 
 const AiSection = () => {
@@ -36,15 +36,14 @@ const AiSection = () => {
               trigger: ".aisec",
               start: "top 85%", 
               onEnter: () => {
-                const textAnimElement = document.querySelector('#textanim');
+                const textAnimElement = document.querySelector("#textanim");
                 if (textAnimElement) {
                     window.scrollTo({
                         top: textAnimElement.getBoundingClientRect().top + window.scrollY - 80, // 5rem = 80px
-                        behavior: 'smooth'
+                        behavior: "smooth"
                     });
                 }
-              },
-            //   markers: true,                    // Smooth transition when `fixedDiv` unpins
+              }, 
             }
         })
       
@@ -52,12 +51,12 @@ const AiSection = () => {
         animation();
     }, [])
     return (
-        <div className='  aisec h-[110vh] py-[3rem] backdrop-blur-lg bg-[#00000033]'>
-            <h1 id='textanim' className='amsterdam opacity-0 bg-origin-border py-4 text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[3rem] lg:text-[4rem] mx-auto mt'>
+        <div  className="cursor-none   aisec h-[110vh] py-[3rem] backdrop-blur-lg bg-[#00000033]">
+            <h1 id="textanim"    className="cursor-none curZ amsterdam opacity-0 bg-origin-border py-4 text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[3rem] lg:text-[4rem] mx-auto mt">
 
             </h1>
-            <div className=' h-fit bg-grday-900 w-screen'>
-                <div className="para">
+            <div  className="cursor-none  h-fit bg-grday-900 w-screen">
+                <div  className="cursor-none para">
                     <Temp />
                 </div>
             </div>

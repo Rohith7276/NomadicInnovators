@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
 
       </head>
       <SessionWrapper>
-        <body className="cursor-none font-inter scrolling" style={{ top: 0 }}>
+        <body className="  font-inter scrolling" style={{ top: 0 }}>
           {children}
           <Cursor />
           <Bot />

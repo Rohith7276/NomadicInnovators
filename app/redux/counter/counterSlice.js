@@ -1,8 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit"
 //here we are setting the variable to send to redux store so that we can access the variable anywhere inside the app
 //this is the count variable stored inside the redux store
 export const counterSlice = createSlice({
-  name: 'counter',
+  name: "counter",
   //initialState is inbuilt where it sets the variable into the initial value as 0
   initialState: {
     value: 0

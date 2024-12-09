@@ -1,13 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body{
+:root{
   cursor: none;
 }
-:root{
+button{
   cursor: none !important;
-
 }
+input{
+  cursor: none !important;
+}
+div{
+  cursor: none !important;
+}
+select{
+  cursor: none !important;
+}
+ 
 .custom-cursor{
   position: fixed;
   top: 0;
@@ -36,11 +45,11 @@ a{
   text-decoration: none;
   cursor: none;
 }
-/* .curZ{
-  color: inherit;
+.curZ{
+  /* color: inherit; */
   text-decoration: none;
-  cursor: none;
-} */
+  /* cursor: none; */
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -61,7 +70,7 @@ a{
   /* Add padding */
   font-size: 14px !important;
   /* Change font size */
-  font-family: 'Arial', sans-serif !important;
+  font-family: "Arial", sans-serif !important;
   /* Change font family */
 }
 .spanclass{
@@ -71,7 +80,7 @@ a{
   width: 9rem;
 }
 .bgHome{
-  background-image: url('../public/images/homeImg2.jpg');
+  background-image: url("../public/images/homeImg2.jpg");
   object-fit: fill;
   background-size: cover;
   background-repeat: no-repeat;
@@ -82,7 +91,7 @@ a{
   background-color: rgba(119, 123, 123, 0.068);
 }
 .bgHome2{
-  background-image: url('../public/images/homeImg.jpg');
+  background-image: url("../public/images/homeImg.jpg");
   object-fit: fill;
   background-size: cover;
   background-repeat: no-repeat;
@@ -92,10 +101,7 @@ a{
   /* backdrop-filter: blur(10px); */
   background-color: rgba(119, 123, 123, 0.068);
 }
-* {
-  cursor: default;
-  /* font-size: medium; */
-}
+ 
 
 .goog-te-combo {
   outline: 0;
@@ -397,7 +403,7 @@ body {
 .aibold2 {
   font-weight: bold;
   font-size: x-large;
-  color: #cacbc3;
+  color: #f2d44c;
 }
 
 .typed-cursor{

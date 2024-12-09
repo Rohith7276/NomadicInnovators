@@ -47,10 +47,10 @@ return (
                     />
                     {errors.password && <div className='text-red-500 text-xs italic'>{errors.password.message}</div>}
                 </div> 
-                <div className="flex items-center justify-between amsterdam tracking-widest rounded-[10rem] bg-[#031a2c]  dark:bg-yellow-600 w-fit cursor-pointer">
+                <div className="flex items-center justify-between amsterdam tracking-widest rounded-[10rem] bg-[#031a2c]  dark:bg-yellow-600 w-fit  ">
                     <input 
                         disabled={isSubmitting} 
-                        className=' bg-white dark:bg-[#1e0700] text-white dark:text-white font-b old py-1 px-4 rounded cursor-pointer focus:outline-none focus:shadow-outline' 
+                        className=' bg-white dark:bg-[#1e0700] text-white dark:text-white font-b old py-1 px-4 rounded   focus:outline-none focus:shadow-outline' 
                         type="submit" 
                         value="Submit" 
                     />

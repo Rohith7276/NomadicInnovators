@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { fireDB } from '../firebase/firebaseConfig';
-import { useSelector } from 'react-redux';
+import { fireDB } from "../firebase/firebaseConfig";
+import { useSelector } from "react-redux";
 import Link from "next/link";
 
 const CommentForm = () => {
@@ -28,8 +28,7 @@ const CommentForm = () => {
                 user: user,
                 timestamp: serverTimestamp(),
             });
-            setComment(""); // Clear input after submission
-            setImage(null); // Clear image after submission
+            setComment("");  
         } catch (error) {
             console.error("Error adding comment: ", error);
         }
@@ -39,26 +38,26 @@ const CommentForm = () => {
         <>
             {user != null ? (
                 <>
-                    <form onSubmit={handleSubmit} className="comment-form px-[1.5rem] m-auto" style={{ display: 'flex', flexDirection: 'column', gap: '10px', maxWidth: '400px' }}>
+                    <form onSubmit={handleSubmit}     className="cursor-none comment-form px-[1.5rem] m-auto" style={{ display: "flex", flexDirection: "column", gap: "10px", maxWidth: "400px" }}>
                         <textarea
                             value={comment}
                             onChange={(e) => setComment(e.target.value)}
                             placeholder="Write a comment..."
-                            className="comment-input outline-none max-h-[40vh] min-h-[50px] text-black"
-                            style={{ padding: '10px', borderRadius: '5px', border: '1px solid #ccc', resize: 'none' }}
+                                className="cursor-none comment-input outline-none max-h-[40vh] min-h-[50px] text-black"
+                            style={{ padding: "10px", borderRadius: "5px", border: "1px solid #ccc", resize: "none" }}
                         ></textarea>
                        
-                        <button type="submit" className="submit-button font-bold dark:hidden dark:bg-[#5e2700]" style={{ padding: '10px', borderRadius: '5px', border: 'none', color: '#fff', cursor: 'pointer', backgroundColor: "#031a2c" }}>
+                        <button type="submit"     className="cursor-none curZ  submit-button font-bold dark:hidden dark:bg-[#5e2700]" style={{ padding: "10px", borderRadius: "5px", border: "none", color: "#fff", cursor: "pointer", backgroundColor: "#031a2c" }}>
                             Post Comment
                         </button>
-                        <button type="button" className="submit-button font-bold hidden dark:block dark:bg-[#5e2700]" style={{ padding: '10px', borderRadius: '5px', border: 'none', color: '#fff', cursor: 'pointer' }} onClick={handleSubmit}>
+                        <button type="button"     className="cursor-none curZ  submit-button font-bold hidden dark:block dark:bg-[#5e2700]" style={{ padding: "10px", borderRadius: "5px", border: "none", color: "#fff", cursor: "pointer" }} onClick={handleSubmit}>
                             Post Comment
                         </button>
                     </form>
                 </>
             ) : (
-                <h1 className='cursor-none amsterdam bg-origin-border py-4 text-[#031a2c] dark:text-[#ffd867] mt-50 text-center w-full text-[3rem] mx-auto mt'>
-                    Please <Link href={"/SignIn"} className="text-blue-400 hover:underline cursor-pointer">SignIn</Link> to comment
+                <h1    className="cursor-none curZ  amsterdam bg-origin-border py-4 text-[#031a2c] curZ  dark:text-[#ffd867] mt-50 text-center w-full text-[3rem] mx-auto mt">
+                    Please <Link href={"/SignIn"}     className="cursor-none text-blue-400 hover:underline  ">SignIn</Link> to comment
                 </h1>
             )}
         </>

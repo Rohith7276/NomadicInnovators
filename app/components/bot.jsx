@@ -22,16 +22,16 @@ export default function App() {
     setIsWebchatOpen((prevState) => !prevState);
   };
   useEffect(() => {
-    const popElement = document.querySelector('.pop');
+    const popElement = document.querySelector(".pop");
     
-      gsap.to(popElement, { width: "13rem", opacity: 1, duration: 0.5});
+      gsap.to(popElement, { width: "14rem", opacity: 1, duration: 0.5});
     
   }, [])
   useEffect(() => {
-    const popElement = document.querySelector('.pop');
+    const popElement = document.querySelector(".pop");
 
     if (closee && popElement) {
-      gsap.to(popElement, { width: 5, paddingLeft:0, paddingRight:0, duration: 0.3, onComplete: () => popElement.style.display = 'none' });
+      gsap.to(popElement, { width: 5, paddingLeft:0, paddingRight:0, duration: 0.3, onComplete: () => popElement.style.display = "none" });
     }
     
   
@@ -42,16 +42,16 @@ export default function App() {
     setClose(true)
   }
   return (
-    <div className="shadow-md">
-      <div className="shadow-lg  fixed pop z-[100] bottom-4 flex gap-2 items-center w-0 text-nowrap overflow-hidden pt-[18px] pb-[18px] pl-[20px] opacity-0 rounded-md pr-[43px] right-[3rem] bg-white text-black">
-        <button className=" bg-blacdfsk absolute flex fl mt-[-3.1rem] ml-[-1.3rem] rounded-full p-0  cursor-pointer text-black" onClick={hide}><TbXboxXFilled className="cursor-pointer" /></button>
-        Hey we&apos;re online<FcCustomerSupport className="text-xl" /></div>
+    <div     className="cursor-none shadow-md">
+      <div     className="cursor-none shadow-lg w-[14rem] fixed pop z-[100] bottom-4 flex gap-2 items-center  text-nowrap overflow-hidden pt-[18px] pb-[18px] pl-[20px] opacity-0 rounded-md pr-[43px] right-[3rem] bg-white text-black">
+        <button     className="cursor-none  bg-blacdfsk absolute flex fl mt-[-3.1rem] ml-[-1.3rem] rounded-full p-0    text-black" onClick={hide}><TbXboxXFilled     className="cursor-none  " /></button>
+        Hey we&apos;re online<FcCustomerSupport     className="cursor-none text-xl" /></div>
       <style>{style}</style>
       <WebchatProvider
         theme={theme}
         client={client}
       >
-        <Fab onClick={toggleWebchat} className="shadfgdw-sm" />
+        <Fab onClick={toggleWebchat}     className="cursor-none shadfgdw-sm" />
         <div
           style={{
             display: isWebchatOpen ? "block" : "none",

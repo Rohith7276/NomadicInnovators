@@ -1,28 +1,27 @@
 "use client"
-import React, { useEffect } from 'react'
-import gsap from 'gsap'
+import React, { useEffect } from "react"
+import gsap from "gsap"
 
 const Cursor = () => {
     useEffect(() => {
-        const cursor = document.querySelector('.custom-cursor')
-        const links = document.querySelectorAll('a')
-        const but = document.querySelectorAll('.curZ')
-        const cursorText = document.querySelector('.cursor-text')
+        const cursor = document.querySelector("#custom-cursor")
+        // const links = document.querySelectorAll("a")
+        const but = document.querySelectorAll(".curZ")
+        const cursorText = document.querySelector(".cursor-text")
 
-        const onMouseMove = (e) => {
-            const { clientX, clientY } = e
+        const onMouseMove = (e) => { 
             gsap.to(cursor, {
-                x: e.clientX,
-                y: e.clientY,
-                duration: 0.5,
+                x: e.clientX-10,
+                y: e.clientY-10, 
+                duration:0
             })
         }
 
         const onMouseEnterLink = (e) => {
             const link = e.target
-            if (link.classList.contains('view')) {
+            if (link.classList.contains("view")) {
                 gsap.to(cursor, { scale: 4 })
-                cursorText.style.display = 'block'
+                cursorText.style.display = "block"
             }
             else {
                 gsap.to(cursor, { scale: 4 })
@@ -30,26 +29,26 @@ const Cursor = () => {
         }
         const onMouseLeaveLink = ( ) => {
             gsap.to(cursor, { scale: 1 })
-            cursorText.style.display = 'none'
+            cursorText.style.display = "none"
         }
-        document.addEventListener('mousemove', onMouseMove)
+        document.addEventListener("mousemove", onMouseMove)
 
-        links.forEach(link => {
-            link.addEventListener('mouseenter', onMouseEnterLink)
+        // links.forEach(link => {
+        //     link.addEventListener("mouseenter", onMouseEnterLink)
 
-            link.addEventListener('mouseleave', onMouseLeaveLink)
+        //     link.addEventListener("mouseleave", onMouseLeaveLink)
 
-        })
-        but.forEach(butt => {
-            butt.addEventListener('mouseenter', onMouseEnterLink)
+        // }) 
+        but.forEach(link => {
+            link.addEventListener("mouseenter", onMouseEnterLink)
 
-            butt.addEventListener('mouseleave', onMouseLeaveLink)
+            link.addEventListener("mouseleave", onMouseLeaveLink)
 
-        })
+        }) 
     }, [])
     return (
-        <div id='custom-cursor' className=" custom-cursor">
-            <span className=' cursor-text'>view</span>
+        <div id="custom-cursor"     className="hidden md:fixed  custom-cursor">
+            <span  className="cursor-text">view</span>
         </div>
     )
 }

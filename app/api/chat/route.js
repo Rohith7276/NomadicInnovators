@@ -1,6 +1,6 @@
 // pages/api/chat.js
-import Groq from 'groq-sdk';
-import {  NextResponse } from 'next/server';
+import Groq from "groq-sdk";
+import {  NextResponse } from "next/server";
 
 const groq = new Groq();
 export async function POST(req){
@@ -28,7 +28,7 @@ async function getResponse(input) {
   });
   var response = ""
   for await (const chunk of chatCompletion) {
-   response += chunk.choices[0]?.delta?.content || '';
+   response += chunk.choices[0]?.delta?.content || "";
   }
   
   return response;

@@ -104,11 +104,11 @@ export default function Navbar() {
         <ul ref={boxRef} className={`absolute ${menu ? "flex" : "hidden"}  gafp-4 flex-col items-start lg:top-0 top-[4rem] p-4 right-0 lg:right-[1rem] w-[12rem] bg-[#cacbc3] dark:bg-[#351a03] lg:flex-row lg:items-center lg:justify-around lg:w-[90vw] lg:h-[4rem]  lg:flex`}>
           <li className='border border-t-0 border-l-0 border-r-0 w-full lg:w-fit py-3 lg:bordver-b-0 border-b-sm lg:border-b-0 flex flex-col justify-end items-center' id='listanim'>
             <Link href="/" >
-              <h2 className='cursor-pointer cursor-none hover:scale-[1.1] duration-300'>Home</h2>
+              <h2 className='  cursor-none hover:scale-[1.1] duration-300'>Home</h2>
             </Link>
           </li>
           <li onClick={()=>setComment(!Comment)} className='border border-t-0 border-l-0 border-r-0 w-full lg:w-fit py-3 border-b-sm lg:border-b-0 flex flex-col justify-end items-center' id='listanim'>
-            <h2 className='cursor-pointer scrl hover:scale-[1.1] curZ duration-300'>Contact</h2>
+            <h2 className='  scrl hover:scale-[1.1] curZ duration-300'>Contact</h2>
           </li>
           <li className='border border-t-0 border-l-0 border-r-0  py-3 lggfd:w-fit border-b-sm lg:border-b-0 w-full lg:w-[10rem]'>
             <Select
@@ -136,14 +136,14 @@ export default function Navbar() {
             <div id="google_translate_element" className='lg:w-fit overflow-hidden mt-[-0.9rem] h-[2rem]'></div>
           </li>
           <li className='border lg:w-fit border-t-0 border-l-0 border-r-0 w-full py-3 border-b-sm lg:border-b-0 flex flex-col justify-end items-center' id='listanim'>
-            <h2 className='cursor-pointer hover:scale-[1.1] scrl duration-300'>About</h2>
+            <h2 className='  hover:scale-[1.1] scrl curZ duration-300'>About</h2>
           </li>
           <li className='border lg:w-fit border-t-0 border-l-0 border-r-0 w-full py-3 border-b-sm lg:border-b-0 flex flex-col justify-end items-center' id='listanim'>
             <ThemeBtn />
           </li>
-          <li className='border lg:w-fit border-t-0 border-l-0  border-r-0 w-full py-3 border-b-sm lg:border-b-0 flex flex-col justify-end cursor-pointer items-center bdfsg-[#cacbc3] text-black dark:text-white' id='listanim'>
-            {user === "null" ? <Link href={"/SignIn"} className='cursor-pointer hover:scale-[1.1] scrl duration-300' >Sign In</Link> :
-              <FaRegUserCircle className='cursor-pointer w-[3rem] h-[1.5rem]' onClick={handleUser} />}
+          <li className='border lg:w-fit border-t-0 border-l-0  border-r-0 w-full py-3 border-b-sm lg:border-b-0 flex flex-col justify-end   items-center bdfsg-[#cacbc3] text-black dark:text-white' id='listanim'>
+            {user === "null" ? <Link href={"/SignIn"} className='  hover:scale-[1.1] scrl duration-300' >Sign In</Link> :
+              <FaRegUserCircle className='  w-[3rem] h-[1.5rem]' onClick={handleUser} />}
             {(userClick && user != null) && <div className='absolute shadow-lg top-[18rem] right-[12rem] bg-[#cacbc3] dark:bg-[#351a03] rounded-l-md lg:rounded-l-none lg:rounded-b-md lg:top-[4rem] lg:-right-[1rem] flex flex-col gap-4 p-4'> {user[0]} <br /> {user[1]} <button className='bg-black text-white dark:bg-yellow-400 rounded-lg dark:text-black font-bold' onClick={handleLogOut}>Logout</button></div>}
           </li>
         </ul>

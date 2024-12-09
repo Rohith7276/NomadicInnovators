@@ -242,7 +242,7 @@ const State = () => {
             </div>
             <div className='lg:bg-gradient-to-r  hidden lg:block ml-[-80vw]  from-black/0 w-[80vw] z-10 right-0 h-[100vh] relative  via-black/85 font-bold vsdia-[#cacbc3cc] tfgdo-[#cacbc3]  to-black leftright opacity-0'></div>
             <div className='text bg-gradient-to-b mt-[-33rem] from-[#00000000] h-fit px-5  lg:px-0 via-black/85 to-black lg:bg-none  lg:mt-0 self-center w-screen lg:w-[45vw] z-20  lg:absolute lg:left-[52vw] lg:h-[100vh] flex flex-col max-h-[80vh] justify-center opacity-0 items-center leftright'>
-              <p className='amsterdam bg-origin-border text-[#a2bac2]  dark:text-yellow-400  mt-50 text-center w-full text-[4rem] mx-auto mt'>
+              <p className='amsterdam bg-origin-border curZ  text-[#a2bac2]  dark:text-yellow-400  mt-50 text-center w-full text-[4rem] mx-auto mt'>
                 {filejson?.states[count]?.state}
               </p>
               <p className='inter bgrnd tex t-black pb-4 lg:pb-0  text-white text-center w-full text-[1.3rem] mx-auto h-fit'>
@@ -252,16 +252,16 @@ const State = () => {
             <div>
             </div>
           </div>
-          <h1 className='amsterdam bg-origin-border pt-10 text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[4rem] mx-auto mt'>
+          <h1 className='amsterdam cur curZ bg-origin-border pt-10 text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[4rem] mx-auto mt'>
             Places to visit
           </h1>
           <SliderComponent />
-          <h1 className='amsterdam bg-origin-border pt-5 lg:pt-0 py-4 text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[4rem] mx-auto mt'>
+          <h1 className='amsterdam cur bg-origin-border curZ pt-5 lg:pt-0 py-4 text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[4rem] mx-auto mt'>
             Culture
           </h1>
           <div className='flex justify-around my-10 flex-wrap'>
             {filejson?.states[count].culture.map((each, index) => (
-              <div id={`culture${index}`} key={each.cultureName} className='flex flex-col lg:flex-row opacity-0 culture border-[2px] dark:border-[#640303] rounded-sm shrink-0 justify-between w-[90vw] md:w-[45vw] m-4 pt-4 lg:pt-0 text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700] '>
+              <div id={`culture${index}`} key={each.cultureName} className='flex  curZ flex-col lg:flex-row opacity-0 culture border-[2px] dark:border-[#640303] rounded-sm shrink-0 justify-between w-[90vw] md:w-[45vw] m-4 pt-4 lg:pt-0 text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700] '>
                 <div className='overflow-hidden flex items-center justify-center lg:w-[126vw]'>
                   <Image src={each.cultureImg} id={`cultureImg${index}`} alt={each.cultureName} width={1000} height={100} className="object-cover float-left px-4 h-[18vh] md:h-[35vh] lg:h-[sdf]  w-fit lg:max-w-[25vw]" />
 
@@ -275,7 +275,7 @@ const State = () => {
           </div>
         
     <section className={`flex shwmr overflow-hidden justify-center my-10 flex-wrap`}>
-      <h1 className='amsterdam bg-origin-border pt-10 text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[3rem] lg:text-[4rem] mx-auto mt'>
+      <h1 className='amsterdam cur bg-origin-border pt-10 text-[#031a2c] curZ  dark:text-yellow-400  mt-50 text-center w-full text-[3rem] lg:text-[4rem] mx-auto mt'>
         Packages
       </h1>
       {
@@ -287,9 +287,9 @@ const State = () => {
 
             </div>}
             <div className='flex flex-col justify-center px-[1rem]   my-6'>
-              <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] dark:text-yellow-400 '>{each.name}</h2>
+              <h2 className='text-2xl h-fit text-center w-full font-bold  curZ text-[#031a2c] dark:text-yellow-400 '>{each.name}</h2>
               <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] dark:text-yellow-400 '>{each.days}</h2>
-              <Link href={each.link} className='cursor-pointer w-full flex justify-center pt-5 items-center' target='_blank'><button className='border  border-whited tracking-wider amsterdam hover:text-white  dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5]   py-1  border-black rounded-[10rem] px-3 cursor-pointer'> View Package </button></Link>
+              <Link href={each.link} className='  w-full flex justify-center pt-5 items-center' target='_blank'><button className='border  border-whited tracking-wider amsterdam cur hover:text-white  dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5]   py-1  border-black rounded-[10rem] px-3  '> View Package </button></Link>
             </div>
           </div>
         ))
@@ -303,10 +303,10 @@ const State = () => {
                 <Image src={each.image} alt={each.placeName} width={1000} height={100} className="object-cover float-left pr-4 h-[18vh] md:h-[35vh] lg:h-[sdf] w-fit lg:max-w-[25vw] placeImg" />
               </div>
               <div className='flex flex-col justify-center px-[1rem] w-full my-6'>
-                <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] dark:text-yellow-400'>{each.name}</h2>
+                <h2 className='text-2xl h-fit text-center curZ  w-full font-bold text-[#031a2c] dark:text-yellow-400'>{each.name}</h2>
                 <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] dark:text-yellow-400'>{each.days}</h2>
-                <Link href={each.link} className='cursor-pointer w-full flex justify-center pt-5 items-center' target='_blank'>
-                  <button className='border border-whited tracking-wider amsterdam hover:text-white dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5] py-1 border-black rounded-[10rem] px-3 cursor-pointer'>View Package</button>
+                <Link href={each.link} className='  w-full flex justify-center pt-5 items-center' target='_blank'>
+                  <button className='border border-whited  curZ tracking-wider amsterdam cur hover:text-white dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5] py-1 border-black rounded-[10rem] px-3  '>View Package</button>
                 </Link>
               </div>
             </div>
@@ -314,10 +314,10 @@ const State = () => {
             <div key={each.name} className='flex-col py-3 mx-4 lg:my-4 lg:py-0 lg:flex-row flex placeDiv items-center overflow-hidden border-[2px] dark:border-[#640303] rounded-sm shrink-0 justify-between w-[90vw] md:w-[45vw] m-4 text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700]'>
 
               <div className='flex flex-col justify-center px-[1rem] w-full my-6'>
-                <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] dark:text-yellow-400'>{each.name}</h2>
+                <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] curZ  dark:text-yellow-400'>{each.name}</h2>
                 <h2 className='text-2xl h-fit text-center w-full font-bold text-[#031a2c] dark:text-yellow-400'>{each.days}</h2>
-                <Link href={each.link} className='cursor-pointer w-full flex justify-center pt-5 items-center' target='_blank'>
-                  <button className='border border-whited tracking-wider amsterdam hover:text-white dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5] py-1 border-black rounded-[10rem] px-3 cursor-pointer'>View Package</button>
+                <Link href={each.link} className='  w-full flex justify-center pt-5 items-center' target='_blank'>
+                  <button className='border border-whited tracking-wider curZ  amsterdam hover:text-white dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5] py-1 border-black rounded-[10rem] px-3  '>View Package</button>
                 </Link>
               </div>
             </div>
@@ -325,9 +325,9 @@ const State = () => {
       }
 
     </section>
-    <button className=' z-10 shdw dark:block hidden' onClick={(e) => handleMore(e)}>show more</button>
-    <button className=' z-10 lightMore dark:hidden' onClick={(e) => handleMore(e)}>show more</button>
-    <h1 className='amsterdam bg-origin-border pt-5 lg:pt-0 py-4 text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[4rem] mx-auto mt-[10vh]'>
+    <button className=' z-10 shdw dark:block hidden curZ ' onClick={(e) => handleMore(e)}>show more</button>
+    <button className=' z-10 lightMore dark:hidden curZ ' onClick={(e) => handleMore(e)}>show more</button>
+    <h1 className='amsterdam bg-origin-border pt-5  curZ lg:pt-0 py-4 text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[4rem] mx-auto mt-[10vh]'>
             Recomended  to visit
           </h1>
           <div className='flex justify-around my-10 flex-wrap'>
@@ -336,9 +336,9 @@ const State = () => {
                 <Image src={filejson?.states[Random.x]?.bigImg} alt={filejson?.states[Random.x]?.state} width={1000} height={100} className="object-cover float-left px-4 h-[18vh] md:h-[35vh] lg:h-[sdf]  w-fit lg:max-w-[25vw]" />
               </div>
               <div className='flex flex-col justify-center gap-2 px-[1rem] my-6'>
-                <h2 className='text-2xl h-fit text-center font-bold text-[#031a2c] dark:text-yellow-400 '> {filejson?.states[Random.x]?.state}</h2>
+                <h2 className='text-2xl h-fit text-center curZ  font-bold text-[#031a2c] dark:text-yellow-400 '> {filejson?.states[Random.x]?.state}</h2>
                 <p className='text-center pt-3'> {filejson?.states[Random.x]?.desc}</p>
-                <div  className='cursor-pointer w-full flex justify-center pt-5 items-center' target='_blank'><button className='border  border-whited tracking-wider amsterdam hover:text-white  dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5]   py-1  border-black rounded-[10rem] px-3 cursor-pointer' onClick={( ) => {
+                <div  className='  w-full curZ  flex justify-center pt-5 items-center' target='_blank'><button className='border  border-whited tracking-wider amsterdam hover:text-white  dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5]   py-1  border-black rounded-[10rem] px-3  ' onClick={( ) => {
                 dispatch(setCount(Random.x));
                 // window.location.reload();
                 router.push('/States');
@@ -352,9 +352,9 @@ const State = () => {
                 <Image src={filejson?.states[Random.y]?.bigImg} alt={filejson?.states[Random.y]?.state} width={1000} height={100} className="object-cover float-left px-4 h-[18vh] md:h-[35vh] lg:h-[sdf]  w-fit lg:max-w-[25vw]" />
               </div>
               <div className='flex flex-col justify-center gap-2 px-[1rem] my-6'>
-                <h2 className='text-2xl h-fit text-center font-bold text-[#031a2c] dark:text-yellow-400 '> {filejson?.states[Random.y]?.state}</h2>
+                <h2 className='text-2xl h-fit text-center font-bold text-[#031a2c] curZ  dark:text-yellow-400 '> {filejson?.states[Random.y]?.state}</h2>
                 <p className='text-center pt-3'> {filejson?.states[Random.y]?.desc}</p>
-                <div  className='cursor-pointer w-full flex justify-center pt-5 items-center' target='_blank'><button className='border  border-whited tracking-wider amsterdam hover:text-white  dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5]   py-1  border-black rounded-[10rem] px-3 cursor-pointer' onClick={( ) => {
+                <div  className='  w-full flex  curZ justify-center pt-5 items-center' target='_blank'><button className='border  border-whited tracking-wider amsterdam hover:text-white  dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5]   py-1  border-black rounded-[10rem] px-3  ' onClick={( ) => {
                 dispatch(setCount(Random.y));
                 // window.location.reload();
                 router.push('/States');
@@ -364,7 +364,7 @@ const State = () => {
           </div>
             
     <div className='pb-10'>
-      <h1 className='amsterdam bg-origin-border  text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[4rem] mx-auto mt'>
+      <h1 className='amsterdam bg-origin-border  curZ  text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[4rem] mx-auto mt'>
         COMMENTS
       </h1>
       <CommentForm />
