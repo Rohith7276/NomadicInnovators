@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
             <Provider store={store}>
                 <Navbar />
 
-                <section    className="cursor-none min-h-screen dark:bg-black bg-gray-100 ">
+                <section    className="  min-h-screen dark:bg-black bg-gray-100 ">
                 {children}
                 </section>
                 <Footer />

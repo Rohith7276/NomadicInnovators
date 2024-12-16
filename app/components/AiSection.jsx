@@ -51,12 +51,12 @@ const AiSection = () => {
         animation();
     }, [])
     return (
-        <div  className="cursor-none   aisec h-[110vh] py-[3rem] backdrop-blur-lg bg-[#00000033]">
-            <h1 id="textanim"    className="cursor-none curZ amsterdam opacity-0 bg-origin-border py-4 text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[3rem] lg:text-[4rem] mx-auto mt">
+        <div  className="    aisec h-[110vh] py-[3rem] backdrop-blur-lg bg-[#00000033]">
+            <h1 id="textanim"    className="  curZ amsterdam opacity-0 bg-origin-border py-4 text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[3rem] lg:text-[4rem] mx-auto mt">
 
             </h1>
-            <div  className="cursor-none  h-fit bg-grday-900 w-screen">
-                <div  className="cursor-none para">
+            <div  className="   h-fit bg-grday-900 w-screen">
+                <div  className="  para">
                     <Temp />
                 </div>
             </div>

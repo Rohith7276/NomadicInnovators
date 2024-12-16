@@ -30,30 +30,30 @@ const CommentList = () => {
     };
     return (
 <>
-        <div     className="cursor-none comment-list dark:hidden  lightscroll overflow-scroll min-h-[20vh] max-h-[50vh]  text-black dark:text-white bg-white shdfadow-lg dark:bg-[#1e0700]   my-4" style={{ padding: "10px" , borderRadius: "5px" }}>
+        <div     className="  comment-list dark:hidden  lightscroll overflow-scroll min-h-[20vh] max-h-[50vh]  text-black dark:text-white bg-white shdfadow-lg dark:bg-[#1e0700]   my-4" style={{ padding: "10px" , borderRadius: "5px" }}>
             {comments.length ? comments.map((comment) => (
-                <div key={comment.id}     className="cursor-none comment flex  border-black dark:border-[#640303] border justify-between text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700]" style={{ marginBottom: "10px", padding: "10px" , borderRadius: "5px" }}>
+                <div key={comment.id}     className="  comment flex  border-black dark:border-[#640303] border justify-between text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700]" style={{ marginBottom: "10px", padding: "10px" , borderRadius: "5px" }}>
                     <div>
-                        {comment.user === user ? <h1     className="cursor-none text-green-600">You</h1> : <h1     className="cursor-none text-gray-400">{comment.user}</h1>}
+                        {comment.user === user ? <h1     className="  text-green-600">You</h1> : <h1     className="  text-gray-400">{comment.user}</h1>}
                     <p style={{ margin: "0 0 5px 0" }}>{comment.content}</p>
-                    <small     className="cursor-none text-gray-500" >{comment.timestamp?.toDate().toLocaleString()}</small>
+                    <small     className="  text-gray-500" >{comment.timestamp?.toDate().toLocaleString()}</small>
                         </div>
-                    {comment.user === user && <button     className="cursor-none  curZ  " onClick={() => handleDelete(comment.id)}><MdDelete     className="cursor-none   w-[1.6rem]"/></button>}
+                    {comment.user === user && <button     className="   curZ  " onClick={() => handleDelete(comment.id)}><MdDelete     className="    w-[1.6rem]"/></button>}
                 </div>
-            )) : <div     className="cursor-none text-black flex h-[20vh] w-full justify-center items-center"> No comments yet</div>}
+            )) : <div     className="  text-black flex h-[20vh] w-full justify-center items-center"> No comments yet</div>}
 
         </div>
-        <div     className="cursor-none comment-list hidden dark:block scroll overflow-scroll min-h-[20vh] max-h-[50vh]  text-black dark:text-white bg-white shdfadow-lg dark:bg-[#1e0700]   my-4" style={{ padding: "10px" , borderRadius: "5px" }}>
+        <div     className="  comment-list hidden dark:block scroll overflow-scroll min-h-[20vh] max-h-[50vh]  text-black dark:text-white bg-white shdfadow-lg dark:bg-[#1e0700]   my-4" style={{ padding: "10px" , borderRadius: "5px" }}>
             {comments.length ? comments.map((comment) => (
-                <div key={comment.id}     className="cursor-none comment flex  border-black dark:border-[#640303] border justify-between text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700]" style={{ marginBottom: "10px", padding: "10px" , borderRadius: "5px" }}>
+                <div key={comment.id}     className="  comment flex  border-black dark:border-[#640303] border justify-between text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700]" style={{ marginBottom: "10px", padding: "10px" , borderRadius: "5px" }}>
                     <div>
-                    {comment.user === user ? <h1     className="cursor-none text-green-600">You</h1> : <h1     className="cursor-none text-gray-400">{comment.user}</h1>}
+                    {comment.user === user ? <h1     className="  text-green-600">You</h1> : <h1     className="  text-gray-400">{comment.user}</h1>}
                     <p style={{ margin: "0 0 5px 0" }}>{comment.content}</p>
-                    <small     className="cursor-none text-yellow-100" >{comment.timestamp?.toDate().toLocaleString()}</small>
+                    <small     className="  text-yellow-100" >{comment.timestamp?.toDate().toLocaleString()}</small>
                     </div>
-                    {comment.user === user && <button     className="cursor-none  curZ  "  onClick={() => handleDelete(comment.id)}><MdDelete     className="cursor-none   w-[1.6rem]"/></button>}
+                    {comment.user === user && <button     className="   curZ  "  onClick={() => handleDelete(comment.id)}><MdDelete     className="    w-[1.6rem]"/></button>}
                 </div>
-            )) : <div     className="cursor-none text-black flex h-[20vh] w-full justify-center items-center"> No comments yet</div>}
+            )) : <div     className="  text-black flex h-[20vh] w-full justify-center dark:text-white items-center"> No comments yet</div>}
 
         </div>
         </>

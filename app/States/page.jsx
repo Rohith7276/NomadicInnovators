@@ -3,7 +3,7 @@ import React from "react"
 import States from "../components/State.jsx";
 const page = () => {
   return (
-    <div    className="cursor-none bg-gray-100">
+    <div    className="  bg-gray-100">
       <States />
     </div>
   )

@@ -29,7 +29,7 @@ return (
                     </label>
                     <input 
                         placeholder='username' 
-                        className='shdfadow appearance-none  bg-white text-black dark:bg-[#1e0700] border rounded w-full py-2 px-3 dark:text-white leading-tight focus:outline-none focus:shadow-outline' 
+                        className='shdfadow appearance-none  bg-white text-black dark:bg #1e0700] border rounded w-full py-2 px-3 dark:t ext-white leading-tight focus:outline-none focus:shadow-outline' 
                         {...register("username", { required: {value: true, message: "This field is required"}, minLength: {value: 3, message: "Min length is 3"} })} 
                         type="text"   
                     />
@@ -41,16 +41,16 @@ return (
                     </label>
                     <input 
                         placeholder='password'  
-                        className='shadow appearance-none bg-white dark:bg-[#1e0700] border rounded w-full py-2 px-3 text-black dark:text-white mb-3 leading-tight focus:outline-none focus:shadow-outline' 
+                        className='shadow appearance-none bg-white d [#1e0700] border rounded w-full py-2 px-3 text-black da ext-white mb-3 leading-tight focus:outline-none focus:shadow-outline' 
                         {...register("password", {minLength: {value: 7, message: "Min length of password is 7"},})} 
                         type="password"
                     />
                     {errors.password && <div className='text-red-500 text-xs italic'>{errors.password.message}</div>}
                 </div> 
-                <div className="flex items-center justify-between amsterdam tracking-widest rounded-[10rem] bg-[#031a2c]  dark:bg-yellow-600 w-fit  ">
+                <div className="flex items-center justify-between amsterdam tracking-widest rounded-[10rem] bg-[#031a2c] text-white dark:bg-yellow-600 w-fit  ">
                     <input 
                         disabled={isSubmitting} 
-                        className=' bg-white dark:bg-[#1e0700] text-white dark:text-white font-b old py-1 px-4 rounded   focus:outline-none focus:shadow-outline' 
+                        className=' bg-whi te   text-b lack   font-b old py-1 px-4 rounded   focus:outline-none focus:shadow-outline' 
                         type="submit" 
                         value="Submit" 
                     />

@@ -5,7 +5,7 @@ import gsap from "gsap"
 const Cursor = () => {
     useEffect(() => {
         const cursor = document.querySelector("#custom-cursor")
-        // const links = document.querySelectorAll("a")
+        const links = document.querySelectorAll("a")
         const but = document.querySelectorAll(".curZ")
         const cursorText = document.querySelector(".cursor-text")
 
@@ -33,12 +33,12 @@ const Cursor = () => {
         }
         document.addEventListener("mousemove", onMouseMove)
 
-        // links.forEach(link => {
-        //     link.addEventListener("mouseenter", onMouseEnterLink)
+        links.forEach(link => {
+            link.addEventListener("mouseenter", onMouseEnterLink)
 
-        //     link.addEventListener("mouseleave", onMouseLeaveLink)
+            link.addEventListener("mouseleave", onMouseLeaveLink)
 
-        // }) 
+        }) 
         but.forEach(link => {
             link.addEventListener("mouseenter", onMouseEnterLink)
 
@@ -47,7 +47,7 @@ const Cursor = () => {
         }) 
     }, [])
     return (
-        <div id="custom-cursor"     className="hidden md:fixed  custom-cursor">
+        <div id="custom-cursor"     className="hidden   lg:flex  custom-cursor">
             <span  className="cursor-text">view</span>
         </div>
     )

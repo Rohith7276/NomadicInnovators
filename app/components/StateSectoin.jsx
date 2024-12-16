@@ -15,6 +15,7 @@ import { gsap } from 'gsap';
 import { useEffect } from 'react';
 import Loader from './Loader'
 const StateSectoin = (data) => {
+  
   const [theme, setTheme] = useState("light")
   const [filejson, setfilejson] = useState(data.data)
   const [Loading, setLoading] = useState(false)
@@ -125,7 +126,7 @@ const StateSectoin = (data) => {
           <div id={`scale${index}`} onClick={() => dispatch(setCount(index))} className={index % 2 ? 'flex-col py-3 lg:py-0 lg:flex-row shadow-lg bg-white text-black  dark:text-white dark:bg-[#351a03] opacity-0 px-2 pfy-2 rounded-md w-[80vw] flex justify-around items-center gap-4 m-6 h-fit animates' : 'flex-col py-3 lg:py-0 lg:flex-row shadow-lg bg-white text-black  dark:text-white dark:bg-[#351a03] opacity-0 rounded-md w-[80vw] scalediv m-6 h-fit flex gap-6 justify-around items-center p-2'}>
             <Image loading='lazy' src={item.PortraitImg} alt={`${item.state} portrait`} width={200} height={300} className=' h-[15rem]' />
             <div className='flex justify-around text-2xl h-full gap-3 text-center flex-col'>
-              <h2 className='text-[#031a2c] dark:text-yellow-400 textdiv text-3xl font-bold '>
+              <h2 className='text-[#031a2c] amsterdam  dark:text-yellow-400 textdiv text-4xl tracking-widest font-bold '>
                 {item.state}
               </h2>
               <p className='text-sm px-3 lg:px-0 lg:text-xl'>
@@ -154,7 +155,7 @@ const StateSectoin = (data) => {
                 )}
               </div>
               <div className='flex flex-col justify-center px-[1rem]   my-6'>
-                <h2 className='text-2xl h-fit text-center font-bold text-[#031a2c] dark:text-yellow-400 '>{each.placeName}</h2>
+                <h2 className=' l h-fit text-center font-bold amsterdam text-4xl tracking-wider text-[#031a2c] dark:text-yellow-400 '>{each.placeName}</h2>
                 <p className='text-center px-5 lg:px-0 lg:pt-3'>{each.desc}</p>
                 {window.innerWidth < 700 && (
                   <Link href={each.hotel} className='  w-full flex justify-center pt-5 items-center' target='_blank'><button className='border  border-whited tracking-wider amsterdam hover:text-white  dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5]   py-1  border-black rounded-[10rem] px-3  '> Book Hotels </button></Link>
@@ -173,13 +174,13 @@ const StateSectoin = (data) => {
       <div className='overflow-hidden w-fit h-fit'>
         {/* <StarsCanvas /> */}
         <section className='flex flex-col items-center my-10 p-6  text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700] dark:border-[#640303] border-[2px]  w-[90vw] md:w-[70vw]'>
-          <h2 className='text-3xl font-bold text-[#031a2c] dark:text-yellow-400  mb-4'>About Tour De India</h2>
+          <h2 className=' tex -3xl font-bold text-[#031a2c] dark:text-yellow-400 py-4  mb-4 amsterdam text-5xl tracking-wider'>About Tour De India</h2>
           <p className='text-lg dark:text-white text-center'>
             Tour De India is dedicated to helping travelers discover the beauty and diversity of India. Our platform provides detailed information on various states&#39; cultural experiences&#39; and travel packages to ensure that every traveler finds their perfect adventure. Whether you&apos;re looking for historical landmarks&#39; natural wonders&#39; or vibrant festivals&#39; Tour De India has something for everyone. Join us in exploring the incredible landscapes and rich heritage of India&#39; and make your journey unforgettable.
           </p>
-        </section>
+        </section> 
         <section className='flex flex-col items-center my-10 p-6  text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700] dark:border-[#640303] border-[2px] w-[90vw] md:w-[70vw]'>
-          <h2 className='text-3xl font-bold text-[#031a2c] dark:text-yellow-400 mb-4'>Why Choose Tour De India?</h2>
+          <h2 className='tex t-3xl font-bold py-4 text-[#031a2c] dark:text-yellow-400 mb-4 amsterdam text-5xl tracking-wider'>Why Choose Tour De India?</h2>
           <p className='text-lg dark:text-white text-center'>
             At Tour De India, we believe in providing a seamless and enriching travel experience. Our team of experts curates the best travel packages&#39; ensuring that you get the most out of your trip. We offer personalized recommendations&#39; 24/7 customer support&#39; and a user-friendly platform to make your travel planning hassle-free. With Tour De India&#39; you can explore hidden gems&#39; enjoy authentic local experiences&#39; and create memories that will last a lifetime. Choose us for a journey that goes beyond the ordinary.
             <br />

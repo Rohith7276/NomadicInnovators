@@ -61,14 +61,14 @@ function ChatApp() {
         const sanitizedHtml = DOMPurify.sanitize(htmlString);
 
         return (
-            <div     className="cursor-none aiRes opacity-0 " dangerouslySetInnerHTML={{ __html: sanitizedHtml }} />
+            <div     className="  aiRes opacity-0 " dangerouslySetInnerHTML={{ __html: sanitizedHtml }} />
         );
     };
     return (
         <div>
-            <div    className="cursor-none  rounded-md m-auto w-fit px-3 h-fit bg-[#031a2c] dark:bg-[#4F2109] flex justify-center items-center">
+            <div    className="   rounded-md m-auto w-fit px-3 h-fit bg-[#031a2c] dark:bg-[#4F2109] flex justify-center items-center">
 
-                <textarea    className="cursor-none w-[60vw] lg:w-[47vw] p-[0.5rem] h-fidfst  h-[2.5rem] bg-[#031a2c] dark:bg-[#4F2109] resize-none self-center outline-none"
+                <textarea    className="  w-[60vw] lg:w-[47vw] p-[0.5rem] h-fidfst  h-[2.5rem] bg-[#031a2c] dark:bg-[#4F2109] resize-none self-center outline-none"
                     value={input}
                     onKeyDown={e => {
                         if (e.key === "Enter") {
@@ -80,15 +80,15 @@ function ChatApp() {
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Enter the place name here..."
                 />
-                <button onClick={handleSendMessage}    className="cursor-none text-white  curZ dark:text-yellow-400  "><IoSend className=" curZ "/></button>
+                <button onClick={handleSendMessage}    className="  text-white  curZ dark:text-yellow-400  "><IoSend className=" curZ "/></button>
             </div>
-            {loading && <div    className="cursor-none absolute ml-[45vw] mt-[7rem] "><Loader /></div>}
-            <div    className="cursor-none h-[60vh] my-6 px-4 scrollBrown hidden dark:block overflow-y-scroll  w-[80vw] py-7 m-auto">
+            {loading && <div    className="  absolute ml-[45vw] mt-[7rem] "><Loader /></div>}
+            <div    className="  h-[60vh] my-6 px-4 scrollBrown hidden dark:block overflow-y-scroll  w-[80vw] py-7 m-auto">
                 {response.map((item, index) => {
                     let formattedItem = item;
                     let isBold = true;
                     while (formattedItem.includes("**")) {
-                        formattedItem = formattedItem.replace("**", isBold ? `<span     className="cursor-none aibold">` : `</span>`);
+                        formattedItem = formattedItem.replace("**", isBold ? `<span     className="  aibold">` : `</span>`);
                         isBold = !isBold;
                     }
                     return (
@@ -99,12 +99,12 @@ function ChatApp() {
                     );
                 })}
             </div>
-            <div    className="cursor-none h-[60vh] dark:hidden my-6 px-4 scrollLight overflow-y-scroll  w-[80vw] py-7 m-auto">
+            <div    className="  h-[60vh] dark:hidden my-6 px-4 scrollLight overflow-y-scroll  w-[80vw] py-7 m-auto">
                 {response.map((item, index) => {
                     let formattedItem = item;
                     let isBold = true;
                     while (formattedItem.includes("**")) {
-                        formattedItem = formattedItem.replace("**", isBold ? `<span     className="cursor-none aibold2">` : `</span>`);
+                        formattedItem = formattedItem.replace("**", isBold ? `<span     className="  aibold2">` : `</span>`);
                         isBold = !isBold;
                     }
                     return (

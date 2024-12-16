@@ -42,16 +42,16 @@ export default function App() {
     setClose(true)
   }
   return (
-    <div     className="cursor-none shadow-md">
-      <div     className="cursor-none shadow-lg w-[14rem] fixed pop z-[100] bottom-4 flex gap-2 items-center  text-nowrap overflow-hidden pt-[18px] pb-[18px] pl-[20px] opacity-0 rounded-md pr-[43px] right-[3rem] bg-white text-black">
-        <button     className="cursor-none  bg-blacdfsk absolute flex fl mt-[-3.1rem] ml-[-1.3rem] rounded-full p-0    text-black" onClick={hide}><TbXboxXFilled     className="cursor-none  " /></button>
-        Hey we&apos;re online<FcCustomerSupport     className="cursor-none text-xl" /></div>
+    <div     className="  shadow-md">
+      <div     className="  shadow-lg w-[14rem] fixed pop z-[100] bottom-4 flex gap-2 items-center  text-nowrap overflow-hidden pt-[18px] pb-[18px] pl-[20px] opacity-0 rounded-md pr-[43px] right-[3rem] bg-white text-black">
+        <button     className="   bg-blacdfsk absolute flex fl mt-[-3.1rem] ml-[-1.47rem] rounded-full p-0    text-black" onClick={hide}><TbXboxXFilled     className="   " /></button>
+        Hey we&apos;re online<FcCustomerSupport     className="  text-xl" /></div>
       <style>{style}</style>
       <WebchatProvider
         theme={theme}
         client={client}
       >
-        <Fab onClick={toggleWebchat}     className="cursor-none shadfgdw-sm" />
+        <Fab onClick={toggleWebchat}     className="  shadfgdw-sm" />
         <div
           style={{
             display: isWebchatOpen ? "block" : "none",

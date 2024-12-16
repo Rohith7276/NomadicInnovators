@@ -2,19 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 :root{
-  cursor: none;
+   
 }
 button{
-  cursor: none !important;
+   
 }
 input{
-  cursor: none !important;
+   
 }
 div{
-  cursor: none !important;
+   
 }
 select{
-  cursor: none !important;
+   
 }
  
 .custom-cursor{
@@ -29,7 +29,7 @@ select{
   pointer-events: none;
   z-index: 9999;
   padding: 10px;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
 
@@ -43,12 +43,12 @@ select{
 a{
   color: inherit;
   text-decoration: none;
-  cursor: none;
+   
 }
 .curZ{
   /* color: inherit; */
   text-decoration: none;
-  /* cursor: none; */
+  /*   */
 }
 :root {
   --foreground-rgb: 0, 0, 0;
