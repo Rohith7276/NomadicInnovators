@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { MdDelete } from "react-icons/md";
 import { collection, query, orderBy, onSnapshot, deleteDoc, doc } from "firebase/firestore"; 
-import { fireDB } from "../firebase/firebaseConfig"
+import { fireDB } from "../app/firebase/firebaseConfig"
 import { useSelector } from "react-redux"
 
 const CommentList = () => {

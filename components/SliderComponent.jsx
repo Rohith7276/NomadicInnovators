@@ -6,28 +6,18 @@ import Loader from "./Loader";
 import { useSelector, useDispatch } from 'react-redux'
 import "react-slideshow-image/dist/styles.css";
 
-import { fireDB } from '../firebase/firebaseConfig'
+import { fireDB } from '../app/firebase/firebaseConfig'
 import { collection, getDocs } from 'firebase/firestore'
 
-const SliderComponent = () => {
-  const [filejson, setfilejson] = useState({})
+const SliderComponent = ({data}) => { 
   const [hover, setHover] = useState(false);
-  const [map, setmap] = useState(false);
-  const [FetchData, setFetchData] = useState(true)
-
-  const dataFetch = async () => {
-    let x = await getDocs(collection(fireDB, 'jsonData'));
-    setfilejson(x. docs[0].data())
-    setFetchData(false)
-
-  }
-  useEffect(() => { dataFetch() }, [])
+  const [map, setmap] = useState(false); 
+ 
 
 
 
 
-  const slide = useRef()
-  const count = useSelector(state => state.counter.value)
+  const slide = useRef() 
 
   const zoomInProperties = {
     duration: hover ? 30000000 : 3043300,
@@ -67,10 +57,10 @@ const SliderComponent = () => {
   };
 
   return (<>
-    {FetchData? <div><Loader/></div> :   <div className="flex  mb-7 lg:my-7 justify-center items-center cursor-default mx-4">
+    {   <div className="flex  mb-7 lg:my-7 justify-center items-center cursor-default mx-4">
       <div ref={slide} className=" w-full ">
         <Slide {...zoomInProperties}>
-          {filejson?.states[count]?.placesToVisit.map((each, index) => (
+          {data?.placesToVisit.map((each, index) => (
             <div key={index} className="flex h-[77vh] margin: 0 0 0 59.7rem; items-center w-[80vw] m-auto lg:w-[89vw]  gap-5 mx-11 border dark:border-[#5e1e0b] rounded-lg  text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700]" style={{ margin: "auto" }}>
 
               <div className="flex flex-col  h-full ligfhtscroll dark:hidden justify-around overflow-hidden gap-3">

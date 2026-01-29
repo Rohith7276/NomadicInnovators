@@ -1,7 +1,7 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import React from 'react'
 import { useForm } from "react-hook-form"
-import { auth } from '../firebase/firebaseConfig';
+import { auth } from '../app/firebase/firebaseConfig';
 import { useRouter } from 'next/navigation';
 
 const SignIn = () => {

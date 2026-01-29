@@ -1,7 +1,7 @@
 "use client"
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer";
 import dynamic from "next/dynamic";
-import Navbar from "../components/Navbar.jsx"
+import Navbar from "../../components/Navbar.jsx"
 import { ThemeProvider } from "@/app/contexts/themes";
 
 import store from "../redux/store";

@@ -1,18 +1,18 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import LOGO from "../../public/images/LOGO.svg";
-import LOGO2 from "../../public/images/LOGO2.jpg";
+import LOGO from "../public/images/LOGO.svg";
+import LOGO2 from "../public/images/LOGO2.jpg";
 import Select from "react-dropdown-select";
 import { deleteDoc } from 'firebase/firestore';
 import Image from "next/image";
 import Contact from "./contact.jsx"
 import Link from 'next/link';
 import { useDispatch } from 'react-redux'
-import { setCount } from '../redux/counter/counterSlice';
+import { setCount } from '../app/redux/counter/counterSlice';
 import SearchBar from "./searchBar"
-import { fireDB } from '../firebase/firebaseConfig'
-import { collection, getDocs, doc } from 'firebase/firestore' 
+import { fireDB } from '../app/firebase/firebaseConfig'
+import { collection, getDocs, doc } from 'firebase/firestore'
 import { CiMenuBurger } from "react-icons/ci";
 import ThemeBtn from './themeBtn'
 import { FaRegUserCircle } from "react-icons/fa";
@@ -24,18 +24,15 @@ export default function Navbar() {
   const [userClick, setUserClick] = useState(false)
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
-    if (storedUser) { 
-      setuser([JSON.parse(storedUser).name, JSON.parse(storedUser).email]);
+    try {
+      if (storedUser) {
+        setuser([JSON?.parse(storedUser)?.name, JSON.parse(storedUser).email]);
+      }
     }
-
-  }, [])
-  const [filejson, setfilejson] = useState({})
+    catch (error){ console.log(error)}
+  }, []) 
   const [Comment, setComment] = useState(false)
-  const dataFetch = async () => {
-    let x = await getDocs(collection(fireDB, 'jsonData'));
-    setfilejson(x. docs[0].data())
-  }
-  useEffect(() => { dataFetch() }, [])
+  
 
   useEffect(() => {
     const googleTranslateElementInit = () => {
@@ -45,7 +42,7 @@ export default function Navbar() {
           'google_translate_element'
         );
       }
-     
+
     };
 
 
@@ -84,8 +81,7 @@ export default function Navbar() {
       console.error("Error deleting user: ", error);
     }
     window.location.reload();
-  };
-  const options = filejson?.states?.map((each, index) => { return { id: index, name: each.state } })
+  }; 
   const [menu, setmenu] = useState(false)
   const handleMenu = () => {
     setmenu(!menu)
@@ -93,7 +89,7 @@ export default function Navbar() {
   return (
     <>
 
-    
+
       <nav className='bg-[#cacbc3]  text-black dark:text-white dark:bg-[#351a03] pl-4 h-[4rem] flex  overdfflow-hidden lg:flex-row items-center justify-between lg:justify-start shadow-md shadow-gray-700   dark:shadow-md dark:shadow-black sticky top-0 w-full z-[100] backdrop-filter backdrop-blur-sm'>
         <div className='flex items-center bdfsg-[#351a03] w-fit justify-between lg:w-fit'>
           <Image class src={LOGO} className="hidden dark:block" width={90} alt="Logo" />
@@ -108,7 +104,7 @@ export default function Navbar() {
               <h2 className='    hover:scale-[1.1] duration-300'>Home</h2>
             </Link>
           </li>
-          <li onClick={()=>setComment(!Comment)} className='border border-t-0 border-l-0 border-r-0 w-fit lg:w-fit py-3 border-b-sm lg:border-b-0 flex flex-col justify-end items-center' id='listanim'>
+          <li onClick={() => setComment(!Comment)} className='border border-t-0 border-l-0 border-r-0 w-fit lg:w-fit py-3 border-b-sm lg:border-b-0 flex flex-col justify-end items-center' id='listanim'>
             <h2 className='  scrl hover:scale-[1.1] curZ duration-300'>Contact</h2>
           </li>
           <li className='border border-t-0 border-l-0 border-r-0  py-3 lggfd:w-fit border-b-sm lg:border-b-0 w-full lg:w-[10rem]'>
@@ -131,7 +127,7 @@ export default function Navbar() {
                 router.push('/States');
               }}
             /> */}
-            <SearchBar/>
+            <SearchBar />
           </li>
           <li className='border border-t-0 border-l-0 border-r-0   py-1 lggfd:w-fit border-b-sm lg:border-b-0 w-full lg:w-fit'>
 
@@ -150,8 +146,8 @@ export default function Navbar() {
           </li>
         </ul>
       </nav>
-     {Comment && <section className="contact">
-              <Contact/>
+      {Comment && <section className="contact">
+        <Contact />
       </section>}
     </>
   );

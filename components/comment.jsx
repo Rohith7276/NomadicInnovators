@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { fireDB } from "../firebase/firebaseConfig";
+import { fireDB } from "../app/firebase/firebaseConfig";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 

@@ -1,7 +1,7 @@
 "use client"
 import React from "react"
 import Background from "../../public/images/homeImg.jpg"
-import { auth, provider,  signInWithPopup } from "../firebase/firebaseConfig"
+import { auth, provider,  signInWithPopup } from "../app/firebase/firebaseConfig"
 import Background2 from "../../public/images/homeImg2.jpg"
 import Image from "next/image"
 import { FaHome } from "react-icons/fa";

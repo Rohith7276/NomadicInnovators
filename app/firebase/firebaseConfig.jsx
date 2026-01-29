@@ -6,13 +6,13 @@ import {getAuth} from "firebase/auth"
 import {signInWithPopup} from "firebase/auth" 
 import { GoogleAuthProvider } from "firebase/auth";
 const firebaseConfig = {
-  apiKey: "AIzaSyBTSmLFd3Jf8KEaOxzFJlVNSvV-7T7AFd0",
+  apiKey: "AIzaSyDQTtLTp-gsu-7Sx7dNws6sKrpAGNHPIgQ",
   authDomain: "travel-d4acf.firebaseapp.com",
   projectId: "travel-d4acf",
-  storageBucket: "travel-d4acf.appspot.com",
+  storageBucket: "travel-d4acf.firebasestorage.app",
   messagingSenderId: "1026654936314",
-  appId: "1:1026654936314:web:316f2976f21c547f427d43",
-  measurementId: "G-M3P6PZE29P"
+  appId: "1:1026654936314:web:7dbf3d6b46bb46bd427d43",
+  measurementId: "G-Z7T16EVF7F"
 };
 
 // Initialize Firebase

@@ -15,7 +15,7 @@ const AiSection = () => {
             var headding = document.getElementById("textanim");
         const textArr = text.split("")
         textArr.forEach(item => {
-            headding.innerHTML += `<span class="animChar">${item}</span>`
+            headding.innerHTML += `<span className="animChar">${item}</span>`
         });
         if (typeof document != "undefined") {
             var message = document.querySelectorAll(".bpMessageBlocksBubble")

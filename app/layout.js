@@ -1,10 +1,10 @@
 
 import { Gowun_Batang } from "next/font/google";
 import "./globals.css";
-import Cursor from './components/Cursor';
+import Cursor from '../components/Cursor';
 import dynamic from 'next/dynamic';
-import SessionWrapper from "./components/SessionWrapper";
-const Bot = dynamic(() => import('./components/bot'), { ssr: false });
+import SessionWrapper from "../components/SessionWrapper";
+const Bot = dynamic(() => import('../components/bot'), { ssr: false });
 
 const inter = Gowun_Batang({ subsets: ["latin"], weight: ['400', '700'], });
 

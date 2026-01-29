@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import React from 'react'
 import { useForm } from "react-hook-form"
-import {auth, fireDB} from '../firebase/firebaseConfig' 
+import {auth, fireDB} from '../app/firebase/firebaseConfig' 
 import { addDoc, collection } from 'firebase/firestore';
 import { useRouter } from 'next/navigation';
 import { v4 as uuidv4 } from 'uuid';

@@ -7,23 +7,25 @@ import Image from 'next/image'
 import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { setCount } from '../redux/counter/counterSlice';
+import { setCount } from '../app/redux/counter/counterSlice';
  
 gsap.registerPlugin(ScrollTrigger);
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap';
 import { useEffect } from 'react';
 import Loader from './Loader'
-const StateSectoin = (data) => {
+
+
+const StateSectoin = (data ) => {
   
-  const [theme, setTheme] = useState("light")
-  const [filejson, setfilejson] = useState(data.data)
+  const [theme, setTheme] = useState("light") 
   const [Loading, setLoading] = useState(false)
   const image = useRef(null)
   const imghov = useRef(false)
   const { contextSafe } = useGSAP();
   useEffect(() => {
     let x = localStorage.getItem("themeMode")
+    console.log(data.data)
     setTheme(x)
   }, [])
 
@@ -66,21 +68,21 @@ const StateSectoin = (data) => {
   const [showMore, setShowMore] = useState(4)
   const handleMore = (e) => {
 
-    if (showMore + 4 < filejson.IndiaPackages.length) {
+    if (showMore + 4 < data.data?.IndiaPackages.length) {
       window.scrollBy({
         top: 500,
         behavior: 'smooth'
       });
       setShowMore(showMore + 4);
-      setShowMore(showMore + (4 - filejson.IndiaPackages.length % 4))
+      setShowMore(showMore + (4 - data.data?.IndiaPackages.length % 4))
      
     }
-    else if (showMore == filejson.IndiaPackages.length) {
+    else if (showMore == data.data?.IndiaPackages.length) {
       document.querySelector('.shwmr').scrollIntoView({
         behavior: 'smooth'
       });
       setShowMore(4)
-      // setShowMore(showMore + (4 - filejson.IndiaPackages.length % 4))
+      // setShowMore(showMore + (4 - data.data.IndiaPackages.length % 4))
       document.querySelectorAll(".shdw").forEach(element => {
         element.innerHTML = "show more";
       });
@@ -93,7 +95,7 @@ const StateSectoin = (data) => {
         top: 500,
         behavior: 'smooth'
       });
-      setShowMore(showMore + (4 - filejson.IndiaPackages.length % 4))
+      setShowMore(showMore + (4 - data.data.IndiaPackages.length % 4))
       document.querySelectorAll(".shdw").forEach(element => {
         element.innerHTML = "show less";
       });
@@ -105,10 +107,8 @@ const StateSectoin = (data) => {
 
   useEffect(() => {
     animation();
-
-    setfilejson(data.data)
-
-  }, [data]);
+  
+  }, []);
 
   const dispatch = useDispatch()
 
@@ -121,7 +121,7 @@ const StateSectoin = (data) => {
         </div >}
       </div>
 
-      {filejson.states?.map((item, index) => (
+      {data.data.states?.map((item, index) => (
         <Link href="/States" key={index} onClick={() => setLoading(true)} >
           <div id={`scale${index}`} onClick={() => dispatch(setCount(index))} className={index % 2 ? 'flex-col py-3 lg:py-0 lg:flex-row shadow-lg bg-white text-black  dark:text-white dark:bg-[#351a03] opacity-0 px-2 pfy-2 rounded-md w-[80vw] flex justify-around items-center gap-4 m-6 h-fit animates' : 'flex-col py-3 lg:py-0 lg:flex-row shadow-lg bg-white text-black  dark:text-white dark:bg-[#351a03] opacity-0 rounded-md w-[80vw] scalediv m-6 h-fit flex gap-6 justify-around items-center p-2'}>
             <Image loading='lazy' src={item.PortraitImg} alt={`${item.state} portrait`} width={200} height={300} className=' h-[15rem]' />
@@ -144,7 +144,7 @@ const StateSectoin = (data) => {
           Places to visit in India
         </h1>
         {
-          filejson.IndiaPackages.slice(0, showMore).map((each) => (
+          data.data?.IndiaPackages?.slice(0, showMore).map((each) => (
             <div key={each.placeName} className='flex-col py-3 mx-4 lg:my-4 lg:py-0 lg:flex-row flex placeDiv items-center overflow-hidden    border-[2px] dark:border-[#640303] rounded-sm shrink-0 justify-between w-[90vw] md:w-[45vw] m-4  text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700] '>
               <div ref={imghov} className='overflow-hidden lg:ml-2 hoverimage flex lg:h-[16rem] items-center justify-start lg:w-[126vw]'>
                 <Image src={each.image} alt={each.placeName} width={1000} height={100} className="object-cover blurimage float-left pr-4 h-[18vh] md:h-[35vh] lg:h-[sdf]   w-fit lg:max-w-[25vw]  placeImg" />
