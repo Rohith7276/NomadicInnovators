@@ -38,7 +38,7 @@ const SearchWithFocus = () => {
 // const index = findIndex(data, 'Mango');
 // console.log(index); // Output: 5
   return (
-    <div className="relative w-64 mx-acvbx mx-10dsf uto mt-1xs">
+    <div className="relative cursor-default w-64 mx-acvbx mx-10dsf uto mt-1xs">
       <input
         type="text"
         className="w-full p-1 px-3 border text-black rounded focus:outline-none"

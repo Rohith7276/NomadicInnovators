@@ -30,7 +30,7 @@ const page = ({ params }) => {
   
   return (
     <div className="bg-gray-100">
-      {loading? <Loader/> :
+      {loading?<div className="flex fixed bg-white z-[1000]  w-screen h-screen"><Loader /></div> :
       <States data={data} />
       }
     </div>

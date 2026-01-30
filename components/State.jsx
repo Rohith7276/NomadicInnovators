@@ -150,7 +150,7 @@ useEffect(() => {
         <div className='w-full h-fit'>
           <div className='h-fit lg:max-h-[95vh] min-w-[50vw] full items-start overflow-hidden w-full flex lg:flex-row flex-col'>
             <div ref={image} className='w-screen opacity-0 relative image stateBg  h-fit flex items-center justify-center  self-center overflow-hidden'>
-              {Loading && <div className="flex fixed bg-[#38sdf1a05ad]  w-screen h-screen"><Loader /></div>}
+              {Loading && <div className="flex fixed bg-white  w-screen h-screen"><Loader /></div>}
               <LazyLoadImage
                 effect="black-and-white"
                 wrapperProps={{
@@ -175,11 +175,11 @@ useEffect(() => {
             <div>
             </div>
           </div>
-          <h1 className='amsterdam cur curZ bg-origin-border pt-10 text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[4rem] mx-auto mt'>
+          <h1 className=' curZamsterdam cur curZ bg-origin-border pt-10 text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[4rem] mx-auto mt'>
             Places to visit
           </h1>
           <SliderComponent  data={data} />
-          <h1 className='amsterdam cur bg-origin-border curZ pt-5 lg:pt-0 py-4 text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[4rem] mx-auto mt'>
+          <h1 className=' curZamsterdam cur bg-origin-border curZ pt-5 lg:pt-0 py-4 text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[4rem] mx-auto mt'>
             Culture
           </h1>
           <div className='flex justify-around my-10 flex-wrap'>
@@ -198,7 +198,7 @@ useEffect(() => {
           </div>
         
     <section className={`flex shwmr overflow-hidden justify-center my-10 flex-wrap`}>
-      <h1 className='amsterdam cur bg-origin-border pt-10 text-[#031a2c] curZ  dark:text-yellow-400  mt-50 text-center w-full text-[3rem] lg:text-[4rem] mx-auto mt'>
+      <h1 className=' curZamsterdam cur bg-origin-border pt-10 text-[#031a2c] curZ  dark:text-yellow-400  mt-50 text-center w-full text-[3rem] lg:text-[4rem] mx-auto mt'>
         Packages
       </h1>
       {
@@ -237,14 +237,14 @@ useEffect(() => {
     </section>
     <button className=' z-10 shdw dark:block hidden curZ ' onClick={(e) => handleMore(e)}>show more</button>
     <button className=' z-10 lightMore dark:hidden curZ ' onClick={(e) => handleMore(e)}>show more</button>
-    <h1 className='amsterdam bg-origin-border pt-5  curZ lg:pt-0 py-4 text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[4rem] mx-auto mt-[10vh]'>
+    {/* <h1 className=' curZamsterdam bg-origin-border pt-5  curZ lg:pt-0 py-4 text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[4rem] mx-auto mt-[10vh]'>
             Recomended  to visit
-          </h1>
+          </h1> */}
         
       
             
     <div className='pb-10'>
-      <h1 className='amsterdam bg-origin-border  curZ  text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[4rem] mx-auto mt'>
+      <h1 className=' curZamsterdam bg-origin-border  curZ  text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[4rem] mx-auto mt'>
         COMMENTS
       </h1>
       <CommentForm />

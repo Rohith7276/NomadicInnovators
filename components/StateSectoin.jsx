@@ -25,7 +25,7 @@ const StateSectoin = (data ) => {
   const { contextSafe } = useGSAP();
   useEffect(() => {
     let x = localStorage.getItem("themeMode")
-    console.log(data.data)
+    console.log(data)
     setTheme(x)
   }, [])
 
@@ -108,7 +108,7 @@ const StateSectoin = (data ) => {
   useEffect(() => {
     animation();
   
-  }, []);
+  }, [data]);
 
   const dispatch = useDispatch()
 
@@ -122,11 +122,11 @@ const StateSectoin = (data ) => {
       </div>
 
       {data.data.states?.map((item, index) => (
-        <Link href="/States" key={index} onClick={() => setLoading(true)} >
+        <Link href={`/States/${item.stateId}`} key={index} onClick={() => setLoading(true)} >
           <div id={`scale${index}`} onClick={() => dispatch(setCount(index))} className={index % 2 ? 'flex-col py-3 lg:py-0 lg:flex-row shadow-lg bg-white text-black  dark:text-white dark:bg-[#351a03] opacity-0 px-2 pfy-2 rounded-md w-[80vw] flex justify-around items-center gap-4 m-6 h-fit animates' : 'flex-col py-3 lg:py-0 lg:flex-row shadow-lg bg-white text-black  dark:text-white dark:bg-[#351a03] opacity-0 rounded-md w-[80vw] scalediv m-6 h-fit flex gap-6 justify-around items-center p-2'}>
             <Image loading='lazy' src={item.PortraitImg} alt={`${item.state} portrait`} width={200} height={300} className=' h-[15rem]' />
             <div className='flex justify-around text-2xl h-full gap-3 text-center flex-col'>
-              <h2 className='text-[#031a2c] amsterdam  dark:text-yellow-400 textdiv text-4xl tracking-widest font-bold '>
+              <h2 className='curZ text-[#031a2c] amsterdam  dark:text-yellow-400 textdiv text-4xl tracking-widest font-bold '>
                 {item.state}
               </h2>
               <p className='text-sm px-3 lg:px-0 lg:text-xl'>
@@ -140,7 +140,7 @@ const StateSectoin = (data ) => {
 
 
       <section className={`flex shwmr overflow-hidden justify-center my-10 flex-wrap`}>
-        <h1 className='amsterdam bg-origin-border pt-10 text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[3rem] lg:text-[4rem] mx-auto mt'>
+        <h1 className=' curZ amsterdam bg-origin-border pt-10 text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[3rem] lg:text-[4rem] mx-auto mt'>
           Places to visit in India
         </h1>
         {
@@ -150,7 +150,7 @@ const StateSectoin = (data ) => {
                 <Image src={each.image} alt={each.placeName} width={1000} height={100} className="object-cover blurimage float-left pr-4 h-[18vh] md:h-[35vh] lg:h-[sdf]   w-fit lg:max-w-[25vw]  placeImg" />
                 {window.innerWidth >= 700 && (
                   <div className='  flex justify-center items-center h-[10rem] lg:h-[16rem] hoverpack  w-[65vw] lg:w-[24vw] absolute'>
-                    <Link href={each.hotel} className=' ' target='_blank'><button className='border bg-[#745f4e81] tracking-wider amsterdam hover:text-white  dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5]  py-1  border-white rounded-[10rem] px-3  '> Book Hotels </button></Link>
+                    <Link href={each.hotel} className=' ' target='_blank'><button className='border bg-[#745f4e81] tracking-wider amsterdam hover:text-white  dark:hover:text-yellow-400 text-lg hover:bg-[#a2bac2] dark:hover:bg-[#351a03d5]  py-1  border-white rounded-[10rem] px-3 curZ  '> Book Hotels </button></Link>
                   </div>
                 )}
               </div>
