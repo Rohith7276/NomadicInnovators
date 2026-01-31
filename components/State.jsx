@@ -16,7 +16,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation';
  
 import Link from 'next/link';
-const State = ({data}) => {
+const State = ({data, id}) => {
   const router = useRouter();
   const [Loading, setLoading] = useState(true)  
   const image = useRef() 
@@ -247,9 +247,9 @@ useEffect(() => {
       <h1 className=' curZamsterdam bg-origin-border  curZ  text-[#031a2c] dark:text-yellow-400  mt-50 text-center w-full text-[4rem] mx-auto mt'>
         COMMENTS
       </h1>
-      <CommentForm />
+      <CommentForm id={id}/>
       <div className=' text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700] mt-6 lg:py-5 py-1 pb-1 lg:px-5 mx-5 lg:mx-52 rounded-md'>
-        <CommentList />
+        <CommentList comments={data.comments} id={id}/>
       </div>
     </div>
   </div >

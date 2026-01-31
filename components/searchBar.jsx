@@ -1,3 +1,4 @@
+ 
 import React, { useState } from 'react';
 import Image from 'next/image';
 import stateIco0 from '../public/images/stateicon/0.png';
@@ -7,15 +8,12 @@ import stateIco3 from '../public/images/stateicon/3.png';
 import stateIco4 from '../public/images/stateicon/4.png';
 import stateIco5 from '../public/images/stateicon/5.png';
 import stateIco6 from '../public/images/stateicon/6.png';
-import stateIco7 from '../public/images/stateicon/7.png';
-import { setCount } from '../app/redux/counter/counterSlice'; 
-import { useDispatch } from 'react-redux' 
+import stateIco7 from '../public/images/stateicon/7.png';  
 import Link from 'next/link';
 
 const SearchWithFocus = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [isFocused, setIsFocused] = useState(false);
-  const dispatch = useDispatch() 
+  const [isFocused, setIsFocused] = useState(false); 
   const data = [
     { "name": 'Karnataka', "icon": stateIco0 , "id":"v4xYIqTL9MQN23nLNKUB" },
     { "name": 'Andhra Pradesh', "icon": stateIco1 , "id":"Fxy2EtckpdIAYie75DkI" },

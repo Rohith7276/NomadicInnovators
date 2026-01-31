@@ -5,7 +5,7 @@ import Cursor from '../components/Cursor';
 import dynamic from 'next/dynamic';
 import SessionWrapper from "../components/SessionWrapper";
 const Bot = dynamic(() => import('../components/bot'), { ssr: false });
-
+import { AuthProvider } from "@/app/contexts/authContext";
 const inter = Gowun_Batang({ subsets: ["latin"], weight: ['400', '700'], });
 
 export const metadata = {
@@ -26,11 +26,14 @@ export default function RootLayout({ children }) {
 
       </head>
       <SessionWrapper>
+           <AuthProvider>
+            
         <body className="  font-inter scrolling" style={{ top: 0 }}>
           {children}
           <Cursor />
           <Bot />
         </body>
+           </AuthProvider>
       </SessionWrapper>
     </html >
   );

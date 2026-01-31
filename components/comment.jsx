@@ -3,18 +3,14 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { fireDB } from "../app/firebase/firebaseConfig";
 import { useSelector } from "react-redux";
 import Link from "next/link";
+import { useAuth } from "@/app/contexts/authContext";
 
-const CommentForm = () => {
-    const counterValue = useSelector(state => state.counter.value);
-    const [comment, setComment] = useState("");
-    const [user, setUser] = useState(null);
+const CommentForm = ({id}) => {
+    const counterValue = id;
+    const [comment, setComment] = useState(""); 
+    const {currentUser} = useAuth() 
 
-    useEffect(() => {
-        const storedUser = localStorage.getItem("user");
-        if (storedUser) {
-            setUser(JSON.parse(storedUser).name);
-        }
-    }, []);
+     
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -25,7 +21,7 @@ const CommentForm = () => {
         try {
             await addDoc(collection(fireDB, `comments${counterValue}`), {
                 content: comment,
-                user: user,
+                currentUser: currentUser,
                 timestamp: serverTimestamp(),
             });
             setComment("");  
@@ -36,7 +32,7 @@ const CommentForm = () => {
 
     return (
         <>
-            {user != null ? (
+            {currentUser != null ? (
                 <>
                     <form onSubmit={handleSubmit}     className="  comment-form px-[1.5rem] m-auto" style={{ display: "flex", flexDirection: "column", gap: "10px", maxWidth: "400px" }}>
                         <textarea

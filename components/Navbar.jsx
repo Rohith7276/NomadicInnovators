@@ -2,23 +2,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import LOGO from "../public/images/LOGO.svg";
-import LOGO2 from "../public/images/LOGO2.jpg";
-import Select from "react-dropdown-select";
-import { deleteDoc } from 'firebase/firestore';
+import LOGO2 from "../public/images/LOGO2.jpg"; 
 import Image from "next/image";
 import Contact from "./contact.jsx"
-import Link from 'next/link';
-import { useDispatch } from 'react-redux'
-import { setCount } from '../app/redux/counter/counterSlice';
-import SearchBar from "./searchBar"
-import { fireDB } from '../app/firebase/firebaseConfig'
-import { collection, getDocs, doc } from 'firebase/firestore'
+import Link from 'next/link'; 
+import SearchBar from "./searchBar" 
 import { CiMenuBurger } from "react-icons/ci";
 import ThemeBtn from './themeBtn'
 import { FaRegUserCircle } from "react-icons/fa";
 export default function Navbar() {
-  const boxRef = useRef(null);
-  const dispatch = useDispatch()
+  const boxRef = useRef(null); 
   const router = useRouter();
   const [user, setuser] = useState("null")
   const [userClick, setUserClick] = useState(false)
@@ -92,8 +85,8 @@ export default function Navbar() {
 
       <nav className='bg-[#cacbc3]  text-black dark:text-white dark:bg-[#351a03] pl-4 h-[4rem] flex  overdfflow-hidden lg:flex-row items-center justify-between lg:justify-start shadow-md shadow-gray-700   dark:shadow-md dark:shadow-black sticky top-0 w-full z-[100] backdrop-filter backdrop-blur-sm'>
         <div className='flex items-center bdfsg-[#351a03] w-fit justify-between lg:w-fit'>
-          <Image class src={LOGO} className="hidden dark:block" width={90} alt="Logo" />
-          <Image class src={LOGO2} className='dark:hidden' width={90} alt="Logo" />
+          <Image  src={LOGO} className="hidden dark:block" width={90} alt="Logo" />
+          <Image src={LOGO2} className='dark:hidden' width={90} alt="Logo" />
         </div>
         <button onClick={handleMenu} className='lg:hidden mx-7'>
           <CiMenuBurger />

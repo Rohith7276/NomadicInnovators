@@ -4,10 +4,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useRef } from 'react';
-import { useDispatch } from 'react-redux';
-import { useState } from 'react';
-import { setCount } from '../app/redux/counter/counterSlice';
+import { useRef } from 'react'; 
+import { useState } from 'react'; 
  
 gsap.registerPlugin(ScrollTrigger);
 import { useGSAP } from '@gsap/react'
@@ -109,8 +107,7 @@ const StateSectoin = (data ) => {
     animation();
   
   }, [data]);
-
-  const dispatch = useDispatch()
+ 
 
 
   return (
@@ -123,7 +120,7 @@ const StateSectoin = (data ) => {
 
       {data.data.states?.map((item, index) => (
         <Link href={`/States/${item.stateId}`} key={index} onClick={() => setLoading(true)} >
-          <div id={`scale${index}`} onClick={() => dispatch(setCount(index))} className={index % 2 ? 'flex-col py-3 lg:py-0 lg:flex-row shadow-lg bg-white text-black  dark:text-white dark:bg-[#351a03] opacity-0 px-2 pfy-2 rounded-md w-[80vw] flex justify-around items-center gap-4 m-6 h-fit animates' : 'flex-col py-3 lg:py-0 lg:flex-row shadow-lg bg-white text-black  dark:text-white dark:bg-[#351a03] opacity-0 rounded-md w-[80vw] scalediv m-6 h-fit flex gap-6 justify-around items-center p-2'}>
+          <div id={`scale${index}`}  className={index % 2 ? 'flex-col py-3 lg:py-0 lg:flex-row shadow-lg bg-white text-black  dark:text-white dark:bg-[#351a03] opacity-0 px-2 pfy-2 rounded-md w-[80vw] flex justify-around items-center gap-4 m-6 h-fit animates' : 'flex-col py-3 lg:py-0 lg:flex-row shadow-lg bg-white text-black  dark:text-white dark:bg-[#351a03] opacity-0 rounded-md w-[80vw] scalediv m-6 h-fit flex gap-6 justify-around items-center p-2'}>
             <Image loading='lazy' src={item.PortraitImg} alt={`${item.state} portrait`} width={200} height={300} className=' h-[15rem]' />
             <div className='flex justify-around text-2xl h-full gap-3 text-center flex-col'>
               <h2 className='curZ text-[#031a2c] amsterdam  dark:text-yellow-400 textdiv text-4xl tracking-widest font-bold '>

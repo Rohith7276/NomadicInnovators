@@ -4,16 +4,17 @@ import {getFirestore} from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 import {getAuth} from "firebase/auth"
 import {signInWithPopup} from "firebase/auth" 
-import { GoogleAuthProvider } from "firebase/auth";
+import { GoogleAuthProvider } from "firebase/auth"; 
 const firebaseConfig = {
-  apiKey: "AIzaSyDQTtLTp-gsu-7Sx7dNws6sKrpAGNHPIgQ",
-  authDomain: "travel-d4acf.firebaseapp.com",
-  projectId: "travel-d4acf",
-  storageBucket: "travel-d4acf.firebasestorage.app",
-  messagingSenderId: "1026654936314",
-  appId: "1:1026654936314:web:7dbf3d6b46bb46bd427d43",
-  measurementId: "G-Z7T16EVF7F"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
+ 
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
