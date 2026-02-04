@@ -4,9 +4,9 @@ import { collection, query, orderBy, onSnapshot, deleteDoc, doc } from "firebase
 import { fireDB } from "../app/firebase/firebaseConfig" 
 import { useAuth } from "@/app/contexts/authContext";
 
-const CommentList = ({comments, id}) => { 
+const CommentList = ({ comments, id}) => { 
     const {currentUser} = useAuth() 
-
+    console.log("comments", comments)
     const handleDelete = async (ids) => {
         try {
             await deleteDoc(doc(fireDB, `comments${id}`, ids));
@@ -20,11 +20,11 @@ const CommentList = ({comments, id}) => {
             {comments?.length ? comments?.map((comment) => (
                 <div key={comment.id}     className="  comment flex  border-black dark:border-[#640303] border justify-between text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700]" style={{ marginBottom: "10px", padding: "10px" , borderRadius: "5px" }}>
                     <div>
-                        {comment.user === currentUser ? <h1     className="  text-green-600">You</h1> : <h1     className="  text-gray-400">{comment.user}</h1>}
+                        {comment?.currentUser === currentUser.email ? <h1     className="  text-green-600">You</h1> : <h1     className="  text-gray-400">{comment?.currentUser}</h1>}
                     <p style={{ margin: "0 0 5px 0" }}>{comment.content}</p>
                     <small     className="  text-gray-500" >{comment.timestamp?.toDate().toLocaleString()}</small>
                         </div>
-                    {comment.user === currentUser && <button     className="   curZ  " onClick={() => handleDelete(comment.id)}><MdDelete     className="    w-[1.6rem]"/></button>}
+                    {comment?.currentUser === currentUser.email && <button     className="   curZ  " onClick={() => handleDelete(comment.id)}><MdDelete     className="    w-[1.6rem]"/></button>}
                 </div>
             )) : <div     className="  text-black flex h-[20vh] w-full justify-center items-center"> No comments yet</div>}
 
@@ -33,11 +33,11 @@ const CommentList = ({comments, id}) => {
             {comments?.length ? comments?.map((comment) => (
                 <div key={comment.id}     className="  comment flex  border-black dark:border-[#640303] border justify-between text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700]" style={{ marginBottom: "10px", padding: "10px" , borderRadius: "5px" }}>
                     <div>
-                    {comment.user === currentUser ? <h1     className="  text-green-600">You</h1> : <h1     className="  text-gray-400">{comment.user}</h1>}
+                    {comment?.currentUser === currentUser.email ? <h1     className="  text-green-600">You</h1> : <h1     className="  text-gray-400">{comment?.currentUser}</h1>}
                     <p style={{ margin: "0 0 5px 0" }}>{comment.content}</p>
                     <small     className="  text-yellow-100" >{comment.timestamp?.toDate().toLocaleString()}</small>
                     </div>
-                    {comment.user === currentUser && <button     className="   curZ  "  onClick={() => handleDelete(comment.id)}><MdDelete     className="    w-[1.6rem]"/></button>}
+                    {comment?.currentUser === currentUser.email && <button     className="   curZ  "  onClick={() => handleDelete(comment.id)}><MdDelete     className="    w-[1.6rem]"/></button>}
                 </div>
             )) : <div     className="  text-black flex h-[20vh] w-full justify-center dark:text-white items-center"> No comments yet</div>}
 

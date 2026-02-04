@@ -2,8 +2,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import States from "../../../components/State.jsx";
-import { collection, query, orderBy, onSnapshot, deleteDoc, doc } from "firebase/firestore"; 
-import { fireDB } from "../../firebase/firebaseConfig" 
+import { onSnapshot, deleteDoc, collection, getDocs, orderBy, query, doc } from "firebase/firestore";
+import { fireDB } from "../../firebase/firebaseConfig"
 
 import Loader from "@/components/Loader.jsx";
 async function getData(state) {
@@ -12,7 +12,7 @@ async function getData(state) {
   return res.json();
 }
 
-const page = ({ params }) => {
+const Page = ({ params }) => {
 
   const { state } = params;
   const [loading, setLoading] = useState(true)
@@ -21,13 +21,29 @@ const page = ({ params }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const a = await getData(state);
-      const q = query(collection(fireDB, `comments${state}`), orderBy("timestamp", "desc"));
-      const unsubscribe = onSnapshot(q, (snapshot) => {
-        setComments(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
-      });
-      setdata(a)
-      unsubscribe()
+      try {
+        const a = await getData(state);
+        
+        const colRef = collection(fireDB, `comments${state}`);
+
+        const q = query(colRef, orderBy("timestamp", "desc"));
+
+        const snapshot = await getDocs(q);
+
+        console.log(snapshot);
+        const x = snapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+        setComments(x)
+        console.log(x);
+
+        setdata(a)
+        // unsubscribe()
+      }
+      catch (e) {
+        console.log("error occured in fetching data", e)
+      }
       setLoading(false);
     };
 
@@ -46,4 +62,4 @@ const page = ({ params }) => {
   );
 };
 
-export default page;
+export default Page;

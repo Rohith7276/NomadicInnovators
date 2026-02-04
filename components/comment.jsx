@@ -14,16 +14,14 @@ const CommentForm = ({id}) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        if (comment.trim() === "") return;
-
-
+        console.log(currentUser)
+        if (comment.trim() === "") return; 
         try {
             await addDoc(collection(fireDB, `comments${counterValue}`), {
                 content: comment,
-                currentUser: currentUser,
+                currentUser: currentUser?.email,
                 timestamp: serverTimestamp(),
-            });
+            }); 
             setComment("");  
         } catch (error) {
             console.error("Error adding comment: ", error);

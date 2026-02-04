@@ -3,12 +3,13 @@ import { IoSend } from "react-icons/io5";
 import DOMPurify from "dompurify";
 import { useGSAP } from "@gsap/react";
 import Loader from "./Loader";
-import Groq from "groq-sdk";
+import Groq from "groq-sdk"; import remarkGfm from "remark-gfm";
+import ReactMarkdown from "react-markdown";
 import { useEffect } from "react";
 import { gsap } from "gsap";
 function ChatApp() {
     const [input, setInput] = useState("");
-    const [response, setResponse] = useState([]);
+    const [response, setResponse] = useState("");
     const [loading, setLoading] = useState(false)
     const { contextSafe } = useGSAP();
     useEffect(() => {
@@ -45,28 +46,36 @@ function ChatApp() {
             //     body: JSON.stringify(finalInput), // Send the user input as JSON
             // });
             // const jsonData = await res.json(); 
-            const groq = new Groq({ apiKey: process.env.NEXT_PUBLIC_GROQ_API_KEY });
+            // const groq = new Groq({ apiKey: process.env.NEXT_PUBLIC_GROQ_API_KEY });
 
-            const chatCompletion = await groq.chat.completions.create({
-                "messages": [
-                    {
-                        "role": "user",
-                        "content": finalInput
-                    }
-                ],
-                // "model": "llama3-8b-8192",
-                model: "openai/gpt-oss-20b",
-                "temperature": 1,
-                "max_tokens": 10024,
-                "top_p": 1,
-                "stream": true,
-                "stop": null
+            // const chatCompletion = await groq.chat.completions.create({
+            //     "messages": [
+            //         {
+            //             "role": "user",
+            //             "content": finalInput
+            //         }
+            //     ],
+            //     // "model": "llama3-8b-8192",
+            //     model: "openai/gpt-oss-20b",
+            //     "temperature": 1,
+            //     "max_tokens": 10024,
+            //     "top_p": 1,
+            //     "stream": true,
+            //     "stop": null
+            // });
+            // var response = ""
+            // for await (const chunk of chatCompletion) {
+            //     response += chunk.choices[0]?.delta?.content || "";
+            // }
+            const res = await fetch("/api/chat", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ message: finalInput }),
             });
-            var response = ""
-            for await (const chunk of chatCompletion) {
-                response += chunk.choices[0]?.delta?.content || "";
-            }
-            setResponse(response);
+            const data = await res.json();
+            setResponse(data.response);
             setLoading(false);
         } catch (error) {
             console.error("Error:", error);
@@ -104,37 +113,18 @@ function ChatApp() {
                 <button onClick={handleSendMessage} className="  text-white  curZ dark:text-yellow-400  "><IoSend className=" curZ " /></button>
             </div>
             {loading && <div className="  absolute ml-[45vw] mt-[7rem] "><Loader /></div>}
-            <div className="  h-[60vh] my-6 px-4 scrollBrown hidden dark:block overflow-y-scroll  w-[80vw] py-7 m-auto">
-                {response.map((item, index) => {
-                    let formattedItem = item;
-                    let isBold = true;
-                    while (formattedItem.includes("**")) {
-                        formattedItem = formattedItem.replace("**", isBold ? `<span     className="  aibold">` : `</span>`);
-                        isBold = !isBold;
-                    }
-                    return (
-                        <div key={index}>
-                            <HtmlRenderer htmlString={formattedItem} />
-                            <br />
-                        </div>
-                    );
-                })}
+            <div className="  h-[60vh] my-6 px-4 scrollBrown hidden dark:block overflow-y-scroll text-xl w-[80vw] py-7 m-auto">
+      
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {response}
+                </ReactMarkdown>
             </div>
-            <div className="  h-[60vh] dark:hidden my-6 px-4 scrollLight overflow-y-scroll  w-[80vw] py-7 m-auto">
-                {response.map((item, index) => {
-                    let formattedItem = item;
-                    let isBold = true;
-                    while (formattedItem.includes("**")) {
-                        formattedItem = formattedItem.replace("**", isBold ? `<span     className="  aibold2">` : `</span>`);
-                        isBold = !isBold;
-                    }
-                    return (
-                        <div key={index}>
-                            <HtmlRenderer htmlString={formattedItem} />
-                            <br />
-                        </div>
-                    );
-                })}
+            <div className="  h-[60vh] dark:hidden my-6 px-4 scrollLight overflow-y-scroll text-xl  w-[80vw] py-7 m-auto">
+             
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {response}
+                </ReactMarkdown>
+
             </div>
         </div>
     );

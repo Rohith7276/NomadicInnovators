@@ -1,14 +1,25 @@
 // pages/api/chat.js
 import Groq from "groq-sdk";
-import {  NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
-const groq = new Groq();
-export async function POST(req){
-  const body = await req.json();
-  const response = await getResponse(body);
-  return NextResponse.json(
-    { response: response }
-  );
+const groq = new Groq({ apiKey: process.env.NEXT_PUBLIC_GROQ_API_KEY });
+
+export async function POST(req) {
+  try {
+    const body = await req.json(); 
+    const input = body.message;
+    console.log(input)
+    const response = await getResponse(input);
+    return NextResponse.json(
+      { response: response }
+    );
+  } catch (error) {
+    console.log(error)
+    return NextResponse.json(
+      { error: "Invalid request body" },
+      { status: 400 }
+    );
+  }
 }
 
 async function getResponse(input) {
@@ -19,7 +30,7 @@ async function getResponse(input) {
         "content": input
       }
     ],
-    "model": "llama3-8b-8192",
+    "model": "openai/gpt-oss-20b",
     "temperature": 1,
     "max_tokens": 1024,
     "top_p": 1,
@@ -28,8 +39,8 @@ async function getResponse(input) {
   });
   var response = ""
   for await (const chunk of chatCompletion) {
-   response += chunk.choices[0]?.delta?.content || "";
+    response += chunk.choices[0]?.delta?.content || "";
   }
-  
+
   return response;
 }

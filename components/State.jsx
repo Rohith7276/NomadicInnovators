@@ -16,7 +16,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation';
  
 import Link from 'next/link';
-const State = ({data, id}) => {
+const State = ({data, comments, id}) => {
   const router = useRouter();
   const [Loading, setLoading] = useState(true)  
   const image = useRef() 
@@ -183,7 +183,7 @@ useEffect(() => {
             Culture
           </h1>
           <div className='flex justify-around my-10 flex-wrap'>
-            {data.culture.map((each, index) => (
+            {data?.culture?.map((each, index) => (
               <div id={`culture${index}`} key={each.cultureName} className='flex  curZ flex-col lg:flex-row opacity-0 culture border-[2px] dark:border-[#640303] rounded-sm shrink-0 justify-between w-[90vw] md:w-[45vw] m-4 pt-4 lg:pt-0 text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700] '>
                 <div className='overflow-hidden flex items-center justify-center lg:w-[126vw]'>
                   <Image src={each.cultureImg} id={`cultureImg${index}`} alt={each.cultureName} width={1000} height={100} className="object-cover float-left px-4 h-[18vh] md:h-[35vh] lg:h-[sdf]  w-fit lg:max-w-[25vw]" />
@@ -249,7 +249,7 @@ useEffect(() => {
       </h1>
       <CommentForm id={id}/>
       <div className=' text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700] mt-6 lg:py-5 py-1 pb-1 lg:px-5 mx-5 lg:mx-52 rounded-md'>
-        <CommentList comments={data.comments} id={id}/>
+        <CommentList comments={comments} id={id}/>
       </div>
     </div>
   </div >
