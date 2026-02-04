@@ -19,7 +19,8 @@ import { useGSAP } from "@gsap/react"
 gsap.registerPlugin(ScrollTrigger)
 
 async function getData() {
-  const res = await fetch(`http://localhost:3000/api/state`)
+  // const res = await fetch(`http://localhost:3000/api/state`)
+  const res = await fetch(`https://tourdeindia.vercel.app/api/state`)
   if (!res.ok) throw new Error("Failed to fetch data")
   return res.json()
 }
@@ -119,12 +120,12 @@ const Home = () => {
                 <div className='flex fdlex-col justify-center w-full -my-5 items-center gap-12'>
                   <Image src={cook2} width="500" className='w-[10rem] dark:hidden' alt="Loading..." />
                   <Image src={cook} width="500" className='w-[10rem] hidden dark:block' alt="Loading..." />
-                  <p className='amsterdam tracking-widest text-xl text-[#031a2c] dark:text-yellow-400  '>Let me cook!</p>
+                  <p className='amsterdam tracking-widest  text-xl text-[#031a2c] dark:text-yellow-400  '>Let me cook!</p>
                 </div>
               ) :
-                response ? <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                response ? <div className="w-full flex justify-center text-xl"><ReactMarkdown remarkPlugins={[remarkGfm]}>
                     {response}
-                </ReactMarkdown> : (
+                </ReactMarkdown></div> : (
                   <p className='amsterdam tracking-widest flex items-center justify-center w-full text-xl text-[#031a2c] dark:text-[#ffd867]'>Click it&apos; don&apos;t be shy!</p>
                 )}
             </div>

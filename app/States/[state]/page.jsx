@@ -7,7 +7,8 @@ import { fireDB } from "../../firebase/firebaseConfig"
 
 import Loader from "@/components/Loader.jsx";
 async function getData(state) {
-  const res = await fetch(`http://localhost:3000/api/state/${state}`);
+  // const res = await fetch(`http://localhost:3000/api/state/${state}`);
+  const res = await fetch(`https://tourdeindia.vercel.app//api/state/${state}`);
   if (!res.ok) throw new Error("Failed to fetch data");
   return res.json();
 }
