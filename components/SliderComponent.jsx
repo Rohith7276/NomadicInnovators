@@ -60,7 +60,7 @@ const SliderComponent = ({data}) => {
     {   <div className="flex  mb-7 lg:my-7 justify-center items-center cursor-default mx-4">
       <div ref={slide} className=" w-full ">
         <Slide {...zoomInProperties}>
-          {data?.placesToVisit.map((each, index) => (
+          {data?.placesToVisit?.map((each, index) => (
             <div key={index} className="flex h-[77vh] margin: 0 0 0 59.7rem; items-center w-[80vw] m-auto lg:w-[89vw]  gap-5 mx-11 border dark:border-[#5e1e0b] rounded-lg  text-black dark:text-white bg-white shadow-lg dark:bg-[#1e0700]" style={{ margin: "auto" }}>
 
               <div className="flex flex-col  h-full ligfhtscroll dark:hidden justify-around overflow-hidden gap-3">
