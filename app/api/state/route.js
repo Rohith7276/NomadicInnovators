@@ -1,6 +1,7 @@
 import { collection, getDocs } from "firebase/firestore"
 import { fireDB } from "@/app/firebase/firebaseConfig"
 import { notFound } from "next/navigation"
+export const dynamic = "force-dynamic";
 
 export async function GET(req) {
   try {
@@ -8,10 +9,9 @@ export async function GET(req) {
     const snapshot = await getDocs(colRef)
 
     if (snapshot.empty) {
-      notFound()
+      return new Response(JSON.stringify({ error: "No data found" }), { status: 404 })
     }
 
-    // If you want FIRST document only
     const data = snapshot.docs[0].data()
 
     return new Response(JSON.stringify(data), {
