@@ -95,7 +95,7 @@ const Home = () => {
     <div className=" min-h-[150vh] min-w-screen bgmn,.-gray-100">
       {Loading && <div className="flex fixed bg-white z-[1000]  w-screen h-screen"><Loader /></div>}
       <>
-        <div ref={image} className=" mt-[-4rem] h-[100vh] bgHome z-[-10] overflow-hidden flex items-center">
+        <div ref={image} className=" mt-[-4rem] h -[100vh] bgHome z-[-10] overflow-hidden flex items-center">
           <div className=" h-full bgHome w-full dark:hidden block"> <div className="   h-screen flex justify-center items-center">
             <img src={Background2} alt="bg" className=" dark:hidden lg:h-screen h-[50vh] object-cover" width={"100"} height={"80"} /> </div>
             <Stars />
@@ -105,8 +105,9 @@ const Home = () => {
             <Stars />
           </div>
         </div>
-        <section className="backdrop-blur-[5px] bg-wh ite">
-          <AiSection /> </section>
+        <section className="backdrop-blur-[5px] h-fit bg-wh ite">
+          <AiSection /> 
+          </section>
         <div className="bg-gray-100 py-11 dark:bg-black">
       <section className='py-8 flex-col lg:flex-row flex justify-start gap-7 rounded-md bg-white text-black dark:text-white dark:bg-[#351902]  items-center border border-[#640303]  px-4 mx-14 '>
             <button
