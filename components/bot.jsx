@@ -47,18 +47,14 @@ export default function App() {
         <button     className="   bg-blacdfsk absolute flex fl mt-[-3.1rem] ml-[-1.47rem] rounded-full p-0    text-black" onClick={hide}><TbXboxXFilled     className="   " /></button>
         Hey we&apos;re online<FcCustomerSupport     className="  text-xl" /></div>
       <style>{style}</style>
-      <WebchatProvider
-        theme={theme}
-        client={client}
-      >
-        <Fab onClick={toggleWebchat}     className="  shadfgdw-sm" />
-        <div
-          style={{
-            display: isWebchatOpen ? "block" : "none",
-          }}
-        >
-          <Webchat />
-        </div>
+
+      <WebchatProvider theme={theme} client={client}>
+        <Fab onClick={toggleWebchat} />
+        {isWebchatOpen && (
+          <div className="fixed bottom-[-0.5rem] right-[-3rem] z-[99] w-[380px] max-w-[95vw] h-[70vh] max-h-[700px]">
+            <Webchat />
+          </div>
+        )}
       </WebchatProvider>
     </div>
   );

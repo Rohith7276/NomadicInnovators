@@ -22,8 +22,7 @@ const StateSectoin = (data ) => {
   const imghov = useRef(false)
   const { contextSafe } = useGSAP();
   useEffect(() => {
-    let x = localStorage.getItem("themeMode")
-    console.log(data)
+    let x = localStorage.getItem("themeMode") 
     setTheme(x)
   }, [])
 

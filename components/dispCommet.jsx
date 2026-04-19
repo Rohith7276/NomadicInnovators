@@ -5,8 +5,7 @@ import { fireDB } from "../app/firebase/firebaseConfig"
 import { useAuth } from "@/app/contexts/authContext";
 
 const CommentList = ({ comments, id}) => { 
-    const {currentUser} = useAuth() 
-    console.log("comments", comments)
+    const {currentUser} = useAuth()  
     const handleDelete = async (ids) => {
         try {
             await deleteDoc(doc(fireDB, `comments${id}`, ids));

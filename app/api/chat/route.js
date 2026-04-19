@@ -1,17 +1,41 @@
-// pages/api/chat.js
 import Groq from "groq-sdk";
 import { NextResponse } from "next/server";
+import { createHash } from "crypto";
+
+import { createCacheKey, getCachedJSON, setCachedJSON } from "@/app/lib/redisCache";
 
 const groq = new Groq({ apiKey: process.env.NEXT_PUBLIC_GROQ_API_KEY });
+export const runtime = "nodejs";
 
 export async function POST(req) {
   try {
-    const body = await req.json(); 
+    const body = await req.json();
     const input = body.message;
-    console.log(input)
+    const normalizedInput = typeof input === "string" ? input.trim() : "";
+    const cacheKey = createCacheKey(
+      "chat",
+      createHash("sha256").update(normalizedInput).digest("hex")
+    );
+
+    const cachedData = await getCachedJSON(cacheKey);
+
+    if (cachedData !== null) {
+      return NextResponse.json(cachedData, {
+        headers: {
+          "X-Cache": "HIT",
+        },
+      });
+    }
+
     const response = await getResponse(input);
+    await setCachedJSON(cacheKey, { response });
     return NextResponse.json(
-      { response: response }
+      { response: response },
+      {
+        headers: {
+          "X-Cache": "MISS",
+        },
+      }
     );
   } catch (error) {
     console.log(error)

@@ -141,8 +141,7 @@ useEffect(() => {
 
   animation(Loading);
 
-}, [Loading]);
-  console.log(data)
+}, [Loading]); 
 
   return (<>
     <div className='min-h-screen bg-gray-100  dark:bg-black min-w-screen'>

@@ -2,6 +2,15 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+### Redis Cache
+
+This backend uses Upstash Redis for read caching. Set these environment variables before starting the app:
+
+- `UPSTASH_REDIS_REST_URL`
+- `UPSTASH_REDIS_REST_TOKEN`
+
+If Redis is unavailable or not configured, the API falls back to direct Firebase and Groq requests.
+
 First, run the development server:
 
 ```bash

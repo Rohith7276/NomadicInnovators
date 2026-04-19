@@ -13,8 +13,7 @@ const CommentForm = ({id}) => {
      
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        console.log(currentUser)
+        e.preventDefault(); 
         if (comment.trim() === "") return; 
         try {
             await addDoc(collection(fireDB, `comments${counterValue}`), {
