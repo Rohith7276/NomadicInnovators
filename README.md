@@ -1,45 +1,84 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+**Tour De India** — Next.js app for travel and itinerary experiences
 
-## Getting Started
+Summary
+- A modern Next.js 14 app that uses Firebase (Auth, Firestore, Storage), optional Upstash Redis caching, and serverless API routes. Includes UI components, theme support, and an AI/chat API integration.
 
-### Redis Cache
+Quick setup
 
-This backend uses Upstash Redis for read caching. Set these environment variables before starting the app:
+1. Install dependencies:
 
-- `UPSTASH_REDIS_REST_URL`
-- `UPSTASH_REDIS_REST_TOKEN`
+```bash
+npm install
+```
 
-If Redis is unavailable or not configured, the API falls back to direct Firebase and Groq requests.
+2. Create a `.env.local` at the project root and add required environment variables (example below).
 
-First, run the development server:
+3. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Environment variables
+- Firebase (used in `app/firebase/firebaseConfig.jsx`):
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+	- `NEXT_PUBLIC_FIREBASE_API_KEY`
+	- `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN`
+	- `NEXT_PUBLIC_FIREBASE_PROJECT_ID`
+	- `NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET`
+	- `NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID`
+	- `NEXT_PUBLIC_FIREBASE_APP_ID`
+	- `NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID` (optional)
 
-## Learn More
+- Upstash Redis (optional cache used by `lib/redisCache.js`):
 
-To learn more about Next.js, take a look at the following resources:
+	- `UPSTASH_REDIS_REST_URL`
+	- `UPSTASH_REDIS_REST_TOKEN`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Example `.env.local` (replace values):
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+NEXT_PUBLIC_FIREBASE_API_KEY=your-api-key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-auth-domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-bucket
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
+NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=your-measurement-id
 
-## Deploy on Vercel
+UPSTASH_REDIS_REST_URL=https://...upstash.io
+UPSTASH_REDIS_REST_TOKEN=your-upstash-token
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Available npm scripts
+- `dev` — runs the Next.js development server
+- `build` — builds the production app
+- `start` — runs the production server
+- `lint` — runs ESLint
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Project structure (high-level)
+- `app/` — Next.js App Router pages and server components
+	- `firebase/firebaseConfig.jsx` — Firebase initialization
+	- `api/` — serverless API routes (chat, itinerary, state)
+- `components/` — React UI components used across the app
+- `contexts/` — React contexts (auth, themes)
+- `public/` — static assets and images
+- `lib/redisCache.js` — optional Upstash Redis cache helper
+
+Notes and tips
+- The app falls back to direct Firebase/Groq requests if Redis is not configured.
+- Authentication integrates Firebase Auth (Google provider included in `firebaseConfig.jsx`).
+- If you plan to deploy to Vercel, add the environment variables into your Vercel project settings.
+
+Deployment
+- Deploy to Vercel for easiest hosting of Next.js apps. Ensure all `NEXT_PUBLIC_*` and `UPSTASH_*` variables are set in the Vercel dashboard.
+
+Troubleshooting
+- If a Firebase feature isn't working, confirm the `NEXT_PUBLIC_FIREBASE_*` values match your Firebase project settings.
+- If caching behaves unexpectedly, verify `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` and consult Upstash docs.
+
+Contributing
+- Feel free to open issues or add pull requests. Keep changes focused and include brief descriptions.
+ 
